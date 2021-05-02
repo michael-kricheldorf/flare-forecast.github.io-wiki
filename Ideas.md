@@ -1,0 +1,12 @@
+- Set up the host, do the configuration, and run the Docker on the host all by running a single command from the web.
+- Do the configuration directly from the terminal using [Zenity](https://linuxconfig.org/how-to-use-graphical-widgets-in-bash-scripts-with-zenity) or similar tools.
+- Set up [automated build](https://docs.docker.com/docker-hub/builds/) for Docker containers.
+- Set up automated tests for Docker containers.
+- Monitor Nodes in the Cluster Using [Zabbix](https://www.zabbix.com/network_monitoring) or Similar Tools
+- Retry flare-download-noaa
+- What to do with logs, especially error logs?
+- Repo Monitoring Using GitHub Actions (Crontab, Email Notification)
+- FLARE Uninstaller
+- TeamViewer IoT Agent
+- Chromium depot_tools git-retry (Currently not working as a cron job or on Ubuntu 18.04)
+- RAM-disk for Containers
