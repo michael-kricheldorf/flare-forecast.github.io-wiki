@@ -87,7 +87,7 @@ $ cd FLARE_DEBUG_NODEJS/functions/$FLARE_CONTAINER_NAME
 $ docker build -t <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME .
 $ docker push <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME
 ### if the openwhisk action is not created before, -t [time in ms] -m [memory in MB]
-$ wsk action create $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000
+$ wsk action create $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000 -m 2048
 ### if the openwhisk action is already existed
 $ wsk action update $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000
 ```
@@ -99,7 +99,7 @@ The payload.json should contain all the parameters we need to pass while invokin
 
 ```json
 {
-    "FLARE_VERSION": "21.01.2", 
+    "FLARE_VERSION": "21.01.4/latest", 
     "container_name": "flare-download-observations",
     "lake": "fcre",
     "s3_endpoint": "xxx",
@@ -128,7 +128,7 @@ $ wsk activation result [activation id]
 # update an action with different memory limit or timeout limit setting, flare-process-observations requires 2G memory and flare-generate-forecast requires 512M memory
 $ wsk action update $FLARE_CONTAINER_NAME -t [time in ms] -m [memory in MB]
 # create an action based on dockerhub  image
-$ wsk action create $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME
+$ wsk action create $FLARE_CONTAINER_NAME --docker flareforecast/openwhisk-$FLARE_CONTAINER_NAME
 ```
 
 
@@ -144,7 +144,7 @@ storage both under flare/${LAKE}/${CONTAINER}/. You can refer to https://github.
 **wsk trigger deployment after creating all the actions**
 ```sh
 # create an every-3-hour alarm trigger
-wsk trigger create flare-download-noaa-alarm-fcre --feed /whisk.system/alarms/alarm -p cron "0 */3 * * * " -p trigger_payload '{"FLARE_VERSION":"21.01.2", "container_name":"flare-download-noaa", "lake":"fcre", "s3_endpoint": "xxx", "s3_access_key":"xxx", "s3_secret_key":"xxx", "openwhisk_apihost": "xxx", "openwhisk_auth":"xxx", "ssh_key":["-----BEGIN RSA PRIVATE KEY-----",..., "-----END RSA PRIVATE KEY-----"]}'
+wsk trigger create flare-download-noaa-alarm-fcre --feed /whisk.system/alarms/alarm -p cron "0 */3 * * * " -p trigger_payload '{"FLARE_VERSION":"21.01.4", "container_name":"flare-download-noaa", "lake":"fcre", "s3_endpoint": "xxx", "s3_access_key":"xxx", "s3_secret_key":"xxx", "openwhisk_apihost": "xxx", "openwhisk_auth":"xxx", "ssh_key":["-----BEGIN RSA PRIVATE KEY-----",..., "-----END RSA PRIVATE KEY-----"]}'
 wsk rule create flare-download-noaa-rule flare-download-noaa-alarm-fcre flare-download-noaa
 
 wsk trigger create flare-download-noaa-ready-fcre
