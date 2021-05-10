@@ -50,7 +50,7 @@ $ docker pull flareforecast/$FLARE_CONTAINER_NAME:$([[ -z "$FLARE_VERSION" ]] &&
 Run the `flare-install.sh` script to copy the required files into `/opt/flare` directory. That needs root access and asks for `sudo` password.
 
 ```bash
-$ source<(wget -O - https://raw.githubusercontent.com/FLARE-forecast/FLARE-containers/$([[ -z "$FLARE_VERSION" ]] && echo 'latest' || echo "$FLARE_VERSION")/commons/flare-install.sh | /usr/bin/env bash -s $FLARE_CONTAINER_NAME $([[ -z "$FLARE_VERSION" ]] && echo 'latest' || echo "$FLARE_VERSION"))
+$ source <(wget -O - https://raw.githubusercontent.com/FLARE-forecast/FLARE-containers/$([[ -z "$FLARE_VERSION" ]] && echo 'latest' || echo "$FLARE_VERSION")/commons/flare-install.sh | /usr/bin/env bash -s $FLARE_CONTAINER_NAME $([[ -z "$FLARE_VERSION" ]] && echo 'latest' || echo "$FLARE_VERSION"))
 ```
 
 
