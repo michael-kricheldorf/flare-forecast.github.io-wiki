@@ -53,7 +53,7 @@ Run the following commands in a terminal to run the container - see [screenshot]
 $ cd FLARE-containers/$FLARE_CONTAINER_NAME
 $ docker-compose up --build
 ```
-nodemon module helps us create a live-reload debugging environment. You can define the input parameters as JSON in [payload.json](payloads/payload.json). 
+nodemon module helps us create a live-reload debugging environment. You can define the input parameters as JSON in payloads/payload.json. 
 
 **Invocation and Payload**
 
