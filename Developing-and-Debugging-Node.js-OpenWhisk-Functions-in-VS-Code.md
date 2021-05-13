@@ -53,35 +53,7 @@ Run the following commands in a terminal to run the container - see [screenshot]
 $ cd FLARE-containers/$FLARE_CONTAINER_NAME
 $ docker-compose up --build
 ```
-nodemon module helps us create a live-reload debugging environment.
-You can define the input as JSON in [payload.json](payloads/payload.json). Set breakpoints in [function.js](functions/docker/function.js). After this invoke the endpoints in the container by running these commands from a second terminal - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-3.png). runDockerFunction.js can be found here: https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/runDockerFunction.js. Remember to adjust path to your need.
-
-```sh
-$ node runDockerFunction.js
-```
-
-You'll see the output of the function in the terminal - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-4.png).
-
-After you're done stop the container via these commands in the first terminal - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-5.png):
-
-```sh
-$ cd FLARE-containers/$FLARE_CONTAINER_NAME
-$ docker-compose down
-```
-
-**Deployment**
-
-Here is how to deploy the function locally.
-```sh
-$ cd FLARE-containers/$FLARE_CONTAINER_NAME
-$ docker build -t <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME .
-$ docker push <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME
-### if the openwhisk action is not created before, -t [time in ms] -m [memory in MB]
-$ wsk action create $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000 -m 2048
-### if the openwhisk action is already existed
-$ wsk action update $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000
-```
-
+nodemon module helps us create a live-reload debugging environment. You can define the input parameters as JSON in [payload.json](payloads/payload.json). 
 **Invocation and Payload**
 
 The payload.json should contain all the parameters we need to pass while invoking the action through the /run endpoint.
@@ -99,6 +71,29 @@ The payload.json should contain all the parameters we need to pass while invokin
     "openwhisk_auth": "xxx",
     "ssh_key": ["-----BEGIN RSA PRIVATE KEY-----", "...", "-----END RSA PRIVATE KEY-----"]
 }
+```
+
+Then use the payload to invoke openwhisk endpoints
+```sh
+$ cd FLARE-containers
+$ node runDockerFunction.js
+```
+
+You'll see the output of the invocation in the docker-compose up terminal. It's also possible to enter the running containtainer using docker exec -it [container-id]
+
+
+
+**Deployment**
+
+Here is how to deploy the function locally.
+```sh
+$ cd FLARE-containers/$FLARE_CONTAINER_NAME
+$ docker build -t <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME .
+$ docker push <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME
+### if the openwhisk action is not created before, -t [time in ms] -m [memory in MB]
+$ wsk action create $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000 -m 2048
+### if the openwhisk action is already existed
+$ wsk action update $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000
 ```
 
 To invoke the action, you can either invoke by passing a json file or passing all parameters one by one.
