@@ -2,15 +2,6 @@
 
 I follow this  [project](https://github.com/nheidloff/openwhisk-debug-nodejs) which clearly shows how [Apache OpenWhisk](http://openwhisk.org/) functions can be developed and debugged locally via [Visual Studio Code](https://code.visualstudio.com/). The current code is stored in [my personal repository](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/). Most usefule parts are transferred to flare repo.
 
-
-Watch the [video](https://www.youtube.com/watch?v=P9hpcOqQ3hw) to see this in action.
-
-The following screenshot shows how functions that run in Docker can be debugged from Visual Studio Code. In order to do this, a volume is used to share the files between the IDE and the container and VS Code attaches a remote debugger to the Docker container. The functions can be changed in the IDE without having to restart the container. [nodemon](https://github.com/remy/nodemon) restarts the Node application in the container automatically when files change.
-
-![alt text](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/raw/master/images/debugging-docker-3.png "Debugging")
-
-
-
 ## Prerequisites and Setup
 
 In order to run the code you need the following prerequisites and you need to set up your system.
@@ -86,10 +77,10 @@ You'll see the output of the invocation in the docker-compose up terminal. It's 
 
 **Deployment**
 
-Here is how to deploy the function locally.
+If you've seen desired output in previous step, now you're able to deploy the function locally.
 ```sh
-$ cd FLARE-containers/$FLARE_CONTAINER_NAME
-$ docker build -t <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME .
+$ cd FLARE-containers
+$ docker build -t flareforecast/$FLARE_CONTAINER_NAME -f $FLARE_CONTAINER_NAME/Dockerfile .
 $ docker push <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME
 ### if the openwhisk action is not created before, -t [time in ms] -m [memory in MB]
 $ wsk action create $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000 -m 2048
