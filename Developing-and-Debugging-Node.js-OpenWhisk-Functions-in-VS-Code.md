@@ -24,7 +24,7 @@ Run the following commands:
 $ git clone git@github.com:FLARE-forecast/FLARE-containers.git
 $ cd FLARE-containers
 $ npm install
-$ code .
+$ code .  ## Open the directory in vscode
 ```
 
 
@@ -60,8 +60,7 @@ The payload.json should contain all the parameters we need to pass while invokin
     "s3_access_key": "xxx",
     "s3_secret_key": "xxx",
     "openwhisk_apihost": "xxx",
-    "openwhisk_auth": "xxx",
-    "ssh_key": ["-----BEGIN RSA PRIVATE KEY-----", "...", "-----END RSA PRIVATE KEY-----"]
+    "openwhisk_auth": "xxx"
 }
 ```
 
