@@ -1,6 +1,6 @@
 # Developing and Debugging Node.js OpenWhisk Functions in VS Code
 
-I follow this  [project](https://github.com/nheidloff/openwhisk-debug-nodejs) which clearly shows how [Apache OpenWhisk](http://openwhisk.org/) functions can be developed and debugged locally via [Visual Studio Code](https://code.visualstudio.com/). The current code is stored in [my personal repository](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/).
+I follow this  [project](https://github.com/nheidloff/openwhisk-debug-nodejs) which clearly shows how [Apache OpenWhisk](http://openwhisk.org/) functions can be developed and debugged locally via [Visual Studio Code](https://code.visualstudio.com/). The current code is stored in [my personal repository](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/). Most usefule parts are transferred to flare repo.
 
 
 Watch the [video](https://www.youtube.com/watch?v=P9hpcOqQ3hw) to see this in action.
@@ -30,18 +30,10 @@ Make sure you have the following tools installed:
 Run the following commands:
 
 ```sh
-$ git clone https://github.com/nheidloff/FLARE_DEBUG_NODEJS.git
-$ cd FLARE_DEBUG_NODEJS
-$ npm install
+$ git clone git@github.com:FLARE-forecast/FLARE-containers.git
+$ cd FLARE-containers
 $ code .
-```
-
-**Debugging from Visual Studio Code**
-
-There are two ways to start the debugger in VS Code:
-
-* From the [debug page](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/start-debugger-ui.png) choose the specific launch configuration
-* Open the [command palette](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/start-debugger-palette-1.png) (⇧⌘P) and search for 'Debug: Select and Start Debugging' or enter 'debug se'. After this select the specific [launch configuration](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/start-debugger-palette-2.png)
+``
 
 
 
@@ -57,16 +49,13 @@ The function can be changed in the IDE without having to restart the container a
 Run the following commands in a terminal to run the container - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-1.png):
 
 ```sh
-$ cd FLARE_DEBUG_NODEJS/functions/$FLARE_CONTAINER_NAME
+$ cd FLARE-containers/$FLARE_CONTAINER_NAME
 $ docker-compose up --build
 ```
-
-Run the launch configurations 'function in container' to attach the debugger - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-2.png).
-
-You can define the input as JSON in [payload.json](payloads/payload.json). Set breakpoints in [function.js](functions/docker/function.js). After this invoke the endpoints in the container by running these commands from a second terminal - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-3.png).
+nodemon module helps us create a live-reload debugging environment.
+You can define the input as JSON in [payload.json](payloads/payload.json). Set breakpoints in [function.js](functions/docker/function.js). After this invoke the endpoints in the container by running these commands from a second terminal - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-3.png). runDockerFunction.js can be found here: https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/runDockerFunction.js. Remember to adjust path to your need.
 
 ```sh
-$ cd FLARE_DEBUG_NODEJS
 $ node runDockerFunction.js
 ```
 
@@ -75,7 +64,7 @@ You'll see the output of the function in the terminal - see [screenshot](https:/
 After you're done stop the container via these commands in the first terminal - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-5.png):
 
 ```sh
-$ cd FLARE_DEBUG_NODEJS/functions/$FLARE_CONTAINER_NAME
+$ cd FLARE-containers/$FLARE_CONTAINER_NAME
 $ docker-compose down
 ```
 
@@ -83,7 +72,7 @@ $ docker-compose down
 
 Here is how to deploy the function locally.
 ```sh
-$ cd FLARE_DEBUG_NODEJS/functions/$FLARE_CONTAINER_NAME
+$ cd FLARE-containers/$FLARE_CONTAINER_NAME
 $ docker build -t <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME .
 $ docker push <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME
 ### if the openwhisk action is not created before, -t [time in ms] -m [memory in MB]
