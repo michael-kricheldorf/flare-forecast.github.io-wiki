@@ -49,18 +49,32 @@ nodemon module helps us create a live-reload debugging environment. You can defi
 **Invocation and Payload**
 
 The payload.json should contain all the parameters we need to pass while invoking the action through the /run endpoint.
-* a lake name (a string, e.g. "fcre"), a container name (also a string, e.g. flare-download-noaa), a server IP,  and an SSH key. For example,
+SSH key is optional . For example,
 
 ```json
 {
-    "FLARE_VERSION": "21.01.4/latest", 
-    "container_name": "flare-download-observations",
+    "FLARE_VERSION": "21.01.4 or latest", 
+    "container_name": "$FLARE_CONTAINER_NAME",
     "lake": "fcre",
     "s3_endpoint": "xxx",
     "s3_access_key": "xxx",
     "s3_secret_key": "xxx",
     "openwhisk_apihost": "xxx",
     "openwhisk_auth": "xxx"
+}
+```
+Or with the sshkey, 
+```json
+{
+    "FLARE_VERSION": "21.01.4 or latest", 
+    "container_name": "$FLARE_CONTAINER_NAME",
+    "lake": "fcre",
+    "s3_endpoint": "xxx",
+    "s3_access_key": "xxx",
+    "s3_secret_key": "xxx",
+    "openwhisk_apihost": "xxx",
+    "openwhisk_auth": "xxx",
+    "ssh_key":["-----BEGIN RSA PRIVATE KEY-----","...","...","-----END RSA PRIVATE KEY-----"]}'
 }
 ```
 
@@ -80,11 +94,11 @@ If you've seen desired output in previous step, now you're able to deploy the fu
 ```sh
 $ cd FLARE-containers
 $ docker build -t flareforecast/$FLARE_CONTAINER_NAME -f $FLARE_CONTAINER_NAME/Dockerfile .
-$ docker push <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME
+$ docker push flareforecast/openwhisk-$FLARE_CONTAINER_NAME
 ### if the openwhisk action is not created before, -t [time in ms] -m [memory in MB]
-$ wsk action create $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000 -m 2048
+$ wsk action create $FLARE_CONTAINER_NAME --docker flareforecast/openwhisk-$FLARE_CONTAINER_NAME -t 18000000 -m 2048
 ### if the openwhisk action is already existed
-$ wsk action update $FLARE_CONTAINER_NAME --docker <dockerhub-name>/openwhisk-$FLARE_CONTAINER_NAME -t 18000000
+$ wsk action update $FLARE_CONTAINER_NAME --docker flareforecast/openwhisk-$FLARE_CONTAINER_NAME -t 18000000
 ```
 
 To invoke the action, you can either invoke by passing a json file or passing all parameters one by one.
