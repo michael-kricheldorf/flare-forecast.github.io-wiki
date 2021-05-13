@@ -33,7 +33,7 @@ Run the following commands:
 $ git clone git@github.com:FLARE-forecast/FLARE-containers.git
 $ cd FLARE-containers
 $ code .
-``
+```
 
 
 
