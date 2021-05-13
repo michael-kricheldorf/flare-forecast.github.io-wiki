@@ -38,7 +38,7 @@ If no version is specified, the default `latest` tag will be used.
 Make sure you can [access GitHub with SSH], if you are using a private repository. (https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh).
 
 
-# Run Container
+# Pull container image
 
 ```bash
 $ docker pull flareforecast/$FLARE_CONTAINER_NAME:$([[ -z "$FLARE_VERSION" ]] && echo 'latest' || echo "$FLARE_VERSION")
@@ -47,7 +47,7 @@ $ docker pull flareforecast/$FLARE_CONTAINER_NAME:$([[ -z "$FLARE_VERSION" ]] &&
 
 # Install Container on Host
 
-Run the `flare-install.sh` script to copy the required files into `/opt/flare` directory. That needs root access and asks for `sudo` password.
+Run the `flare-install.sh` script to copy the required files into `~/flare-host` directory. 
 
 ```bash
 $ source <(wget -O - https://raw.githubusercontent.com/FLARE-forecast/FLARE-containers/$([[ -z "$FLARE_VERSION" ]] && echo 'latest' || echo "$FLARE_VERSION")/commons/flare-install.sh | /usr/bin/env bash -s $FLARE_CONTAINER_NAME $([[ -z "$FLARE_VERSION" ]] && echo 'latest' || echo "$FLARE_VERSION"))
@@ -108,5 +108,5 @@ forecast_horizon: 16.0
 forecast_project_id: wrr_runs
 sim_name: wrr_runs
 forecast_sss_on: no
-execute_location: /root/flare/shared/flare-generate-forecast/working_directory
+execute_location: /home/user/flare/shared/flare-generate-forecast/working_directory
 ```
