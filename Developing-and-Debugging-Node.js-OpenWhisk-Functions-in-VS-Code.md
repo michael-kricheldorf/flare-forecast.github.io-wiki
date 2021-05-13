@@ -32,6 +32,7 @@ Run the following commands:
 ```sh
 $ git clone git@github.com:FLARE-forecast/FLARE-containers.git
 $ cd FLARE-containers
+$ npm install
 $ code .
 ```
 
