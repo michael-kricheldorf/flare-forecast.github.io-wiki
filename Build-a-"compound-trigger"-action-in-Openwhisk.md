@@ -65,6 +65,5 @@ The payload.json is exactly same with payload field above.
     "s3_secret_key": "xxx",
     "openwhisk_apihost": "xxx",
     "openwhisk_auth": "xxx",
-    "ssh_key": ["-----BEGIN RSA PRIVATE KEY-----", "...", "-----END RSA PRIVATE KEY-----"]
 }
 ```
