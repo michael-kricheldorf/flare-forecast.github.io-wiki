@@ -54,6 +54,7 @@ $ cd FLARE-containers/$FLARE_CONTAINER_NAME
 $ docker-compose up --build
 ```
 nodemon module helps us create a live-reload debugging environment. You can define the input parameters as JSON in [payload.json](payloads/payload.json). 
+
 **Invocation and Payload**
 
 The payload.json should contain all the parameters we need to pass while invoking the action through the /run endpoint.
