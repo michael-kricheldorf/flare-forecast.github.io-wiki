@@ -9,9 +9,9 @@ The "compound trigger" action also interact with our storage server(e.g. mc ls f
 Source code: https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/tree/master/functions/compound-trigger.
 
 ```sh
-$ docker build -t [dockerhub_username]/compound-trigger .
-$ docker push [dockerhub_username]/compound-trigger
-$ wsk action create compound-trigger --docker [dockerhub_username]/compound-trigger
+$ docker build -t flareforecast/openwhisk-compound-trigger .
+$ docker push flareforecast/openwhisk-compound-trigger
+$ wsk action create compound-trigger --docker flareforecast/openwhisk-compound-trigger
 ```
 
 ## Step 2: Combine flare-noaa-ready-[lake] and flare-observations-ready-[lake] triggers and compound-trigger action as two rules. 
@@ -53,7 +53,7 @@ To test compound-trigger as an action only,
 ```sh
 $ wsk action invoke compound-trigger -P payload.json
 ```
-The payload.json is exactly same with payload field above.
+The payload.json is exactly same with payload field above. ssh_key is optional
 
 ```json
 {
