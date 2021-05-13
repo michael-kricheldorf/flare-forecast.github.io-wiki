@@ -38,7 +38,7 @@ The function can be changed in the IDE without having to restart the container a
 
 **Debugging**
 
-Run the following commands in a terminal to run the container - see [screenshot](https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/blob/master/images/debugging-docker-1.png):
+Run the following commands in a terminal to run the container
 
 ```sh
 $ cd FLARE-containers/$FLARE_CONTAINER_NAME
