@@ -84,7 +84,7 @@ $ cd FLARE-containers
 $ node runDockerFunction.js
 ```
 
-You'll see the output of the invocation in the docker-compose up terminal. It's also possible to enter the running containtainer using docker exec -it [container-id]
+You'll see the output of the invocation in the docker-compose up terminal. It's also possible to enter the running containtainer using docker exec -it [container-id] bash
 
 
 
