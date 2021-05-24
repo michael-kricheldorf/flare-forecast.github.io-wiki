@@ -9,7 +9,8 @@ The "compound trigger" action also interact with our storage server(e.g. mc ls f
 Source code: https://github.com/Jyuqi/FLARE_DEBUG_NODEJS/tree/master/functions/compound-trigger.
 
 ```sh
-$ docker build -t flareforecast/openwhisk-compound-trigger .
+$ cd [parent dir of compound-trigger]
+$ docker build -t flareforecast/openwhisk-compound-trigger -f compound-trigger/Dockerfile .
 $ docker push flareforecast/openwhisk-compound-trigger
 $ wsk action create compound-trigger --docker flareforecast/openwhisk-compound-trigger
 ```
