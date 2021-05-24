@@ -92,7 +92,7 @@ $ unset FLARE_VERSION
 
 ## flare-generate-forecast Container
 
-To run for the first time, you should run the `flare-host.sh` script once. It creates the `run_configuration.yml` file at `/opt/flare/shared/flare-generate-forecast/forecast/configuration_files/run_configuration.yml`. Then edit this file from the host as follows: (Suppose the first date for whom you have NOAA forecasts is `2021-02-23`.)
+To run for the first time, you should run the `flare-host.sh` script once. It creates the `run_configuration.yml` file at `/opt/flare/shared/flare-generate-forecast/forecast/configuration_files/run_configuration.yml`. Then edit this file from the host as follows: (Suppose the first date for whom you have NOAA forecasts is `2021-05-23`.)
 
 ```bash
 $ sudo vi /root/flare/shared/flare-generate-forecast/forecast/configuration_files/run_configuration.yml
@@ -100,13 +100,13 @@ $ sudo vi /root/flare/shared/flare-generate-forecast/forecast/configuration_file
 
 ```yaml
 restart_file: .na
-start_day_local: '2021-02-22'
+start_day_local: '2021-05-22'
 start_time_local: '07:00:00'
 end_day_local: .na
-forecast_start_day_local: '2021-02-23'
+forecast_start_day_local: '2021-05-23'
 forecast_horizon: 16.0
 forecast_project_id: wrr_runs
 sim_name: wrr_runs
 forecast_sss_on: no
-execute_location: /home/user/flare/shared/flare-generate-forecast/working_directory
+forecast_location: /home/user/flare/shared/flare-generate-forecast/working_directory
 ```
