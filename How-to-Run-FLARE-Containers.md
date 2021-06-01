@@ -108,5 +108,4 @@ forecast_horizon: 16.0
 forecast_project_id: wrr_runs
 sim_name: wrr_runs
 forecast_sss_on: no
-forecast_location: /home/user/flare/shared/flare-generate-forecast/working_directory
 ```
