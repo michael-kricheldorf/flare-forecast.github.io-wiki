@@ -34,6 +34,8 @@
 
 ## Directory Tree Structure
 
+Here is the directory tree structure for two sample days:
+
 ```
 .
 ├── NOAAGEFS_1hr
