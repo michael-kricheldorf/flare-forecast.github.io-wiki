@@ -6,7 +6,6 @@
 
 ### Where
 
-`drivers` = the bucket name
 
 `noaa_model` = the model of the output, `noaa` for 35-day forecasts or `noaa-point` for 16-day forecasts
 
