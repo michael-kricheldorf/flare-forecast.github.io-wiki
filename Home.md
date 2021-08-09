@@ -46,7 +46,9 @@ Links to pages are organized by audience and topic of interest in the following 
 | [OpenWhisk CLI invocations for NOAA container](Openwhisk-invoke-FLARE-container) | OpenWhisk |
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
 | [EdgeVPN virtual addresses](CIBR2-Evio-network) | EdgeVPN |
-
+| [Accessing FLARE S3 Storage from R](Accessing-FLARE-S3-Storage-from-R) | FLARE |
+| [Accessing FLARE S3 Storage with MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
+| [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
 
 ### Additional OpenWhisk documentation for developers
 
