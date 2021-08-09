@@ -12,9 +12,9 @@ https://dl.min.io/client/mc/release/windows-amd64/mc.exe
 4. Add `C:\MinIO` to your path:  
 https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53
 
-5. Open Command Prompt by typing `cmd` in the Windows Search Bar and hitting Enter.
-
 ### macOS
+
+Install mc packages using Homebrew:
 
 ```
 brew install minio/stable/mc
@@ -22,7 +22,7 @@ brew install minio/stable/mc
 
 ## Installation Verification
 
-Run `mc` command.
+Run `mc` command from terminal (Command Prompt, Terminal, etc.)
 
 ```
 mc
