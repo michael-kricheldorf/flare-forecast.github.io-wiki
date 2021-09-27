@@ -49,6 +49,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | [Accessing FLARE S3 Storage from R](Accessing-FLARE-S3-Storage-from-R) | FLARE |
 | [Accessing FLARE S3 Storage with MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
 | [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
+| [Manage Files on S3 Using RClone](Manage-Files-on-S3-Using-RClone) | FLARE |
 
 ### Additional OpenWhisk documentation for developers
 
