@@ -1,6 +1,6 @@
 # What is RClone?
 
-Rclone is a platform-independent command-line program to manage files on cloud storage. We are interested in its support for S3 object storages, including Minio.
+Rclone is a platform-independent command-line program to manage files on cloud storage. We are interested in its support for S3 object storage, including Minio.
 
 # Install RClone
 
@@ -26,8 +26,8 @@ Run `rclone config` in the terminal and follow the steps:
 3- storage> s3
 4- provider> Minio
 5- env_auth> (Leave it blank and hit enter.)
-6- access_key_id> (Enter the access key you should already have for Jetstream storage on Minio.)
-7- secret_access_key> (Enter the secret key you should already have for Jetstream storage on Minio.)
+6- access_key_id> (Enter the access key for Jetstream storage on Minio if you have. Leave blank for read-only access.)
+7- secret_access_key> (Enter the secret key for Jetstream storage on Minio if you have. Leave blank for read-only access.)
 8- region> (Leave it blank and hit enter.)
 9- endpoint> https://tacc.jetstream-cloud.org:8080
 10- location_constraint> (Leave it blank and hit enter.)
@@ -53,19 +53,15 @@ For instance:
 
 ```bash
 mkdir /home/ubuntu/s3
-rclone mount s3jetstream: /home/ubuntu/s3 &
+rclone mount s3jetstream:flare /home/ubuntu/s3 &
 ```
 
 Then, you can work with it as a regular directory with subdirectories and files. You can use your operating system GUI file manager, too.
 
 ```bash
 $ cd /home/ubuntu/s3
-$ ls -la /home/ubuntu/s3
-total 12
-drwxrwxr-x  1 vd vd     0 Sep 28 12:53 ./
-drwxr-xr-x 66 vd vd 12288 Sep 28 12:53 ../
-drwxrwxr-x  1 vd vd     0 Mar 24  2021 fcre/
-drwxrwxr-x  1 vd vd     0 Mar 22  2021 flare/
+$ ls
+drivers
 ```
 
 *Note:* `rclone mount` doesn't stop until you kill it. Adding `&` to the end of the command makes it run in the background.
@@ -75,5 +71,5 @@ drwxrwxr-x  1 vd vd     0 Mar 22  2021 flare/
 If you just need read-only access to the remote storage, mount t in read-only mode to prevent accidental alteration to the files and directories:
 
 ```bash
-rclone mount --read-only s3jetstream: /home/ubuntu/s3 &
+rclone mount --read-only s3jetstream:flare /home/ubuntu/s3 &
 ```
