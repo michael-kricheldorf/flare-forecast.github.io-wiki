@@ -1,6 +1,6 @@
 # What is RClone?
 
-Rclone is a platform-independent command-line program to manage files on cloud storage. It also has a GUI. We are interested in its support for S3 object stores including Minio.
+Rclone is a platform-independent command-line program to manage files on cloud storage. We are interested in its support for S3 object storages, including Minio.
 
 # Install RClone
 
@@ -38,27 +38,12 @@ Run `rclone config` in the terminal and follow the steps:
 15- e/n/d/r/c/s/q> q (q for "Quit")
 ```
 
-# Run RClone WebUI
 
-To run RClone WebUI and explore the files from your web browser, run:
-
-```bash
-rclone rcd --rc-web-gui --rc-no-auth
-```
-
-A browser tab should open and you can navigate to "Explorer", choose the new remote you just created and explore the files.
-
-![RClone WebUI Explorer](https://raw.githubusercontent.com/rclone/rclone-webui-react/master/screenshots/remoteexplorer.png)
-
-**Note:** It shouldn't ask for a username and password. But due to a bug, it may do. In that case, stop the WebUI and close all the tabs in the browser and run the WebUI again.
-
-# Mount
+# Mount Remote Storage
 
 RClone mount allows to mount any RClone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
 
-To mount a storage to a path on your operating system, first, you should create an empty local directory on your machine and then mount your remote storage to that directory either using WebUI or terminal command:
-
-![RClone WebUI Mount](https://raw.githubusercontent.com/rclone/rclone-webui-react/master/screenshots/mounts.png)
+To mount a storage to a path on your operating system, first, you should create an empty local directory on your machine and then mount your remote storage to that directory:
 
 ```bash
 rclone mount remote:path/to/files /path/to/local/mount
@@ -71,7 +56,7 @@ mkdir /home/ubuntu/s3
 rclone mount s3jetstream: /home/ubuntu/s3 &
 ```
 
-Then, you can work with it as a regular directory with subdirectories and files:
+Then, you can work with it as a regular directory with subdirectories and files. You can use your operating system GUI file manager, too.
 
 ```bash
 $ cd /home/ubuntu/s3
@@ -84,3 +69,11 @@ drwxrwxr-x  1 vd vd     0 Mar 22  2021 flare/
 ```
 
 *Note:* `rclone mount` doesn't stop until you kill it. Adding `&` to the end of the command makes it run in the background.
+
+## Mount in Read-only Mode
+
+If you just need read-only access to the remote storage, mount t in read-only mode to prevent accidental alteration to the files and directories:
+
+```bash
+rclone mount --read-only s3jetstream: /home/ubuntu/s3 &
+```
