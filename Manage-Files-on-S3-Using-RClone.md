@@ -51,3 +51,36 @@ A browser tab should open and you can navigate to "Explorer", choose the new rem
 ![RClone WebUI Explorer](https://raw.githubusercontent.com/rclone/rclone-webui-react/master/screenshots/remoteexplorer.png)
 
 **Note:** It shouldn't ask for a username and password. But due to a bug, it may do. In that case, stop the WebUI and close all the tabs in the browser and run the WebUI again.
+
+# Mount
+
+RClone mount allows to mount any RClone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
+
+To mount a storage to a path on your operating system, first, you should create an empty local directory on your machine and then mount your remote storage to that directory either using WebUI or terminal command:
+
+![RClone WebUI Mount](https://raw.githubusercontent.com/rclone/rclone-webui-react/master/screenshots/mounts.png)
+
+```bash
+rclone mount remote:path/to/files /path/to/local/mount
+```
+
+For instance:
+
+```bash
+mkdir /home/ubuntu/s3
+rclone mount s3jetstream: /home/ubuntu/s3 &
+```
+
+Then, you can work with it as a regular directory with subdirectories and files:
+
+```bash
+$ cd /home/ubuntu/s3
+$ ls -la /home/ubuntu/s3
+total 12
+drwxrwxr-x  1 vd vd     0 Sep 28 12:53 ./
+drwxr-xr-x 66 vd vd 12288 Sep 28 12:53 ../
+drwxrwxr-x  1 vd vd     0 Mar 24  2021 fcre/
+drwxrwxr-x  1 vd vd     0 Mar 22  2021 flare/
+```
+
+*Note:* `rclone mount` doesn't stop until you kill it. Adding `&` to the end of the command makes it run in the background.
