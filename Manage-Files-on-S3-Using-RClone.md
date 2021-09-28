@@ -64,7 +64,7 @@ $ ls
 drivers
 ```
 
-*Note:* `rclone mount` doesn't stop until you kill it. Adding `&` to the end of the command makes it run in the background.
+**Note:** `rclone mount` doesn't stop until you kill it. Adding `&` to the end of the command makes it run in the background.
 
 ## Mount in Read-only Mode
 
