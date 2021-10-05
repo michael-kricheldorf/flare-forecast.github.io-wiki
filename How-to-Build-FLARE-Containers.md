@@ -64,5 +64,5 @@ $ git submodule add git@github.com:FLARE-forecast/flare_lake_examples.git
 ### Build Image
 
 ```bash
-$ docker build -t flareforecast/$FLARE_CONTAINER_NAME .
+$ docker build -t flareforecast/$FLARE_CONTAINER_NAME -f $FLARE_CONTAINER_NAME/Dockerfile .
 ```
