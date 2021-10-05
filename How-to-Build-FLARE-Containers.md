@@ -55,7 +55,7 @@ $ git submodule add git@github.com:FLARE-forecast/flare_lake_examples.git
 
 [02_process_observations.R](https://www.diffchecker.com/fbVNm0B9)
 
-[03_generate_forecast.R](https://www.diffchecker.com/qEkmZhvj)
+[03_generate_forecast.R](https://www.diffchecker.com/c84iaE9E)
 
 [04_visualize.R](https://www.diffchecker.com/31XlWl4I)
 
