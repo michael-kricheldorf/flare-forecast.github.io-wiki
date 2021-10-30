@@ -1,8 +1,10 @@
+For each lake, a GitHub Action is responsible to run the `generate-graphs` R script and generate the output graphs. Then, a container downloads the generated graphs and attaches them to the daily email.
+
 ## FCRE-generate-graphs (FCRE Sensor Check)
 
 ### Script
 
-The R script can be edited by anyone with write access:
+The `generate-graphs` R script can be edited by anyone with write access:
 
 https://github.com/FLARE-forecast/FCRE-data/blob/sunp-generate-graphs/fcre-generate-graphs.R
 
@@ -22,7 +24,7 @@ https://github.com/FLARE-forecast/FCRE-data/blob/master/.github/workflows/fcre-g
 
 ### Script
 
-The R script can be edited by anyone with write access:
+The `generate-graphs` R script can be edited by anyone with write access:
 
 https://github.com/FLARE-forecast/SUNP-data/blob/sunp-generate-graphs/sunp-generate-graphs.R
 
