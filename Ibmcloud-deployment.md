@@ -84,28 +84,3 @@ Step 4: Create secret keys (Make sure below variable are set)
 * IBMCLOUD_REGION
 
 ![](https://i.imgur.com/Gc2bu11.png)
-
-## Upload your json file ##
-
-Upload lake json file to this [repo](https://https://github.com/FLARE-forecast/deployed-forecasts)
-
-The json file format needs to follow as below
-```json=
-{
-  "forecast_code": "XXX",
-  "config_set": "XXX",
-  "function": "1",
-  "use_https": "XXX",
-  "aws_default_region": "XXX",
-  "aws_s3_endpoint": "XXX",
-  "sim_name": "XXX"
-}
-```
-* The "function" variable needs to be set to "1".
-
-## Modify alarm's frequency
-If you want to modify frequency of openwhisk alarm, you can modify the "cron" option at line 83 in github action yaml file.
-
-``` shell=83
-ibmcloud wsk trigger create $alarm_name --feed /whisk.system/alarms/alarm --param cron "0 */6 * * *"  --param trigger_payload ${payload}
-```
