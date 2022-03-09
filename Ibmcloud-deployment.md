@@ -65,7 +65,7 @@ ibmcloud wsk action create flare --sequence function1,function2,function3,functi
 * Make sure the sequence name is "flare"!
 
 
-## Use your own json file ##
+## Set up the secret for Github Action ##
 > **Store your secret keys in Github account**
 
 Step 1: Click on the setting page in your repo
