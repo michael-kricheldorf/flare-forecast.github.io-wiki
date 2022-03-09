@@ -1,8 +1,6 @@
 Ibmcloud deployment
 ===
 
-[TOC]
-
 ## Ibmcloud cli installation
 
 > **Download ibmcloud cli**
