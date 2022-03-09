@@ -1,6 +1,3 @@
-Ibmcloud deployment
-===
-
 ## Ibmcloud cli installation
 
 > **Download ibmcloud cli**
