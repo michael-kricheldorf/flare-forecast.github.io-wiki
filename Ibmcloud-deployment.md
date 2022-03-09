@@ -89,7 +89,7 @@ Step 4: Create secret keys (Make sure below variable are set)
 
 Upload lake json file to this [repo](https://https://github.com/FLARE-forecast/deployed-forecasts)
 
-The json file format needs to follow as below example
+The json file format needs to follow as below
 ```json=
 {
   "forecast_code": "XXX",
