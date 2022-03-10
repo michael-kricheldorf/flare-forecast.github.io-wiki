@@ -105,3 +105,26 @@ You should see an output like:
 ```
 {"couchdb":"Welcome","version":"3.2.1","git_sha":"244d428af","uuid":"774f11fbfa002485ca39e67824343a3b","features":["access-ready","partitioned","pluggable-storage-engines","reshard","scheduler"],"vendor":{"name":"The Apache Software Foundation"}}
 ```
+
+# Install OpenWhisk on flare-frontend (using terminal+ssh):
+
+Clone the OpenWhisk repository and perform initial setup, using the provided setup script:
+
+```
+cd
+git clone https://github.com/openwhisk/openwhisk.git
+cd openwhisk
+cd tools/ubuntu-setup && ./all.sh
+```
+
+Configure OpenWhisk to use the CouchDB instance you just set up - make sure to replace PrivateIP and CouchDB_pwd appropriately:
+
+```
+cd ~/openwhisk/ansible
+export OW_DB=CouchDB
+export OW_DB_PROTOCOL=http
+export OW_DB_HOST=PrivateIP
+export OW_DB_PORT=5984
+export OW_DB_USERNAME=admin
+export OW_DB_PASSWORD=CouchDB_pwd
+```
