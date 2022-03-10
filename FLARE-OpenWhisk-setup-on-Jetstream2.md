@@ -216,3 +216,67 @@ ansible-playbook routemgmt.yml
 ```
 
 Now you should see all the containers running - docker ps should show containers for redis, kafka, apigateway, zookeeper, nginx, etc.
+
+# Install wsk OpenWhisk command-line interface (CLI)
+
+[Download the wsk CLI amd64 binary from the releases repository](https://github.com/apache/openwhisk-cli/releases), then copy it to /usr/local/bin and set properties to use the cluster:
+
+
+```
+cd 
+wget https://github.com/apache/openwhisk-cli/releases/download/latest/OpenWhisk_CLI-latest-linux-amd64.tgz
+tar -xzf OpenWhisk_CLI-latest-linux-amd64.tgz
+chmod +x wsk
+sudo cp wsk /usr/local/bin
+wsk property set --apihost 172.17.0.1
+wsk property set --auth `cat ~/openwhisk/ansible/files/auth.guest`
+```
+
+And you can test the wsk CLI and run a simple task:
+
+```
+wsk -i action invoke /whisk.system/utils/echo -p message hello --result
+```
+
+If all goes well, you should see:
+
+```
+{
+    "message": "hello"
+}
+```
+
+# Use wskadmin to delete guest user and create FLARE user
+
+The installation process creates a user account in the "guest" namespace:
+
+```
+cd ~/openwhisk/tools/admin
+./wskadmin user list guest -a
+```
+
+Let us create a new user, FLARE, in a new namespace, FLARE:
+
+```
+./wskadmin user create FLARE -ns FLARE
+./wskadmin user list FLARE -a
+```
+
+Now let's set the wsk CLI authentication key for this user; replace the argument after --auth with the key created for the FLARE user above:
+
+```
+wsk property set --auth XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+```
+
+Now you should be able to issue wsk commands as FLARE:
+
+```
+wsk property get --auth
+wsk -i action invoke /whisk.system/utils/echo -p message hello --result
+```
+
+And you can delete the default guest account:
+
+```
+./wskadmin user delete guest -ns guest
+```
