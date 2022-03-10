@@ -342,3 +342,38 @@ CONTAINER ID        IMAGE                                 COMMAND               
 2a1fc0060272        whisk/catalog_alarms                  "docker-entrypoint.s…"   4 weeks ago          Up 4 weeks          0.0.0.0:11001->8080/tcp                                                                               boring_noether
 ```
 
+# Configure SSL certificates
+
+Now we will configure SSL for the public API endpoint, so that our OpenWhisk cluster can receive requests from sites such as github. 
+
+## Roadmap
+
+We'll use letsencrypt to get a free certificate. letsencrypt requires that a web server successfully responds to a challenge in order to issue a short-term certificate; this is a little tricky, as the OpenWhisk nginx server is not configured to do that. The instructions below do this by temporarily bringing down OpenWhisk, then run the certbot CLI tool to use the ACME protocol to grab a certificate from letsencrypt.
+
+## Temporarily turn off nginx to request certificate
+
+Let's kill our existing nginx and apigateway containers:
+
+```
+docker kill nginx
+docker kill apigateway
+```
+
+## Install certbot from snap
+
+```
+cd
+mkdir certbot
+cd certbot
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+```
+
+## Grab certificate from letsencrypt using certbot
+
+Note: for this, you will need to find out the domain name that is mapped to your flare-frontend's PubIP. You can find this out by running: 
+
+```
+nslookup PubIP
+```
+
