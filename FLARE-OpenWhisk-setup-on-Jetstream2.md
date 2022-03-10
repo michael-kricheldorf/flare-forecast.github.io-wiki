@@ -7,7 +7,6 @@ The cluster is setup as follows:
 * m3.quad instance
 * 80GB volume
 * a public IP address
-* a security group that allows incoming ssh (port 22 for management), icmp (for ping), http and https (ports 80 and 443, for the OpenWhisk event API). 
 
 # Deploy flare_openwhisk instance (using Exosphere GUI)
 
@@ -33,6 +32,7 @@ ssh -i your_private_key ubuntu@Pub_IP
 sudo ufw allow 22/tcp
 sudo ufw allow http
 sudo ufw allow https
+sudo ufw allow from 172.17.0.1
 sudo ufw enable
 ```
 
@@ -48,15 +48,7 @@ sudo apt-get install curl git python-pip python-setuptools build-essential libss
 
 # Setup CouchDB 
 
-Here we will install CouchDB on the host. It can also be installed as a Docker container, but we’ll stick to a host install.
-
-First, find out what **private** IP address your Jetstream2 instance is running. You can find this under "Internal IP address" in the Exosphere GUI; or, the output of the following command will show it. It should be of the form 10.0.xxx.yyy; we'll refer to this as PrivateIP:
-
-```
-ifconfig ens3
-```
-
-In a terminal in flare_openwhisk:
+Here we will install CouchDB on the host. In a terminal in flare_openwhisk:
 
 ```
 sudo apt update && sudo apt install -y curl apt-transport-https gnupg
@@ -71,7 +63,7 @@ A text screen will pop up:
 
 * Click Ok
 * Then select Standalone, Ok
-* Then enter your PrivateIP private address (it will look like 10.0.xxx.yyy, as per above) as the interface to bind
+* Then enter 172.17.0.1 as the interface to bind (this is the Docker IP address)
 * Click Ok
 * Enter a strong password for your CouchDB admin. **Don't use special characters, though, as it can create problems with command-line arguments later on.** We’ll call this CouchDB_pwd in the rest of the document
 
@@ -79,13 +71,13 @@ A text screen will pop up:
 ## Sanity check that CouchDB is listening:
 
 ```
-curl PrivateIP:5984/_node/_local/_config/ -u admin
+curl 172.17.0.1:5984/_node/_local/_config/ -u admin
 ```
 
 ## Set the reduce_limit as per OpenWhisk recommendation:
 
 ```
-curl -X PUT http://PrivateIP:5984/_node/_local/_config/query_server_config/reduce_limit -d '"false"' -u admin
+curl -X PUT http://172.17.0.1:5984/_node/_local/_config/query_server_config/reduce_limit -d '"false"' -u admin
 ```
 
 ## Restart CouchDB:
@@ -99,7 +91,7 @@ sudo service couchdb restart
 Check that you can access the database by issuing, from flare-frontend:
 
 ```
-curl PrivateIP_frontend:5984
+curl 172.17.0.1:5984
 ```
 
 You should see an output like:
@@ -119,13 +111,13 @@ cd openwhisk
 cd tools/ubuntu-setup && ./all.sh
 ```
 
-Configure OpenWhisk to use the CouchDB instance you just set up - **make sure to replace PrivateIP and CouchDB_pwd appropriately with your private IP and CouchDB password**:
+Configure OpenWhisk to use the CouchDB instance you just set up - **make sure to replace CouchDB_pwd appropriately with your CouchDB password**:
 
 ```
 cd ~/openwhisk/ansible
 export OW_DB=CouchDB
 export OW_DB_PROTOCOL=http
-export OW_DB_HOST=PrivateIP
+export OW_DB_HOST=172.17.0.1
 export OW_DB_PORT=5984
 export OW_DB_USERNAME=admin
 export OW_DB_PASSWORD=CouchDB_pwd
@@ -147,7 +139,7 @@ db_provider=CouchDB
 db_username=admin
 db_password=CouchDB_pwd
 db_protocol=http
-db_host=PrivateIP
+db_host=172.17.0.1
 db_port=5984
 ```
 
