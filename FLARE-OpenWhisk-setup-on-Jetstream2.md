@@ -117,7 +117,7 @@ cd openwhisk
 cd tools/ubuntu-setup && ./all.sh
 ```
 
-Configure OpenWhisk to use the CouchDB instance you just set up - make sure to replace PrivateIP and CouchDB_pwd appropriately:
+Configure OpenWhisk to use the CouchDB instance you just set up - **make sure to replace PrivateIP and CouchDB_pwd appropriately with your private IP and CouchDB password**:
 
 ```
 cd ~/openwhisk/ansible
@@ -127,4 +127,24 @@ export OW_DB_HOST=PrivateIP
 export OW_DB_PORT=5984
 export OW_DB_USERNAME=admin
 export OW_DB_PASSWORD=CouchDB_pwd
+```
+
+## Perform initial ansible setup:
+
+```
+cd ~/openwhisk/ansible
+ansible-playbook setup.yml
+```
+
+Check that the file db_local.ini is populated with the variables for CouchDB as configured above - in particular, double-check the password is correct:
+
+```
+cat db_local.ini
+[db_creds]
+db_provider=CouchDB
+db_username=admin
+db_password=CouchDB_pwd
+db_protocol=http
+db_host=PrivateIP
+db_port=5984
 ```
