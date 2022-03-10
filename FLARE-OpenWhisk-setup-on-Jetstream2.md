@@ -148,3 +148,63 @@ db_protocol=http
 db_host=PrivateIP
 db_port=5984
 ```
+
+## Change the maximum run time and memory of containers 
+
+FLARE containers can run for longer than the default of 5 minutes. Let's set a generous timeout of 500 minutes and increase memory limit to 4GB:
+
+```
+vi ~/openwhisk/common/scala/src/main/resources/application.conf
+```
+
+scroll down and change the time-limit max to 500 m (should be around line 476) and max memory to 4GB, and save:
+
+```
+    time-limit {
+        min = 100 ms
+        max = 500 m
+        std = 1 m
+    }
+
+    # action memory configuration
+    memory {
+        min = 128 m
+        max = 4096 m
+        std = 256 m
+    }
+```
+
+# Finish OpenWhisk install and deploy
+
+Some of these steps may take several minutes...
+
+## Install nodejs and npm, as prerequisites for OpenWhisk:
+
+```
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+## Run the pre-requisites ansible playbook
+
+```
+cd ~/openwhisk/ansible
+ansible-playbook prereq.yml
+```
+
+## Run Gradle
+
+```
+cd ~/openwhisk
+./gradlew distDocker
+```
+
+## Initialize and clear the database
+
+** These two ansible playbooks (initdb, wipe) should only be activated the first time you install the cluster, or you will lose data!!!
+
+```
+cd ~/openwhisk/ansible
+ansible-playbook initdb.yml
+ansible-playbook wipe.yml
+```
