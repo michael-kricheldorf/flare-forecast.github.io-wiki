@@ -41,35 +41,67 @@ sudo apt-get upgrade -y
 sudo apt-get install curl git python-pip python-setuptools build-essential libssl-dev libffi-dev python-dev software-properties-common -y
 sudo pip install ansible==2.5.2
 sudo pip install jinja2==2.9.6
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository  "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt update
-sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-sudo groupadd -f docker
-sudo usermod -a -G docker $USER
 ```
 
-Logout from flare-frontend, and log back in, so the Docker group addition takes effect. Sanity check that Docker is running:
-
-```
-exit
-ssh -i your_private_key ubuntu@Pub_IP
-docker ps
-```
-
-The command should work (you may see Jetstream2 guacamole containers running)
 
 # Setup CouchDB 
 
 Here we will install CouchDB on the host. It can also be installed as a Docker container, but we’ll stick to a host install.
 
-In a terminal in flare-frontend:
+First, find out what **private** IP address your Jetstream2 instance is running; the output of this command will show it. It should be of the form 10.0.xxx.yyy; we'll refer to this as PrivateIP:
 
 ```
-sudo apt-get install -y apt-transport-https gnupg ca-certificates
-curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc | sudo apt-key add -
-echo "deb https://apache.bintray.com/couchdb-deb bionic main" | sudo tee -a /etc/apt/sources.list.d/couchdb.list
+ifconfig ens3
+```
+
+In a terminal in flare_openwhisk:
+
+```
+sudo apt update && sudo apt install -y curl apt-transport-https gnupg
+curl https://couchdb.apache.org/repo/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/couchdb-archive-keyring.gpg >/dev/null 2>&1
+source /etc/os-release
+echo "deb [signed-by=/usr/share/keyrings/couchdb-archive-keyring.gpg] https://apache.jfrog.io/artifactory/couchdb-deb/ ${VERSION_CODENAME} main" \ | sudo tee /etc/apt/sources.list.d/couchdb.list >/dev/null
 sudo apt-get update
 sudo apt-get install couchdb -y
 ```
 
+A text screen will pop up:
+
+* Click Ok
+* Then select Standalone, Ok
+* Then enter your PrivateIP private address (it will look like 10.0.xxx.yyy, as per above) as the interface to bind
+* Click Ok
+* Enter a strong password for your CouchDB admin. **Don't use special characters, though, as it can create problems with command-line arguments later on.** We’ll call this CouchDB_pwd in the rest of the document
+
+
+## Sanity check that CouchDB is listening:
+
+```
+curl PrivateIP:5984/_node/_local/_config/ -u admin
+```
+
+## Set the reduce_limit as per OpenWhisk recommendation:
+
+```
+curl -X PUT http://PrivateIP:5984/_node/_local/_config/query_server_config/reduce_limit -d '"false"' -u admin
+```
+
+## Restart CouchDB:
+
+```
+sudo service couchdb restart
+```
+
+## Sanity check 
+
+Check that you can access the database by issuing, from flare-frontend:
+
+```
+curl PrivateIP_frontend:5984
+```
+
+You should see an output like:
+
+```
+{"couchdb":"Welcome","version":"3.2.1","git_sha":"244d428af","uuid":"774f11fbfa002485ca39e67824343a3b","features":["access-ready","partitioned","pluggable-storage-engines","reshard","scheduler"],"vendor":{"name":"The Apache Software Foundation"}}
+```
