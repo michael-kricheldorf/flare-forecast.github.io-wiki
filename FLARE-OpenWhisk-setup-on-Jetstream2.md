@@ -26,10 +26,14 @@ After you click "Create", the instance will be built and deployed within a few m
 
 # Connect to flare_openwhisk instance (using SSH)
 
-Once your instance is up and running, it will show "Ready" in the Jetstream2 Exosphere GUI. Click on it to show the public IP address (e.g. 149.165.xxx.yyy - we'll refer to it as PubIP). Use your ssh key to log in:
+Once your instance is up and running, it will show "Ready" in the Jetstream2 Exosphere GUI. Click on it to show the public IP address (e.g. 149.165.xxx.yyy - we'll refer to it as PubIP). Use your ssh key to log in and set an initial firewall that allows SSH, HTTP, and HTTPS only:
 
 ```
 ssh -i your_private_key ubuntu@Pub_IP
+sudo ufw allow 22/tcp
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw enable
 ```
 
 # Initial configuration of flare_openwhisk (using terminal+ssh)
@@ -48,7 +52,7 @@ sudo pip install jinja2==2.9.6
 
 Here we will install CouchDB on the host. It can also be installed as a Docker container, but we’ll stick to a host install.
 
-First, find out what **private** IP address your Jetstream2 instance is running; the output of this command will show it. It should be of the form 10.0.xxx.yyy; we'll refer to this as PrivateIP:
+First, find out what **private** IP address your Jetstream2 instance is running. You can find this under "Internal IP address" in the Exosphere GUI; or, the output of the following command will show it. It should be of the form 10.0.xxx.yyy; we'll refer to this as PrivateIP:
 
 ```
 ifconfig ens3
@@ -220,6 +224,5 @@ ansible-playbook postdeploy.yml
 ansible-playbook apigateway.yml
 ansible-playbook routemgmt.yml
 ```
-
 
 Now you should see all the containers running - docker ps should show containers for redis, kafka, apigateway, zookeeper, nginx, etc.
