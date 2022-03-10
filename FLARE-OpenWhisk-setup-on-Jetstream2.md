@@ -280,3 +280,65 @@ And you can delete the default guest account:
 ```
 ./wskadmin user delete guest -ns guest
 ```
+
+# Install the OpenWhisk alarm package
+
+Let's install the alarm package, which creates timer events.
+
+```
+cd
+git clone https://github.com/apache/openwhisk-package-alarms.git
+export WSK_HOME="$HOME/openwhisk"
+export OPENWHISK_HOME=$WSK_HOME
+export AUTH_KEY=`cat ~/openwhisk/ansible/files/auth.whisk.system`
+export DB_HOST=`awk -F "=" '/db_host/ {print $2}' $WSK_HOME/ansible/db_local.ini`
+export DB_PORT=`awk -F "=" '/db_port/ {print $2}' $WSK_HOME/ansible/db_local.ini`
+### replace CouchDB_Password below
+export DB_URL=http://admin:CouchDB_Password@$DB_HOST:$DB_PORT
+export DB_PREFIX=`awk -F "=" '/db.prefix/ {print $2}' $WSK_HOME/whisk.properties`
+export EDGE_HOST=`awk -F "=" '/APIHOST/ {print $2}' $HOME/.wskprops`
+export API_HOST=`awk -F "=" '/APIHOST/ {print $2}' $HOME/.wskprops`
+cd openwhisk-package-alarms
+./installCatalog.sh $AUTH_KEY $EDGE_HOST $API_HOST 2 $DB_URL $DB_PREFIX
+```
+
+To verify the installation, use following commands:
+
+```
+wsk -i package get --summary /whisk.system/alarms
+wsk -i action get --summary /whisk.system/alarms/alarm
+```
+
+Now build the Docker image for the alarm:
+
+```
+./gradlew distDocker
+```
+
+Now run the Docker image - again replace CouchDB_Password appropriately:
+
+```
+set -e
+set -x
+WSK_HOME=$HOME/openwhisk
+DB_PROTOCOL=`awk -F "=" '/db_protocol/ {print $2}' $WSK_HOME/ansible/db_local.ini`
+DB_HOST=`awk -F "=" '/db_host/ {print $2}' $WSK_HOME/ansible/db_local.ini`
+DB_PORT=`awk -F "=" '/db_port/ {print $2}' $WSK_HOME/ansible/db_local.ini`
+DB_PREFIX=`awk -F "=" '/db.prefix/ {print $2}' $WSK_HOME/whisk.properties`
+
+### Substitute password here
+docker run -d -p 11001:8080 -v $HOME/wsklogs/alarms:/logs \
+-e PORT=8080 -e ROUTER_HOST=172.17.0.1 \
+-e DB_PREFIX=${DB_PREFIX} -e DB_USERNAME=admin \
+-e DB_PASSWORD=CouchDB_Password -e DB_HOST=${DB_HOST}:${DB_PORT} \
+-e DB_PROTOCOL=${DB_PROTOCOL} whisk/catalog_alarms
+```
+
+The Docker container should now be running locally on port 11001, which is verified from docker ps:
+
+```
+$ docker ps | grep alarms
+CONTAINER ID        IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                                                                                 NAMES
+2a1fc0060272        whisk/catalog_alarms                  "docker-entrypoint.s…"   4 weeks ago          Up 4 weeks          0.0.0.0:11001->8080/tcp                                                                               boring_noether
+```
+
