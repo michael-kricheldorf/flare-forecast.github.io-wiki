@@ -14,6 +14,7 @@ The cluster is setup as follows:
 To avoid repeating documentation, [refer to this page for documentation on the Exosphere GUI. Before you start the steps in the document below to deploy an instance for your cluster front-end, make note of the following:](https://docs.jetstream-cloud.org/ui/exo/exo/)
 
 * When launching an instance, select Ubuntu 18.04 image
+* Provide a name (e.g. flare_openwhisk)
 * Select the m3.quad flavor (or larger)
 * Select Custom disk size, and enter 80GB (or larger) in the text box
 * Keep the 1 instance selection unchanged
@@ -23,6 +24,39 @@ To avoid repeating documentation, [refer to this page for documentation on the E
 
 After you click "Create", the instance will be built and deployed within a few minutes
 
+# Connect to flare_openwhisk instance (using SSH)
 
+Once your instance is up and running, it will show "Ready" in the Jetstream2 Exosphere GUI. Click on it to show the public IP address (e.g. 149.165.xxx.yyy - we'll refer to it as PubIP). Use your ssh key to log in:
+
+```
+ssh -i your_private_key ubuntu@Pub_IP
+```
+
+# Initial configuration of flare_openwhisk (using terminal+ssh)
+
+```
+ssh -i your_private_key ubuntu@Pub_IP
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install curl git python-pip python-setuptools build-essential libssl-dev libffi-dev python-dev software-properties-common -y
+sudo pip install ansible==2.5.2
+sudo pip install jinja2==2.9.6
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository  "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+sudo groupadd -f docker
+sudo usermod -a -G docker $USER
+```
+
+Logout from flare-frontend, and log back in, so the Docker group addition takes effect. Sanity check that Docker is running:
+
+```
+exit
+ssh -i your_private_key ubuntu@Pub_IP
+docker ps
+```
+
+The command should work (but should not see no containers running yet)
 
 
