@@ -201,10 +201,25 @@ cd ~/openwhisk
 
 ## Initialize and clear the database
 
-** These two ansible playbooks (initdb, wipe) should only be activated the first time you install the cluster, or you will lose data!!!
+** These two ansible playbooks (initdb, wipe) should only be activated the first time you install the cluster, or you will lose data!!! **
 
 ```
 cd ~/openwhisk/ansible
 ansible-playbook initdb.yml
 ansible-playbook wipe.yml
 ```
+
+## Deploy OpenWhisk containers
+
+You will need to repeat these four steps after a reboot to deploy OpenWhisk
+
+```
+cd ~/openwhisk/ansible
+ansible-playbook openwhisk.yml
+ansible-playbook postdeploy.yml
+ansible-playbook apigateway.yml
+ansible-playbook routemgmt.yml
+```
+
+
+Now you should see all the containers running - docker ps should show containers for redis, kafka, apigateway, zookeeper, nginx, etc.
