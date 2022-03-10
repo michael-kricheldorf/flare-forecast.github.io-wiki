@@ -32,7 +32,7 @@ ssh -i your_private_key ubuntu@Pub_IP
 sudo ufw allow 22/tcp
 sudo ufw allow http
 sudo ufw allow https
-sudo ufw allow from 172.17.0.1
+sudo ufw allow from 172.17.0.0/24
 sudo ufw enable
 ```
 
