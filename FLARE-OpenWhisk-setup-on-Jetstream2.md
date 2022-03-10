@@ -57,6 +57,19 @@ ssh -i your_private_key ubuntu@Pub_IP
 docker ps
 ```
 
-The command should work (but should not see no containers running yet)
+The command should work (you may see Jetstream2 guacamole containers running)
 
+# Setup CouchDB 
+
+Here we will install CouchDB on the host. It can also be installed as a Docker container, but we’ll stick to a host install.
+
+In a terminal in flare-frontend:
+
+```
+sudo apt-get install -y apt-transport-https gnupg ca-certificates
+curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc | sudo apt-key add -
+echo "deb https://apache.bintray.com/couchdb-deb bionic main" | sudo tee -a /etc/apt/sources.list.d/couchdb.list
+sudo apt-get update
+sudo apt-get install couchdb -y
+```
 
