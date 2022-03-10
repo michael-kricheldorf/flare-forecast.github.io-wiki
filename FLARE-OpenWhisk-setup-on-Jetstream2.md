@@ -44,7 +44,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install curl git python-pip python-setuptools build-essential libssl-dev libffi-dev python-dev software-properties-common -y
 sudo pip install ansible==4.1.0
-sudo pip install jinja2==3.0.1
+sudo pip install jinja2==2.11.3
 ```
 
 
