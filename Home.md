@@ -41,9 +41,7 @@ Links to pages are organized by audience and topic of interest in the following 
 |---|---|
 | [Container Development Workflow](Development-Workflow) | Containers |
 | [OpenWhisk FLARE integration](Openwhisk-FLARE-integration) | OpenWhisk+FLARE |
-| [OpenWhisk FLARE deployment on Jetstream](FLARE-OpenWhisk-setup-on-Jetstream) | OpenWhisk+FLARE |
-| [Gitlab Server](gitlab-server-configuration-and-use) | Git |
-| [OpenWhisk CLI invocations for NOAA container](Openwhisk-invoke-FLARE-container) | OpenWhisk |
+| [OpenWhisk FLARE deployment on Jetstream2](FLARE-OpenWhisk-setup-on-Jetstream2) | OpenWhisk+FLARE |
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
 | [EdgeVPN virtual addresses](CIBR2-Evio-network) | EdgeVPN |
 | [Accessing FLARE S3 Storage from R](Accessing-FLARE-S3-Storage-from-R) | FLARE |
@@ -59,4 +57,3 @@ Links to pages are organized by audience and topic of interest in the following 
 | [OpenWhisk Setup](OpenWhisk-setup) | OpenWhisk |
 | [OpenWhisk helpful resources](OpenWhisk---helpful-resources) | OpenWhisk |
 | [OpenWhisk Alarm](Install-alarm-package-in-Openwhisk) | OpenWhisk |
-| [OpenWhisk Compound trigger](Build-a-"compound-trigger"-action-in-Openwhisk) | OpenWhisk |
