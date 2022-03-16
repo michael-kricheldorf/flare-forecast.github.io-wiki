@@ -14,6 +14,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | Title | Topic |
 |---|---|
 | [Running FLARE Containers](How-to-Run-FLARE-Containers) | Containers |
+| [Deploying FLARE forecasts via JSON](https://github.com/FLARE-forecast/deployed-forecasts/blob/master/README.md) | Containers |
 | [Debugging FLARE Containers](How-to-Debug-FLARE-Containers) | Containers |
 | [Building FLARE Containers](How-to-Build-FLARE-Containers) | Containers |
 | [Container Configuration](Configuration-File) | Containers |
