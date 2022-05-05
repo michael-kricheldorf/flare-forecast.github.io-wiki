@@ -41,14 +41,38 @@ Run `rclone config` in the terminal and follow the steps:
 
 # Browse S3 Storage with RClone
 
+You can browse a whole bucket:
+
 ```bash
-rclone lsf s3flare: 
+$ rclone lsf s3flare: 
+analysis/
+drivers/
+drivertest/
+forecasts/
+log/
+restart/
+scores/
+targets/
+test/
 ```
 
-You can browse a specific path:
+Or browse a specific path:
 
 ```bash
-rclone lsf s3flare:forecasts/sunp
+$ rclone lsf s3flare:forecasts/sunp
+sunp-2021-06-02-sunp_V1.nc
+sunp-2021-06-02-sunp_V1.xml
+sunp-2021-06-03-sunp_V1.nc
+sunp-2021-06-03-sunp_V1.xml
+sunp-2021-06-04-sunp_V1.nc
+sunp-2021-06-04-sunp_V1.xml
+sunp-2021-06-05-sunp_V1.nc
+sunp-2021-06-05-sunp_V1.xml
+sunp-2021-06-06-sunp_V1.nc
+sunp-2021-06-06-sunp_V1.xml
+.
+.
+.
 ```
 
 # Mount Remote Storage on Linux/macOS/BSD
