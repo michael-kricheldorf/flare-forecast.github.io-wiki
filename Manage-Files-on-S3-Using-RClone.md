@@ -22,26 +22,27 @@ Run `rclone config` in the terminal and follow the steps:
 
 ```
 1- e/n/d/r/c/s/q> n (n for "New remote")
-2- name> s3jetstream (or any other name you prefer)
+2- name> s3flare (or any other name you prefer)
 3- storage> s3
 4- provider> Minio
 5- env_auth> (Leave it blank and hit enter.)
-6- access_key_id> (Enter the access key for Jetstream storage on Minio if you have. Leave blank for read-only access.)
-7- secret_access_key> (Enter the secret key for Jetstream storage on Minio if you have. Leave blank for read-only access.)
+6- access_key_id> (Enter the access key for FLARE storage on Minio if you have. Leave blank for read-only access.)
+7- secret_access_key> (Enter the secret key for FLARE storage on Minio if you have. Leave blank for read-only access.)
 8- region> (Leave it blank and hit enter.)
-9- endpoint> https://tacc.jetstream-cloud.org:8080
+9- endpoint> https://s3.flare.forecast.org
 10- location_constraint> (Leave it blank and hit enter.)
 11- acl> (Leave it blank and hit enter.)
 12- server_side_encryption> (Leave it blank and hit enter.)
 13- sse_kms_key_id> (Leave it blank and hit enter.)
 14- y/n> (Leave it blank and hit enter.)
-15- e/n/d/r/c/s/q> q (q for "Quit")
+15- y/e/d> (Leave it blank and hit enter.)
+16- e/n/d/r/c/s/q> q (q for "Quit")
 ```
 
 
-# Mount Remote Storage
+# Mount Remote Storage on Linux or macOS
 
-RClone mount allows to mount any RClone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
+RClone mount allows mounting any RClone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
 
 To mount a storage to a path on your operating system, first, you should create an empty local directory on your machine and then mount your remote storage to that directory:
 
@@ -52,14 +53,14 @@ rclone mount remote:path/to/files /path/to/local/mount
 For instance:
 
 ```bash
-mkdir /home/ubuntu/s3
-rclone mount s3jetstream:flare /home/ubuntu/s3 &
+mkdir ~/s3flare
+rclone mount s3flare:forecasts ~/s3flare &
 ```
 
 Then, you can work with it as a regular directory with subdirectories and files. You can use your operating system GUI file manager, too.
 
 ```bash
-$ cd /home/ubuntu/s3
+$ cd ~/s3flare
 $ ls
 drivers
 ```
@@ -71,5 +72,5 @@ drivers
 If you just need read-only access to the remote storage, mount t in read-only mode to prevent accidental alteration to the files and directories:
 
 ```bash
-rclone mount --read-only s3jetstream:flare /home/ubuntu/s3 &
+rclone mount --read-only s3flare:forecasts ~/s3flare &
 ```
