@@ -14,7 +14,7 @@ To run rclone on Windows, download it first:
 
 https://rclone.org/downloads/
 
-Then, extract it and find `rclone` executable.
+Then, extract it and find `rclone` (rclone.exe) executable.
 
 # Configure RClone
 
@@ -39,8 +39,19 @@ Run `rclone config` in the terminal and follow the steps:
 16- e/n/d/r/c/s/q> q (q for "Quit")
 ```
 
+# Browse S3 Storage with RClone
 
-# Mount Remote Storage on Linux or macOS
+```bash
+rclone lsf s3flare: 
+```
+
+You can browse a specific path:
+
+```bash
+rclone lsf s3flare:forecasts/sunp
+```
+
+# Mount Remote Storage on Linux/macOS/BSD
 
 RClone mount allows mounting any RClone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
 
