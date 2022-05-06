@@ -14,7 +14,7 @@ To run rclone on Windows, download it first:
 
 https://rclone.org/downloads/
 
-Then, extract it and find `rclone` (rclone.exe) executable.
+Then, extract it and find `rclone` executable (`rclone.exe`).
 
 # Configure RClone
 
