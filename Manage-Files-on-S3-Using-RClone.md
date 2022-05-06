@@ -14,7 +14,7 @@ To run rclone on Windows, download it first:
 
 https://rclone.org/downloads/
 
-Then, extract it and find `rclone` executable (`rclone.exe`).
+Then, extract it and find `rclone` executable (`rclone.exe`) and change your current directory in the terminal to that directory.
 
 # Configure RClone
 
