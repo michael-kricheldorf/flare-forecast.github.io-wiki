@@ -29,7 +29,7 @@ Run `rclone config` in the terminal and follow the steps:
 6- access_key_id> (Enter the access key for FLARE storage on Minio if you have. Leave blank for read-only access.)
 7- secret_access_key> (Enter the secret key for FLARE storage on Minio if you have. Leave blank for read-only access.)
 8- region> (Leave it blank and hit enter.)
-9- endpoint> https://s3.flare.forecast.org
+9- endpoint> https://s3.flare-forecast.org
 10- location_constraint> (Leave it blank and hit enter.)
 11- acl> (Leave it blank and hit enter.)
 12- server_side_encryption> (Leave it blank and hit enter.)
