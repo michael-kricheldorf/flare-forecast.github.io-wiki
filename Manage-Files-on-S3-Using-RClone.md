@@ -88,14 +88,14 @@ rclone mount remote:path/to/files /path/to/local/mount
 For instance:
 
 ```bash
-mkdir ~/s3flare-local
-rclone mount s3flare: ~/s3flare-local &
+mkdir ~/s3flare-directory
+rclone mount s3flare: ~/s3flare-directory &
 ```
 
 Then, you can work with it as a regular directory with subdirectories and files. You can use your operating system GUI file manager, too.
 
 ```bash
-$ cd ~/s3flare-local
+$ cd ~/s3flare-directory
 $ ls
 analysis  drivers  drivertest  forecasts  log  restart  scores  targets
 ```
@@ -107,5 +107,5 @@ analysis  drivers  drivertest  forecasts  log  restart  scores  targets
 If you just need read-only access to the remote storage, mount t in read-only mode to prevent accidental alteration to the files and directories:
 
 ```bash
-rclone mount --read-only s3flare: ~/s3flare-local &
+rclone mount --read-only s3flare: ~/s3flare-directory &
 ```
