@@ -1,8 +1,8 @@
-# What is RClone?
+# What is Rclone?
 
-Rclone is a platform-independent command-line program to manage files on cloud storage. We are interested in its support for S3 object storage, including Minio.
+Rclone is a platform-independent command-line program to manage files on cloud storage. We are interested in its support for S3 object storage, including MiniIO.
 
-# Install RClone
+# Install Rclone
 
 To install rclone on Linux/macOS/BSD systems, run:
 
@@ -16,7 +16,9 @@ https://rclone.org/downloads/
 
 Then, extract it and find `rclone` executable (`rclone.exe`) and change your current directory in the terminal to that directory.
 
-# Configure RClone
+For more detailed information on how to install Rclone, visit [Install](https://rclone.org/install/) page from Rclone official website.
+
+# Configure Rclone
 
 Run `rclone config` in the terminal and follow the steps:
 
@@ -39,7 +41,7 @@ Run `rclone config` in the terminal and follow the steps:
 16- e/n/d/r/c/s/q> q (q for "Quit")
 ```
 
-# Browse S3 Storage with RClone
+# Browse S3 Storage with Rclone
 
 You can browse a whole bucket:
 
@@ -47,13 +49,11 @@ You can browse a whole bucket:
 $ rclone lsf s3flare: 
 analysis/
 drivers/
-drivertest/
 forecasts/
 log/
 restart/
 scores/
 targets/
-test/
 ```
 
 Or browse a specific path:
@@ -77,7 +77,7 @@ sunp-2021-06-06-sunp_V1.xml
 
 # Mount Remote Storage on Linux/macOS/BSD
 
-RClone mount allows mounting any RClone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
+Rclone mount allows mounting any Rclone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
 
 To mount a storage to a path on your operating system, first, you should create an empty local directory on your machine and then mount your remote storage to that directory:
 
@@ -97,7 +97,7 @@ Then, you can work with it as a regular directory with subdirectories and files.
 ```bash
 $ cd ~/s3flare-directory
 $ ls
-analysis  drivers  drivertest  forecasts  log  restart  scores  targets
+analysis  drivers  forecasts  log  restart  scores  targets
 ```
 
 **Note:** `rclone mount` doesn't stop until you kill it. Adding `&` to the end of the command makes it run in the background.
@@ -109,3 +109,7 @@ If you just need read-only access to the remote storage, mount t in read-only mo
 ```bash
 rclone mount --read-only s3flare: ~/s3flare-directory &
 ```
+
+# Need more details?
+
+Visit the official MinIO documentation for using [Rclone with MinIO Server](https://docs.min.io/docs/rclone-with-minio-server.html).
