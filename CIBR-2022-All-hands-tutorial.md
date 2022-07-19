@@ -15,9 +15,29 @@ Participants are encouraged to go over the tutorial on their own desktops during
 
 # Pre-requisites and installation
 
+To follow this tutorial, you will need:
+
+* A GitHub account
+* A lake properly configured with the FLARE code and configuration in one of your repositories
+* An S3 client installed on your desktop to browse storage buckets
+
+To help ensure a smooth tutorial, please go over these steps before the workshop:
+
 ## Forking your own FLARE test lake
 
+If you don't already have one, please create a GitHub account. 
+
+Then, use the GitHub "fork" to create a fork of the FCR lake in your own account:
+
+* Browse to the FCR forecast code repository, [https://github.com/FLARE-forecast/FCRE-forecast-code](https://github.com/FLARE-forecast/FCRE-forecast-code)
+* Locate the "Fork" icon towards top right of your screen; click on the down arrow and select "Create a new fork"
+
+
 ## Installing RClone
+
+RClone is a free S3 client that works with multiple cloud storage technologies - including Minio, which we use in CIBR. It is supported for Windows, MacOS, and Linux. You need to install this software in your computer so you can browse CIBR S3 buckets.
+
+Please [follow the steps in this page to install and configure RClone](Manage-Files-on-S3-Using-RClone). Note: for this tutorial, you only need read-only access - so it is ok to leave the access_key_id and secret_access_key blank when configuring RClone.
 
 # Workflow overview for retroactive forecasts
 
