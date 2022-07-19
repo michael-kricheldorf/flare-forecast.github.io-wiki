@@ -43,7 +43,7 @@ Run `rclone config` in the terminal and follow the steps:
 
 # Browse S3 Storage with Rclone
 
-You can browse a whole bucket:
+You can browse the whole storage (only if you have previously entered your `access_key_id` and `secret_access_key` and have proper permissions):
 
 ```bash
 $ rclone lsf s3flare: 
@@ -56,7 +56,23 @@ scores/
 targets/
 ```
 
-Or browse a specific path:
+Or browse a specific bucket (even without entering `access_key_id` and `secret_access_key` with read-only access):
+
+```bash
+$ rclone lsf s3flare:forecasts
+BARC/
+CRAM/
+LIRO/
+PRLA/
+PRPO/
+SUGG/
+bvre/
+fcre/
+sunp/
+test/
+```
+
+Or browse a specific path (even without entering `access_key_id` and `secret_access_key` with read-only access):
 
 ```bash
 $ rclone lsf s3flare:forecasts/sunp
