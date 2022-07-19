@@ -41,6 +41,23 @@ Please [follow the steps in this page to install and configure RClone](Manage-Fi
 
 # Workflow overview for retroactive forecasts
 
+Before we go into the hands-on activities, let's overview the process. The main pieces of the puzzle here are:
+
+## R code: GitHub repo
+The forecast code to be executed is defined and stored in your own GitHub repository, and uses the FLARE library. So, you are free to customize the code to suit your needs, as per FLARE guidelines. Currently, we assume that you will use GLM as the model - but this can be expanded upon later
+
+## Lake configuration: GitHub repo
+The configuration for your lake is also stored in GitHub repo that has your code, in YAML format. The main configuration file is found in configuration/default/configure_run.yml - in this file you can specify values such as sim_name, start_datetime and forecast_start_datetime as per your needs. More on this later
+
+## Data: S3 buckets
+The retroactive runs will read and write data from cloud storage using S3 buckets - a standard used in many cloud projects. CIBR has an S3 service running at Virginia Tech and based on the Minio software; this is where your retroactive run outputs will be stored. The S3 bucket is readable by anyone - without the need for credentials. However, writes to the bucket need a valid credential. For retroactive runs, you will submit through someone who has already a credential managed on behalf of CIBR, so you will not need your own separate. However, if you do want to write directly to the bucket from your desktop for your use case, you will need credentials - let us know and we'll work with you.
+
+## Retroactive batch job configuration: JSON file
+In addition to the YAML lake configuration described above - which would work even if you were to run a single forecast - you need to specify a job configuration file. This JSON-formatted file is intended to provide information about a _batch_ of runs 
+
+## Retroactive batch job execution: Jetstream 2
+The actual batch jobs (i.e. where FLARE, GLM run) currently take place in Jetstream 2, an NSF cloud resource we have access to. However, as an end user, you will not need to worry about this module - someone from the CIBR CI team will run the batch job on your behalf
+
 # Activity 1: pre-requisite double-check
 
 # Activity 2: browsing FLARE S3 bucket
