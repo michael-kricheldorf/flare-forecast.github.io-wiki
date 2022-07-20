@@ -125,6 +125,10 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
 
 HERE - Vahid to show which files need to be configured with simname (tutorial+theirname) and anything else that may need to be user-specific
 
+what date range? one month. 06/01/2022 - 06/31/2022
+
+explain this includes a spin-up time of 5 days, and the analysis PDFs should be ignored for days 1-5
+
 # Activity 4: creating and submitting JSON configuration file
 
 HERE - Yun-Jung to show JSON template, explain key/values, and explain how to send it to you
