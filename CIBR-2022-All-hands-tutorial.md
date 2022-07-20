@@ -23,15 +23,11 @@ To follow this tutorial, you will need:
 
 To help ensure a smooth tutorial, please go over these steps before the workshop:
 
-## Forking your own FLARE test lake
+## Creating your own FLARE lake from a template
 
 If you don't already have one, please create a GitHub account. 
 
-Then, use the GitHub "fork" to create a fork of the FCR lake in your own account:
-
-* Browse to the FCR forecast code repository, [https://github.com/FLARE-forecast/FCRE-forecast-code](https://github.com/FLARE-forecast/FCRE-forecast-code)
-* Locate the "Fork" icon towards the top right of your screen; click on the down arrow and select "Create a new fork"
-
+* [Follow the instructions from the FLARE template README](https://github.com/FLARE-forecast/LAKE-forecast-code#readme) to create your own lake in your own GitHub repository
 
 ## Installing Rclone
 
@@ -62,9 +58,9 @@ The actual batch jobs (i.e. where FLARE, GLM run) currently take place in Jetstr
 
 # Activity 2: browsing FLARE S3 bucket
 
-HERE - what are all the folders and what is in them
+The s3flare S3 bucket has several folders where data for different lakes/forecast runs are stored. Here is an overview of the important folders you need to be aware of:
 
-## Drivers
+## drivers
 
 rclone lsf s3flare:drivers/noaa
 NOAAGEFS_1hr/
@@ -78,7 +74,7 @@ NOAAGEFS_raw/
 rclone lsf s3flare:drivers/inflow
 FLOWS-NOAAGEFS-AR1/
 
-## Targets
+## targets
 Processed data from NOAA and observational data, both .csv and NetCDF (output of FLARE function 1)
 
 Example:
@@ -88,7 +84,7 @@ fcre-targets-inflow.csv
 fcre-targets-insitu.csv
 observed-met_fcre.nc
 
-## Restart
+## restart
 This stores the YML run configuration file (configure_run.yml) for the next run. There is a folder per simname. (output of FLARE function 3)
 
 Example:
@@ -97,7 +93,7 @@ rclone lsf s3flare:restart/[lakecode]/[simname]
 
 configure_run.yml
 
-## Forecast
+## forecasts
 This stores the forecast outputs (output of FLARE function 3). Each file name (xml, NetCDF) has prefix lakecode_simname
 
 Example:
@@ -111,7 +107,7 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.nc
 fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.xml
 
 
-## Analysis
+## analysis
 Graphical outputs of forecasts (output of FLARE function 4). Each file name (pdf) has prefix lakecode_simname
 
 Example:
@@ -134,6 +130,8 @@ HERE - Yun-Jung to show JSON template, explain key/values, and explain how to se
 # Q&A time
 
 # Workflow overview for daily forecasts
+
+HERE - Renato will add a description
 
 # Activity 5: checking your outputs
 
