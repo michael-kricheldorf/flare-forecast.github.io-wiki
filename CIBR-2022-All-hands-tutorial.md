@@ -62,8 +62,8 @@ The s3flare S3 bucket has several folders where data for different lakes/forecas
 
 ## drivers
 
-```
-rclone lsf s3flare:drivers/noaa
+```bash
+$ rclone lsf s3flare:drivers/noaa
 NOAAGEFS_1hr/
 NOAAGEFS_1hr-debias/
 NOAAGEFS_1hr_stacked/
@@ -71,37 +71,38 @@ NOAAGEFS_1hr_stacked_average/
 NOAAGEFS_6hr/
 NOAAGEFS_6hr_stacked/
 NOAAGEFS_raw/
+```
 
-rclone lsf s3flare:drivers/inflow
+Outflow data, .csv (output of FLARE function 2). Example:
+
+```bash
+$ rclone lsf s3flare:drivers/inflow
 FLOWS-NOAAGEFS-AR1/
 ```
 
 ## targets
 Processed data from NOAA and observational data, both .csv and NetCDF (output of FLARE function 1). Example:
 
-```
-rclone lsf s3flare:targets/[lakecode]
-
+```bash
+$ rclone lsf s3flare:targets/[lakecode]
 fcre-targets-inflow.csv
 fcre-targets-insitu.csv
 observed-met_fcre.nc
 ```
 
 ## restart
-This stores the YML run configuration file (configure_run.yml) for the next run. There is a folder per simname. (output of FLARE function 3). Example:
+This stores the YML run configuration file (configure_run.yml) for the next run. There is a folder per sim_name. (output of FLARE function 3). Example:
 
-```
-rclone lsf s3flare:restart/[lakecode]/[simname]
-
+```bash
+$ rclone lsf s3flare:restart/[lakecode]/[sim_name]
 configure_run.yml
 ```
 
 ## forecasts
-This stores the forecast outputs (output of FLARE function 3). Each file name (xml, NetCDF) has prefix lakecode_simname. Example:
+This stores the forecast outputs (output of FLARE function 3). Each file name (xml, NetCDF) has prefix [lakecode]_[sim_name]. Example:
 
-```
-rclone lsf s3flare:forecasts/[lakecode]
-
+```bash
+$ rclone lsf s3flare:forecasts/[lakecode]
 fcre_js2_H_2022_03_10_2022_05_10_F_0_20220518T014355.nc
 fcre_js2_H_2022_03_10_2022_05_10_F_0_20220518T014355.xml
 fcre_test4_H_2021_07_01_2021_09_01_F_0_20220114T182816.nc
@@ -111,11 +112,10 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.xml
 ```
 
 ## analysis
-Graphical outputs of forecasts (output of FLARE function 4). Each file name (pdf) has prefix lakecode_simname. Example:
+Graphical outputs of forecasts (output of FLARE function 4). Each file name (pdf) has prefix [lakecode]_[sim_name]. Example:
 
-```
-rclone lsf s3flare:analysis/[lakecode]
-
+```bash
+$ rclone lsf s3flare:analysis/[lakecode]
 fcre_js2_H_2022_03_10_2022_05_10_F_0_20220518T014355.pdf
 fcre_test4_H_2021_07_01_2021_09_01_F_0_20220114T182816.pdf
 fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
@@ -123,7 +123,7 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
 
 # Activity 3: editing FLARE configuration files in your lake repo
 
-HERE - Vahid to show which files need to be configured with simname (tutorial+theirname) and anything else that may need to be user-specific
+HERE - Vahid to show which files need to be configured with sim_name (tutorial+theirname) and anything else that may need to be user-specific
 
 what date range? one month. 06/01/2022 - 06/31/2022
 
