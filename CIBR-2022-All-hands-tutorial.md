@@ -27,7 +27,7 @@ To help ensure a smooth tutorial, please go over these steps before the workshop
 
 If you don't already have one, please create a GitHub account. 
 
-* [Follow the instructions from the FLARE template README](https://github.com/FLARE-forecast/LAKE-forecast-code#readme) to create your own lake in your own GitHub repository
+* [Follow the instructions from the FLARE template README](https://github.com/FLARE-forecast/LAKE-forecast-code#readme) to create your own lake (based off FCR) in your own GitHub repository
 
 ## Installing Rclone
 
@@ -137,7 +137,13 @@ HERE - Yun-Jung to show JSON template, explain key/values, and explain how to se
 
 # Workflow overview for daily forecasts
 
-HERE - Renato will add a description
+While in this tutorial we've gone through setting up a batch of retroactive forecast runs, the approach is fairly similar to run a daily operational forecast. The key difference is that, in retroactive batch mode, forecasts run “back-to-back” on data from the past, where as in operational mode, forecasts run daily at a configurable time (or multiple times daily, if needed) on current data. In summary, to setup a daily forecast:
+
+* You need your own code repository, configured for your lake, as we did in this tutorial
+* You need to ensure drivers and observational data are available for your lake (from S3 or GitHub)
+* You need to produce and submit a pull request for a JSON configuration file describing your forecast
+
+[This page provides a detailed how-to if you are interested](https://github.com/FLARE-forecast/deployed-forecasts/blob/master/README.md)
 
 # Activity 5: checking your outputs
 
