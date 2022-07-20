@@ -62,9 +62,74 @@ The actual batch jobs (i.e. where FLARE, GLM run) currently take place in Jetstr
 
 # Activity 2: browsing FLARE S3 bucket
 
+HERE - what are all the folders and what is in them
+
+## Drivers
+
+rclone lsf s3flare:drivers/noaa
+NOAAGEFS_1hr/
+NOAAGEFS_1hr-debias/
+NOAAGEFS_1hr_stacked/
+NOAAGEFS_1hr_stacked_average/
+NOAAGEFS_6hr/
+NOAAGEFS_6hr_stacked/
+NOAAGEFS_raw/
+
+rclone lsf s3flare:drivers/inflow
+FLOWS-NOAAGEFS-AR1/
+
+## Targets
+Processed data from NOAA and observational data, both .csv and NetCDF (output of FLARE function 1)
+
+Example:
+rclone lsf s3flare:targets/[lakecode]
+
+fcre-targets-inflow.csv
+fcre-targets-insitu.csv
+observed-met_fcre.nc
+
+## Restart
+This stores the YML run configuration file (configure_run.yml) for the next run. There is a folder per simname. (output of FLARE function 3)
+
+Example:
+
+rclone lsf s3flare:restart/[lakecode]/[simname]
+
+configure_run.yml
+
+## Forecast
+This stores the forecast outputs (output of FLARE function 3). Each file name (xml, NetCDF) has prefix lakecode_simname
+
+Example:
+rclone lsf s3flare:forecasts/[lakecode]
+
+fcre_js2_H_2022_03_10_2022_05_10_F_0_20220518T014355.nc
+fcre_js2_H_2022_03_10_2022_05_10_F_0_20220518T014355.xml
+fcre_test4_H_2021_07_01_2021_09_01_F_0_20220114T182816.nc
+fcre_test4_H_2021_07_01_2021_09_01_F_0_20220114T182816.xml
+fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.nc
+fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.xml
+
+
+## Analysis
+Graphical outputs of forecasts (output of FLARE function 4). Each file name (pdf) has prefix lakecode_simname
+
+Example:
+
+rclone lsf s3flare:analysis/[lakecode]
+
+fcre_js2_H_2022_03_10_2022_05_10_F_0_20220518T014355.pdf
+fcre_test4_H_2021_07_01_2021_09_01_F_0_20220114T182816.pdf
+fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
+
+
 # Activity 3: editing FLARE configuration files in your lake repo
 
+HERE - Vahid to show which files need to be configured with simname (tutorial+theirname) and anything else that may need to be user-specific
+
 # Activity 4: creating and submitting JSON configuration file
+
+HERE - Yun-Jung to show JSON template, explain key/values, and explain how to send it to you
 
 # Q&A time
 
