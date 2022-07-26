@@ -7,7 +7,7 @@ Rclone is a platform-independent command-line program to manage files on cloud s
 To install rclone on Linux/macOS/BSD systems, run:
 
 ```bash
-curl https://rclone.org/install.sh | sudo bash
+$ curl https://rclone.org/install.sh | sudo bash
 ```
 
 To run rclone on Windows, download it first:
@@ -19,6 +19,30 @@ Then, extract it and find `rclone` executable (`rclone.exe`) and change your cur
 For more detailed information on how to install Rclone, visit [Install](https://rclone.org/install/) page from Rclone official website.
 
 # Configure Rclone
+
+### Method 1
+
+Find the path for Rclone configuration file:
+
+```
+$ rclone config file
+Configuration file doesn't exist, but rclone will use this path:
+/root/.config/rclone/rclone.conf
+```
+
+Create the configuration file there or edit the file if it already exists and add the following content:
+
+```
+[s3flare]
+type = s3
+provider = Minio
+endpoint = https://s3.flare-forecast.org
+access_key_id =
+secret_access_key =
+```
+If you don't have `access_key_id` and `secret_access_key` for the S3 storage, you can leave them blank since they are not required for read-only access.
+
+### Method 2
 
 Run `rclone config` in the terminal and follow the steps:
 
@@ -98,14 +122,14 @@ Rclone mount allows mounting any Rclone storage as a file system and enables you
 To mount a storage to a path on your operating system, first, you should create an empty local directory on your machine and then mount your remote storage to that directory:
 
 ```bash
-rclone mount remote:path/to/files /path/to/local/mount
+$ rclone mount remote:path/to/files /path/to/local/mount
 ```
 
 For instance:
 
 ```bash
-mkdir ~/s3flare-directory
-rclone mount s3flare: ~/s3flare-directory &
+$ mkdir ~/s3flare-directory
+$ rclone mount s3flare: ~/s3flare-directory &
 ```
 
 Then, you can work with it as a regular directory with subdirectories and files. You can use your operating system GUI file manager, too.
@@ -123,7 +147,7 @@ analysis  drivers  forecasts  log  restart  scores  targets
 If you just need read-only access to the remote storage, mount t in read-only mode to prevent accidental alteration to the files and directories:
 
 ```bash
-rclone mount --read-only s3flare: ~/s3flare-directory &
+$ rclone mount --read-only s3flare: ~/s3flare-directory &
 ```
 
 # Need more details?
