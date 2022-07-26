@@ -156,7 +156,7 @@ use_s3: TRUE
 
 The above configuration is set for running the forecasts for 30 days starting June 01, 2022. 
 
-*A key entry to configure is sim_name - make sure you configure it with `sim_name: tutorial_<yourname>`* This customizes the run so for you, separates your files from other people's files, and enables you to check on the results later. 
+*IMPORTANT: A key entry to configure is sim_name - make sure you configure it with `sim_name: tutorial_<yourname>`* This customizes the run so for you, separates your files from other people's files, and enables you to check on the results later. 
 
 This is a configuration for "cold-starting", with no forecast history (`restart_file: .na`). So keep in mind that the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored. When you configure your forecast retroactive runs, keep in mind to plan for this "ramp-up" period as you configure the yml file.
 
@@ -164,7 +164,7 @@ This is a configuration for "cold-starting", with no forecast history (`restart_
 With your code repository set up and YAML configuration file created as per activity 3, the next step is to create a JSON file that is used to provide the necessary information for the retroactive batch run. Here is the template of the JSON file for a retroactive run:
 ```json
 {
-  "forecast_code": "https://github.com/Yun-Jung/LAKE-forecast-code",
+  "forecast_code": "https://github.com/Yun-Jung/TEST-forecast-code",
   "forecast_code_branch": "main",
   "config_set": "default",
   "function": "0",
@@ -176,7 +176,7 @@ With your code repository set up and YAML configuration file created as per acti
 }
 ```
 ### Variables Explanation
-* "forecast_code" is the link to your GitHub repository which you have created and configured earlier.
+* "forecast_code" is the full URL link to your GitHub repository which you have created and configured earlier in activity 3.
 * "forecast_code_branch" is the variable which points to the branch of your GitHub repository.
 * "configure_run" is the file where the begin date was set.
 * "config_set", "function" specify the FLARE config_set and which FLARE function to run
