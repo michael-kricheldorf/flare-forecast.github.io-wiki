@@ -169,7 +169,7 @@ Below is the template of JSON file.
   "number_of_runs": 365
 }
 ```
-###Variable Explanation
+### Variables Explanation
 * "forecast_code" is the link to your github repository which you forked at the beginning.
 * "forecast_code_branch" is the variable which points to the branch of your github repository.
 * "configure_run" is the file where the begin date was set.
