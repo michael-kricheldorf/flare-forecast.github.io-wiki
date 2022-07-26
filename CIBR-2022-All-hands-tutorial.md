@@ -122,12 +122,37 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
 ```
 
 # Activity 3: editing FLARE configuration files in your lake repo
+  
+For creating a new lake forecast code based on FCRE forecast, follow these steps:
 
-HERE - Vahid to show which files need to be configured with sim_name (tutorial+theirname) and anything else that may need to be user-specific
+1- Go to the following template which is based on FCRE-forecast-code:
 
-what date range? one month. start date 06/01/2022 (30 days specified in the JSON file below)
+https://github.com/FLARE-forecast/LAKE-forecast-code/
 
-explain this includes a spin-up time of 5 days, and the analysis PDFs should be ignored for days 1-5
+1- Click the green "Use this template" button on the top right corner of the page.
+
+2- Choose a "Repository name" such as "TEST-forecast-code".
+
+3- Click the green "Create repository from template" button on the bottom of the page.
+
+4- Edit the following files in your newly created repository:
+  - `configuration/default/configure_flare.yml`
+
+5- Apply the changes to the `configure_flare.yml` as the following sample:
+
+```yaml
+restart_file: .na
+start_datetime: 2022-06-01 00:00:00 # Update this line
+end_datetime: .na
+forecast_start_datetime: 2022-06-30 00:00:00 # Update this line
+forecast_horizon: 16.0 # Update this line
+sim_name: tutorial_<yourname> # Update this line
+configure_flare: configure_flare.yml
+configure_obs: observation_processing.yml
+use_s3: TRUE
+```
+
+The above configuration is for running the forecasts for 30 days starting May 01, 2022 and `sim_name: tutorial_<yourname>` customizes that for you and enables you to check on the results later. Since it is cold starting with no forecast history (`restart_file: .na`), the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored.  
 
 # Activity 4: creating and submitting JSON configuration file
 
