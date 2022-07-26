@@ -169,7 +169,7 @@ Below is the template of JSON file.
   "number_of_runs": 365
 }
 ```
-Variable Explanation
+###Variable Explanation
 * "forecast_code" is the link to your github repository which you forked at the beginning.
 * "forecast_code_branch" is the variable which points to the branch of your github repository.
 * "configure_run" is the file where the begin date was set.
@@ -177,7 +177,7 @@ Variable Explanation
 * "aws_s3_endpoint" is the link to the s3 bucket.
 * "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set as 365 and the start date is 2021/01/01, there were results in 365 days in the s3 buckets.
 
-After setting up these variables, the file needs to be save as filename.json.
+After setting up these variables, the file needs to be save as ```filename.json```.
 To run the retroactive run, send the json file to me(y.ku@ufl.edu). 
 I will run your repo with variables set up by yourself.
 Then, you can check the results in s3 bucket with your personal s3 account.
