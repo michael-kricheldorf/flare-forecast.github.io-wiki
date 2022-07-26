@@ -1,7 +1,12 @@
+## Index
+### [Data Repositories](#data-repositories)  
+### [Forecast Repositories](#forecast-repositories)  
+### [Cyberinfrastructure Repositories](#cyberinfrastructure-repositories)  
+
 ## Data Repositories
 
 ### FLARE-forecast/FCRE-data  
-Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir  
+Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir, VA, USA  
 
 #### Branches
 **bita-logs:** Gateway logs for Bita, currently located at FCR weir  
@@ -10,22 +15,26 @@ Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir
 **fcre-manual-data:** Manually downloaded data from FCR data loggers  
 **fcre-metstation-data:** Sensor data and logs for FCR metstation  
 **fcre-weir-data:** Sensor data and logs for FCR weir  
-**master:** Gateways and branches status updates    
+**master:** FCR GitHub Workflows and gateways and branches status updates  
 **mia-logs:** Gateway logs for Mia, currently located at FCR catwalk  
 **wvwa-generate-graphs:** GitHub Actions for generating graphs for West Virginia Water Authority reservoirs, FCR, BVR, and CCR  
 **wvwa-graphs:** GitHub Action generated graphs for West Virginia Water Authority reservoirs, FCR, BVR, and CCR  
 
 ### FLARE-forecast/BVRE-data  
+Sensor data, sensor logs, and gateway logs for Beaverdam Reservoir, VA, USA  
+
 #### Branches
-**bjorn-logs:**  
-**bvre-manual-downloads:**  
-**bvre-platform-data:**  
-**master:**  
+**bjorn-logs:** Gateway logs for Bjorn, currently located at BVR platform  
+**bvre-manual-downloads:** Manually downloaded data from BVR data loggers  
+**bvre-platform-data:** Sensor data and logs for BVR platform  
+**master:** BVR GitHub Workflows and gateways and branches status updates  
 
 ### FLARE-forecast/SUNP-data  
+Sensor data, sensor logs, and gateway logs for Lake Sunapee, NH, USA  
+
 #### Branches
 **lspa-computer-logs:**  
-**master:**  
+**master:** SUNP GitHub Workflows  
 **sunp-buoy-data:**  
 **sunp-generate-graphs:**  
 **sunp-graphs:**  
@@ -37,10 +46,6 @@ Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir
 **main:**  
 
 ### FLARE-forecast/NEON-nonDP-data  
-#### Branches
-**master:**  
-
-### FLARE-forecast/FCRE-dashboard  
 #### Branches
 **master:**  
 
@@ -152,6 +157,12 @@ Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir
 ### FLARE-forecast/FCRE_LER-forecast-code  
 #### Branches
 **main:**  
+
+### FLARE-forecast/FCRE-dashboard  
+Code for shiny dashboard for Falling Creek Reservoir, VA, USA
+
+#### Branches
+**master:**  
 
 
 ## Cyberinfrastructure Repositories
