@@ -166,7 +166,7 @@ Below is the template of JSON file.
   "use_https": "TRUE",
   "aws_default_region": "s3",
   "aws_s3_endpoint": "flare-forecast.org",
-  "number_of_runs": 365
+  "number_of_runs": 30
 }
 ```
 ### Variables Explanation
@@ -175,7 +175,7 @@ Below is the template of JSON file.
 * "configure_run" is the file where the begin date was set.
 * "config_set", "function", "use_https", "aws_default_region" At this point, these variables are set which are same with example.
 * "aws_s3_endpoint" is the link to the s3 bucket.
-* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set as 365 and the start date is 2021/01/01, there were results in 365 days in the s3 buckets.
+* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set as 30 and the start date is 2022/06/01, there were results in 30 days in the s3 buckets.
 
 After setting up these variables, the file needs to be save as ```filename.json```.
 To run the retroactive run, send the json file to me(y.ku@ufl.edu). 
