@@ -137,8 +137,8 @@ https://github.com/FLARE-forecast/LAKE-forecast-code/
 
 In a real usage scenario, you would now work on the code to customize FLARE for your own lake. This can take time, and given that we have limited time for this tutorial, we will use FCRE without changes as an example. We will thus simply edit the configuration file to configure this tutorial run:
 
-1- Edit the following files in your newly created repository:
-  - `configuration/default/configure_flare.yml`
+1- Edit the following files in your newly created repository by browsing to configuration then default:
+  - `configuration/default/configure_run.yml`
 
 2- Apply the changes to the `configure_run.yml` by following the template below - the lines you need to worry about are highlighted:
 
@@ -177,16 +177,16 @@ With your code repository set up and YAML configuration file created as per acti
 ```
 ### Variables Explanation
 * "forecast_code" is the full URL link to your GitHub repository which you have created and configured earlier in activity 3.
-* "forecast_code_branch" is the variable which points to the branch of your GitHub repository.
-* "configure_run" is the file where the begin date was set.
-* "config_set", "function" specify the FLARE config_set and which FLARE function to run
+* "forecast_code_branch" is the variable which points to the branch of your GitHub repository (typically main, but you can configure a different branch if needed).
+* "configure_run" is the name of the YAML configuration file you edited in your GitHub repo in activity 4, i.e. where dates were defined.
+* "config_set", "function" specify the FLARE config_set and which FLARE function to run (we'll use default)
 * "use_https", "aws_default_region", and "aws_s3_endpoint" specify S3-related configuration: whether to use https, which S3 region to use, and which S3 server to connect. For most (if not all) CIBR runs, these will all be "TRUE", "s3", and "flare-forecast.org", so you are unlikely to ever need to change these
-* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set as 30 and the start date is 2022/06/01 (defined in the configure_flare.yml as per the previous activity), there were results in 30 days in the s3 buckets.
+* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set as 30 and the start date is 2022/06/01 (defined in the configure_flare.yml as per the previous activity), there were results in 30 days in the S3 buckets.
 
-After setting up these variables, the file needs to be save as ```filename.json```.
-To run the retroactive run, send the json file to Yun-Jung (y.ku@ufl.edu). 
-She will run your repo with variables set up by yourself.
-Then, you can check the results in s3 bucket with your personal s3 account.
+After setting up these variables, the file needs to be save as ```tutorial_<yourname>.json```.
+To start the retroactive run, send the json file to Yun-Jung (y.ku@ufl.edu). 
+She will dispatch the run of a batch of 30 days as configured, using code from your repo with variables that you set up.
+You will be able to check the results in the S3 bucket as the runs complete, as per activity 2. Files associated with you your runs will have tutorial_<yourname> in the name.
 
 # Q&A time
 
