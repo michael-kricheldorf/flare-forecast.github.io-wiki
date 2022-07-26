@@ -1,7 +1,7 @@
 ## Index
-### [Data Repositories](#data-repositories)  
-### [Forecast Repositories](#forecast-repositories)  
-### [Cyberinfrastructure Repositories](#cyberinfrastructure-repositories)  
+[Data Repositories](#data-repositories)  
+[Forecast Repositories](#forecast-repositories)  
+[Cyberinfrastructure Repositories](#cyberinfrastructure-repositories)  
 
 ## Data Repositories
 
