@@ -123,22 +123,24 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
 
 # Activity 3: editing FLARE configuration files in your lake repo
   
-For creating a new lake forecast code based on FCRE forecast, follow these steps:
+First step, you'll create a forecast code repository based on FCRE forecast. This is described above under pre-requisites above. If you haven't created your repo already, follow steps 1-4 below (skip these steps if you already did this as pre-requisite):
 
 1- Go to the following template which is based on FCRE-forecast-code:
 
 https://github.com/FLARE-forecast/LAKE-forecast-code/
 
-1- Click the green "Use this template" button on the top right corner of the page.
+2- Click the green "Use this template" button on the top right corner of the page.
 
-2- Choose a "Repository name" such as "TEST-forecast-code".
+3- Choose a "Repository name" such as "TEST-forecast-code".
 
-3- Click the green "Create repository from template" button on the bottom of the page.
+4- Click the green "Create repository from template" button on the bottom of the page.
 
-4- Edit the following files in your newly created repository:
+In a real usage scenario, you would now work on the code to customize FLARE for your own lake. This can take time, and given that we have limited time for this tutorial, we will use FCRE without changes as an example. We will thus simply edit the configuration file to configure this tutorial run:
+
+1- Edit the following files in your newly created repository:
   - `configuration/default/configure_flare.yml`
 
-5- Apply the changes to the `configure_flare.yml` as the following sample:
+2- Apply the changes to the `configure_flare.yml` by following the template below - the lines you need to worry about are highlighted:
 
 ```yaml
 restart_file: .na
@@ -152,7 +154,11 @@ configure_obs: observation_processing.yml
 use_s3: TRUE
 ```
 
-The above configuration is for running the forecasts for 30 days starting June 01, 2022 and `sim_name: tutorial_<yourname>` customizes that for you and enables you to check on the results later. Since it is cold starting with no forecast history (`restart_file: .na`), the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored.  
+The above configuration is set for running the forecasts for 30 days starting June 01, 2022. 
+
+*A key entry to configure is sim_name - make sure you configure it with `sim_name: tutorial_<yourname>`* This customizes the run so for you, separates your files from other people's files, and enables you to check on the results later. 
+
+This is a configuration for "cold-starting", with no forecast history (`restart_file: .na`). So keep in mind that the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored. When you configure your forecast retroactive runs, keep in mind to plan for this "ramp-up" period as you configure the yml file.
 
 # Activity 4: creating and submitting JSON configuration file
 With your code repository set up and YAML configuration file created as per activity 3, the next step is to create a JSON file that is used to provide the necessary information for the retroactive batch run. Here is the template of the JSON file for a retroactive run:
