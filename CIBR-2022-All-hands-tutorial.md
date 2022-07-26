@@ -157,6 +157,19 @@ The above configuration is for running the forecasts for 30 days starting May 01
 # Activity 4: creating and submitting JSON configuration file
 
 HERE - Yun-Jung to show JSON template, explain key/values, and explain how to send it to you
+```json
+{
+  "forecast_code": "https://github.com/Yun-Jung/LAKE-forecast-code",
+  "forecast_code_branch": "main",
+  "config_set": "default",
+  "function": "0",
+  "configure_run": "configure_run.yml",
+  "use_https": "TRUE",
+  "aws_default_region": "s3",
+  "aws_s3_endpoint": "flare-forecast.org",
+  "number_of_runs": 365
+}
+```
 
 # Q&A time
 
