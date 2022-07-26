@@ -44,7 +44,13 @@ If you don't have `access_key_id` and `secret_access_key` for the S3 storage, yo
 
 ### Method 2
 
-Run `rclone config` in the terminal and follow the steps:
+Run:
+
+```
+$ rclone config
+``` 
+
+Then follow the steps:
 
 ```
 1- e/n/d/r/c/s/q> n (n for "New remote")
