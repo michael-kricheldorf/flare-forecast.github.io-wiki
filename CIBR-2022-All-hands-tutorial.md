@@ -140,7 +140,7 @@ In a real usage scenario, you would now work on the code to customize FLARE for 
 1- Edit the following files in your newly created repository:
   - `configuration/default/configure_flare.yml`
 
-2- Apply the changes to the `configure_flare.yml` by following the template below - the lines you need to worry about are highlighted:
+2- Apply the changes to the `configure_run.yml` by following the template below - the lines you need to worry about are highlighted:
 
 ```yaml
 restart_file: .na
