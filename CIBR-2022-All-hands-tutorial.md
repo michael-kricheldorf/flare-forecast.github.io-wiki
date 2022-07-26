@@ -155,8 +155,7 @@ use_s3: TRUE
 The above configuration is for running the forecasts for 30 days starting May 01, 2022 and `sim_name: tutorial_<yourname>` customizes that for you and enables you to check on the results later. Since it is cold starting with no forecast history (`restart_file: .na`), the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored.  
 
 # Activity 4: creating and submitting JSON configuration file
-
-HERE - Yun-Jung to show JSON template, explain key/values, and explain how to send it to you
+Below is the template of JSON file.
 ```json
 {
   "forecast_code": "https://github.com/Yun-Jung/LAKE-forecast-code",
@@ -170,7 +169,18 @@ HERE - Yun-Jung to show JSON template, explain key/values, and explain how to se
   "number_of_runs": 365
 }
 ```
+Variable Explanation
+* "forecast_code" is the link to your github repository which you forked at the beginning.
+* "forecast_code_branch" is the variable which points to the branch of your github repository.
+* "configure_run" is the file where the begin date was set.
+* "config_set", "function", "use_https", "aws_default_region" At this point, these variables are set which are same with example.
+* "aws_s3_endpoint" is the link to the s3 bucket.
+* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set as 365 and the start date is 2021/01/01, there were results in 365 days in the s3 buckets.
 
+After setting up these variables, the file needs to be save as filename.json.
+To run the retroactive run, send the json file to me(y.ku@ufl.edu). 
+I will run your repo with variables set up by yourself.
+Then, you can check the results in s3 bucket with your personal s3 account.
 # Q&A time
 
 # Workflow overview for daily forecasts
