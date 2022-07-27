@@ -123,7 +123,7 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
 
 # Activity 3: editing FLARE configuration files in your lake repo
   
-First step, you'll create a forecast code repository based on FCRE forecast. This is described above under pre-requisites above. If you haven't created your repo already, follow steps 1-4 below (skip these steps if you already did this as pre-requisite):
+First step, you'll create a forecast code repository based on FCRE forecast. This is described above under pre-requisites. If you haven't created your repo already, follow steps 1-4 below (skip these steps if you already did this as pre-requisite):
 
 1- Go to the following template which is based on FCRE-forecast-code:
 
@@ -135,9 +135,9 @@ https://github.com/FLARE-forecast/LAKE-forecast-code/
 
 4- Click the green "Create repository from template" button on the bottom of the page.
 
-In a real usage scenario, you would now work on the code to customize FLARE for your own lake. This can take time, and given that we have limited time for this tutorial, we will use FCRE without changes as an example. We will thus simply edit the configuration file to configure this tutorial run:
+In a real usage scenario, you would now work on the code to customize FLARE for your own lake. This can take time, and given that we have limited time for this tutorial, we will use FCRE forecast code without changes as an example. We will thus simply edit the configuration file to configure this tutorial run:
 
-1- Edit the following files in your newly created repository by browsing to configuration then default:
+1- Edit the following file in your newly created repository by browsing to `configuration` then `default`:
   - `configuration/default/configure_run.yml`
 
 2- Apply the changes to the `configure_run.yml` by following the template below - the lines you need to worry about are highlighted:
@@ -146,7 +146,7 @@ In a real usage scenario, you would now work on the code to customize FLARE for 
 restart_file: .na
 start_datetime: 2022-06-01 00:00:00 # Update this line
 end_datetime: .na
-forecast_start_datetime: 2022-06-30 00:00:00 # Update this line
+forecast_start_datetime: 2022-06-02 00:00:00 # Update this line
 forecast_horizon: 16.0 # Update this line
 sim_name: tutorial_<yourname> # Update this line
 configure_flare: configure_flare.yml
@@ -154,9 +154,25 @@ configure_obs: observation_processing.yml
 use_s3: TRUE
 ```
 
-The above configuration is set for running the forecasts for 30 days starting June 01, 2022. 
+**restart_file:** indicates the name of the latest forecast file if it is warm start. `.na` means a cold start.
 
-*IMPORTANT: A key entry to configure is sim_name - make sure you configure it with `sim_name: tutorial_<yourname>`* This customizes the run so for you, separates your files from other people's files, and enables you to check on the results later. 
+**start_datetime:** indicates historical data assimilation start date and time. For this tutorial, we set it to `2022-06-01 00:00:00`.
+
+**end_datetime:** indicates historical data assilmilation end date and time.
+
+**forecast_start_datetime:** indicates forecast start date and time. For this tutorial, we set it to `2022-06-02 00:00:00`.
+
+**forecast_horizon:** indicates the length of time in days into the future for which forecasts are to be generated. Since FCRE forecasts currently uses NOAA 16-day forecasts as one of the drivers, for this tutorial, we set it to `16.0`
+
+**sim_name:** indicates the simulation name which is being used to distinguish different forecast runs. The forecast outputs are categorized in different directories based on this key. For this tutorial, we set it to `tutorial_<yourname>`. This customizes the run so for you, separates your files from other people's files, and enables you to check on the results later.
+
+**configure_flare:** indicates the name of the main configuration file.
+
+**configure_obs:** indicates the name of the observation processing configuration file.
+
+**use_s3:** identifies whether we want to use S3 storage to store forecast outputs or not. If set to `FALSE`, the outputs will store locally, otherwise, when set to `TRUE`, all the outputs will be transferred to the S3 storage.
+
+The above configuration is set for running the forecasts starting June 01, 2022.
 
 This is a configuration for "cold-starting", with no forecast history (`restart_file: .na`). So keep in mind that the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored. When you configure your forecast retroactive runs, keep in mind to plan for this "ramp-up" period as you configure the yml file.
 
