@@ -40,7 +40,9 @@ endpoint = https://s3.flare-forecast.org
 access_key_id =
 secret_access_key =
 ```
-If you don't have `access_key_id` and `secret_access_key` for the S3 storage, you can leave them blank since they are not required for read-only access.
+**Note 1:** If you don't have `access_key_id` and `secret_access_key` for the S3 storage, you can leave them blank, since they are not required for read-only access.
+
+**Note 2:** Instead of `s3flare` used in this configuration file, you can choose any name for the S3 storage. You will use this name later to browse the files on the S3 storage.
 
 ### Method 2
 
@@ -123,7 +125,7 @@ sunp-2021-06-06-sunp_V1.xml
 
 # Mount Remote Storage on Linux/macOS/BSD
 
-Rclone mount allows mounting any Rclone storage as a file system and enables you to work with it the way you work with files and folders on your operating system.
+Rclone mount allows mounting any Rclone storage as a file system and enables you to work with it the way you work with files and folders on your operating system. It is not necessary, but it makes browsing the storage easier.
 
 To mount a storage to a path on your operating system, first, you should create an empty local directory on your machine and then mount your remote storage to that directory:
 
