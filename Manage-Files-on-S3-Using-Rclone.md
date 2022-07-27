@@ -26,11 +26,11 @@ There are two methods you can use to configure Rclone: in the first method, you 
 
 ### Method 1
 
-Find the path for Rclone configuration file:
+Find the path for Rclone configuration file (e.g., in a macOS computer):
 
 ```
 $ rclone config file
-Configuration file doesn't exist, but rclone will use this path (e.g. in a MacOS computer):
+Configuration file doesn't exist, but rclone will use this path:
 /Users/renato/.config/rclone/rclone.conf
 ```
 
