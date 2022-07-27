@@ -122,7 +122,7 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.pdf
 
 # Activity 3: editing FLARE configuration files in your lake repo
   
-First step, you'll create a forecast code repository based on FCRE forecast. This is described above under pre-requisites. If you haven't created your repo already, follow steps 1-4 below (skip these steps if you already did this as pre-requisite):
+First step, you'll create a forecast code repository based on FCRE forecast:
 
 1- Go to the following template which is based on FCRE-forecast-code:
 
