@@ -26,8 +26,8 @@ Find the path for Rclone configuration file:
 
 ```
 $ rclone config file
-Configuration file doesn't exist, but rclone will use this path:
-/root/.config/rclone/rclone.conf
+Configuration file doesn't exist, but rclone will use this path (e.g. in a MacOS computer):
+/Users/renato/.config/rclone/rclone.conf
 ```
 
 Create the configuration file there or edit the file if it already exists and add the following content:
