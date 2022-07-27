@@ -180,7 +180,7 @@ This is a configuration for "cold-starting", with no forecast history (`restart_
 With your code repository set up and YAML configuration file created as per activity 3, the next step is to create a JSON file that is used to provide the necessary information for the retroactive batch run. Here is the template of the JSON file for a retroactive run:
 ```json
 {
-  "forecast_code": "https://github.com/Yun-Jung/TEST-forecast-code",
+  "forecast_code_repo": "https://github.com/Yun-Jung/TEST-forecast-code",
   "forecast_code_branch": "main",
   "config_set": "default",
   "function": "0",
