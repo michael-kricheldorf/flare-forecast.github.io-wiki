@@ -1,10 +1,12 @@
 # What is Rclone?
 
-Rclone is a platform-independent command-line program to manage files on cloud storage. We are interested in its support for S3 object storage, including MiniIO.
+Rclone is a platform-independent command-line program to manage files on cloud storage. We are interested in its support for S3 object storage, including MiniIO. 
+
+Rclone requires you to use a command-line terminal in your computer ("terminal" in MacOS, "Windows Terminal" in Windows)
 
 # Install Rclone
 
-To install rclone on Linux/macOS/BSD systems, run:
+To install rclone on Linux/macOS/BSD systems, run this command in your terminal:
 
 ```bash
 $ curl https://rclone.org/install.sh | sudo bash
@@ -14,11 +16,13 @@ To run rclone on Windows, download it first:
 
 https://rclone.org/downloads/
 
-Then, extract it and find `rclone` executable (`rclone.exe`) and change your current directory in the terminal to that directory.
+Then, extract it and find the `rclone` executable (`rclone.exe`) and change your current directory in the terminal to that directory.
 
 For more detailed information on how to install Rclone, visit [Install](https://rclone.org/install/) page from Rclone official website.
 
 # Configure Rclone
+
+There are two methods you can use to configure Rclone: in the first method, you create/edit a configuration file rclone.conf manually (using a text editor), while in the second method you answer questions interactively and Rclone creates the configuration file for you. Both methods work - choose which one you think is easier for you:
 
 ### Method 1
 
