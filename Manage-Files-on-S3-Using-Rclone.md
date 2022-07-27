@@ -127,7 +127,9 @@ sunp-2021-06-06-sunp_V1.xml
 .
 ```
 
-# Mount Remote Storage on Linux/macOS/BSD
+# Mount Remote Storage
+
+## Mount on Linux/macOS/BSD
 
 Rclone mount allows mounting any Rclone storage as a file system and enables you to work with it the way you work with files and folders on your operating system. It is not necessary, but it makes browsing the storage easier.
 
@@ -154,13 +156,17 @@ analysis  drivers  forecasts  log  restart  scores  targets
 
 **Note:** `rclone mount` doesn't stop until you kill it. Adding `&` to the end of the command makes it run in the background.
 
-## Mount in Read-only Mode
+### Mount in Read-only Mode
 
 If you just need read-only access to the remote storage, mount t in read-only mode to prevent accidental alteration to the files and directories:
 
 ```bash
 $ rclone mount --read-only s3flare: ~/s3flare-directory &
 ```
+
+## Mount on Windows
+
+Follow the official documentation for [rclone mount on Windows](https://rclone.org/commands/rclone_mount/#installing-on-windows).
 
 # Need more details?
 
