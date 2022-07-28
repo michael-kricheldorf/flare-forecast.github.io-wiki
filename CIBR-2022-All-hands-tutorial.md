@@ -205,7 +205,7 @@ With your code repository set up and YAML configuration file created as per acti
 
 After setting up these variables, the file needs to be saved as `tutorial_<yourname>.json`.
 To start the retroactive run, send the JSON file to Yun-Jung (y.ku@ufl.edu). 
-She will dispatch the run of a batch of 30 days as configured, using code from your repo with variables that you set up.
+She will dispatch the run of a batch of 35 days as configured, using code from your repo with variables that you set up.
 You will be able to check the results in the S3 bucket as the runs complete, as per activity 2. Files associated with you your runs will have `tutorial_<yourname>` in the name.
 
 # Q&A time
