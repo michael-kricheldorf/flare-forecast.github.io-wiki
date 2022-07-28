@@ -11,7 +11,7 @@ In this tutorial, you will learn:
 * How to request execution of your retroactive run
 * How to view and download results
 
-Participants are encouraged to go over the tutorial on their own desktops during the tutorial, in particular if they plan to do this for their research in the future. Participants may also follow along the screen-shared tutorial on Zoom if they do not run it themselves.
+Participants are encouraged to go over the tutorial on their own personal computers during the tutorial, in particular if they plan to do this for their research in the future. Participants may also follow along the screen-shared tutorial on Zoom if they do not run it themselves.
 
 # Pre-requisites and installation
 
