@@ -6,7 +6,7 @@ In this tutorial, you will learn:
 
 * An overview of the workflow, in particular: where the code, data, and configuration reside, and how the execution takes place using containers
 * How to navigate data used by the workflow stored in cloud storage - S3 buckets
-* How to create your own "starter lake" by forking from an existing lake
+* How to create your own "starter lake" by starting from an existing lake template
 * How to configure the various aspects of your retroactive run
 * How to request execution of your retroactive run
 * How to view and download results
