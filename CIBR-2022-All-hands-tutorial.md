@@ -55,6 +55,8 @@ The actual batch jobs (i.e. where FLARE, GLM run) currently take place in Jetstr
 
 # Activity 1: prerequisite double-check
 
+Do you have your GitHub account ready? Have you been able to install and configure Rclone successfully? Time to check on everyone to make sure you have your setup ready to move forward
+
 # Activity 2: browsing FLARE S3 bucket
 
 The s3flare S3 bucket has several folders where data for different lakes/forecast runs are stored. Here is an overview of the important folders you need to be aware of:
