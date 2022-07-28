@@ -158,13 +158,13 @@ configure_obs: observation_processing.yml
 use_s3: TRUE
 ```
 
-**restart_file:** indicates the name of the latest forecast file if it is warm start. `.na` means a cold start.
+**restart_file:** indicates the name of the latest forecast file if it is warm start. For a cold start, it is `.na`.
 
-**start_datetime:** indicates historical data assimilation start date and time. For this tutorial, we set it to `2022-06-25 00:00:00`.
+**start_datetime:** indicates historical data assimilation start date and time. For this tutorial, we set it to `2022-06-25 00:00:00`. It is usually one day before "forecast_start_datetime".
 
 **end_datetime:** indicates historical data assilmilation end date and time.
 
-**forecast_start_datetime:** indicates forecast start date and time. For this tutorial, we set it to `2022-06-26 00:00:00`.
+**forecast_start_datetime:** indicates forecast start date and time. For this tutorial, we set it to `2022-06-26 00:00:00`. For a cold start, it should be at least a few days before the actual date you are considering for the forecast since the first few days' outputs are not accurate.
 
 **forecast_horizon:** indicates the length of time in days into the future for which forecasts are to be generated. Since FCRE forecasts currently uses NOAA 16-day forecasts as one of the drivers, for this tutorial, we set it to `16.0`.
 
@@ -201,7 +201,7 @@ With your code repository set up and YAML configuration file created as per acti
 * "configure_run" is the name of the YAML configuration file you edited in your GitHub repo in activity 4, i.e. where dates were defined.
 * "config_set", "function" specify the FLARE config_set and which FLARE function to run (we'll use 'default' and '0' for this tutorial).
 * "use_https", "aws_default_region", and "aws_s3_endpoint" specify S3-related configuration: whether to use https, which S3 region to use, and which S3 server to connect. For most (if not all) CIBR runs, these will all be "TRUE", "s3", and "flare-forecast.org", so you are unlikely to ever need to change these.
-* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set to "35" and the "forecast_start_date" is "2022/06/26" (defined in the "configure_flare.yml" as per the previous activity), there were results in 35 days in the S3 buckets.
+* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set to "35" and the "forecast_start_datetime" is "2022/06/26 00:00:00" (defined in the "configure_flare.yml" as per the previous activity), there were results in 35 days in the S3 buckets.
 
 After setting up these variables, the file needs to be saved as `tutorial_<yourname>.json`.
 To start the retroactive run, send the JSON file to Yun-Jung (y.ku@ufl.edu). 
