@@ -139,14 +139,14 @@ In a real usage scenario, you would now work on the code to customize FLARE for 
 1- Edit the following file in your newly created repository by browsing to `configuration` then `default`:
   - `configuration/default/configure_run.yml`
 
-2- Apply the changes to the `configure_run.yml` by following the template below - the lines you need to worry about are highlighted:
+2- Apply the changes to the `configure_run.yml` by following the template below - the line you need to worry about is highlighted:
 
 ```yaml
 restart_file: .na
-start_datetime: 2022-06-01 00:00:00 # Update this line
+start_datetime: 2022-06-25 00:00:00
 end_datetime: .na
-forecast_start_datetime: 2022-06-02 00:00:00 # Update this line
-forecast_horizon: 16.0 # Update this line
+forecast_start_datetime: 2022-06-26 00:00:00
+forecast_horizon: 16.0
 sim_name: tutorial_<yourname> # Update this line
 configure_flare: configure_flare.yml
 configure_obs: observation_processing.yml
@@ -155,13 +155,13 @@ use_s3: TRUE
 
 **restart_file:** indicates the name of the latest forecast file if it is warm start. `.na` means a cold start.
 
-**start_datetime:** indicates historical data assimilation start date and time. For this tutorial, we set it to `2022-06-01 00:00:00`.
+**start_datetime:** indicates historical data assimilation start date and time. For this tutorial, we set it to `2022-06-25 00:00:00`.
 
 **end_datetime:** indicates historical data assilmilation end date and time.
 
-**forecast_start_datetime:** indicates forecast start date and time. For this tutorial, we set it to `2022-06-02 00:00:00`.
+**forecast_start_datetime:** indicates forecast start date and time. For this tutorial, we set it to `2022-06-26 00:00:00`.
 
-**forecast_horizon:** indicates the length of time in days into the future for which forecasts are to be generated. Since FCRE forecasts currently uses NOAA 16-day forecasts as one of the drivers, for this tutorial, we set it to `16.0`
+**forecast_horizon:** indicates the length of time in days into the future for which forecasts are to be generated. Since FCRE forecasts currently uses NOAA 16-day forecasts as one of the drivers, for this tutorial, we set it to `16.0`.
 
 **sim_name:** indicates the simulation name which is being used to distinguish different forecast runs. The forecast outputs are categorized in different directories based on this key. For this tutorial, we set it to `tutorial_<yourname>`. This customizes the run so for you, separates your files from other people's files, and enables you to check on the results later.
 
