@@ -174,7 +174,7 @@ use_s3: TRUE
 
 **configure_obs:** indicates the name of the observation processing configuration file.
 
-**use_s3:** identifies whether we want to use S3 storage to store forecast outputs or not. If set to `FALSE`, the outputs will store locally, otherwise, when set to `TRUE`, all the outputs will be transferred to the S3 storage.
+**use_s3:** identifies whether we want to use S3 storage to store forecast outputs or not. If set to `FALSE`, the outputs will be stored locally, otherwise, when set to `TRUE`, all the outputs will be transferred to the S3 storage.
 
 The above configuration is set for running the forecasts starting June 26, 2022.
 
