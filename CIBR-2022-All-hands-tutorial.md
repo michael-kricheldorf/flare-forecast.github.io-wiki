@@ -13,6 +13,10 @@ In this tutorial, you will learn:
 
 Participants are encouraged to go over the tutorial on their own personal computers during the tutorial, in particular if they plan to do this for their research in the future. Participants may also follow along the screen-shared tutorial on Zoom if they do not run it themselves.
 
+# Tutorial Goal
+
+We want to run FLARE forecast for FCRE, but instead of forecasting into the future, we want to run the forecast on the historical data in the past. The period we are considering is July 01, 2022 to Jul 30, 2022 (30 days), and we want to do a cold start. It means that we do not have any prior forecast as the starting point or warm start. In a cold start, the forecast outputs for the first days are considered inaccurate. So, in order to have accurate results for the period, we should start the forecast a few days earlier, and ignore the first forecast results in our analysis. We plan to start the forecasts 5 days eralier on Jun 26, 2022 and run it for 35 days.
+
 # Pre-requisites and installation
 
 To follow this tutorial, you will need:
