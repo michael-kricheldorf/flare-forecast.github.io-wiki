@@ -59,11 +59,13 @@ The actual batch jobs (i.e. where FLARE, GLM run) currently take place in Jetstr
 
 Do you have your GitHub account ready? Have you been able to install and configure Rclone successfully? Time to check on everyone to make sure you have your setup ready to move forward.
 
-# Activity 2: browsing FLARE S3 bucket
+# Activity 2: browsing FLARE S3 storage
 
-The s3flare S3 bucket has several folders where data for different lakes/forecast runs are stored. Here is an overview of the important folders you need to be aware of:
+The s3flare S3 storage has several buckets where data for different lakes/forecast runs are stored. Here is an overview of the important buckets you need to be aware of:
 
 ## drivers
+
+This bucket stores NOAA forecasts and inflow/outflow data, .csv (output of FLARE function 2). Example:
 
 ```bash
 $ rclone lsf s3flare:drivers/noaa
@@ -76,15 +78,13 @@ NOAAGEFS_6hr_stacked/
 NOAAGEFS_raw/
 ```
 
-Outflow data, .csv (output of FLARE function 2). Example:
-
 ```bash
 $ rclone lsf s3flare:drivers/inflow
 FLOWS-NOAAGEFS-AR1/
 ```
 
 ## targets
-Processed data from NOAA and observational data, both .csv and NetCDF (output of FLARE function 1). Example:
+This bucket stores processed data from NOAA and observational data, both .csv and NetCDF (output of FLARE function 1). Example:
 
 ```bash
 $ rclone lsf s3flare:targets/[lakecode]
@@ -94,7 +94,7 @@ observed-met_fcre.nc
 ```
 
 ## restart
-This stores the YML run configuration file (configure_run.yml) for the next run. There is a folder per sim_name. (output of FLARE function 3). Example:
+This bucket stores YAML run configuration files ("configure_run.yml") for the next runs. There is a folder per "sim_name". (output of FLARE function 3). Example:
 
 ```bash
 $ rclone lsf s3flare:restart/[lakecode]/[sim_name]
@@ -102,7 +102,7 @@ configure_run.yml
 ```
 
 ## forecasts
-This stores the forecast outputs (output of FLARE function 3). Each file name (xml, NetCDF) has prefix [lakecode]_[sim_name]. Example:
+This bucket stores forecast outputs (output of FLARE function 3). Each file name (XML, NetCDF) has prefix [lakecode]_[sim_name]. Example:
 
 ```bash
 $ rclone lsf s3flare:forecasts/[lakecode]
@@ -115,7 +115,8 @@ fcre_test5_H_2021_07_01_2021_09_01_F_0_20220114T010805.xml
 ```
 
 ## analysis
-Graphical outputs of forecasts (output of FLARE function 4). Each file name (pdf) has prefix [lakecode]_[sim_name]. Example:
+
+This bucket stores graphical outputs of forecasts (output of FLARE function 4). Each file name (pdf) has prefix [lakecode]_[sim_name]. Example:
 
 ```bash
 $ rclone lsf s3flare:analysis/[lakecode]
@@ -177,7 +178,7 @@ use_s3: TRUE
 
 The above configuration is set for running the forecasts starting June 26, 2022.
 
-This is a configuration for "cold-starting", with no forecast history (`restart_file: .na`). So keep in mind that the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored. When you configure your forecast retroactive runs, keep in mind to plan for this "ramp-up" period as you configure the yml file.
+This is a configuration for "cold-starting", with no forecast history (`restart_file: .na`). So keep in mind that the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored. When you configure your forecast retroactive runs, keep in mind to plan for this "ramp-up" period as you configure the YAML file.
 
 # Activity 4: creating and submitting JSON configuration file
 With your code repository set up and YAML configuration file created as per activity 3, the next step is to create a JSON file that is used to provide the necessary information for the retroactive batch run. Here is the template of the JSON file for a retroactive run:
@@ -213,9 +214,9 @@ You will be able to check the results in the S3 bucket as the runs complete, as 
 
 While in this tutorial we've gone through setting up a batch of retroactive forecast runs, the approach is fairly similar to run a daily operational forecast. The key difference is that, in retroactive batch mode, forecasts run “back-to-back” on data from the past, where as in operational mode, forecasts run daily at a configurable time (or multiple times daily, if needed) on current data. In summary, to setup a daily forecast:
 
-* You need your own code repository, configured for your lake, as we did in this tutorial
-* You need to ensure drivers and observational data are available for your lake (from S3 or GitHub)
-* You need to produce and submit a pull request for a JSON configuration file describing your forecast
+* You need your own code repository, configured for your lake, as we did in this tutorial.
+* You need to ensure drivers and observational data are available for your lake (from S3 or GitHub).
+* You need to produce and submit a pull request for a JSON configuration file describing your forecast.
 
 [This page provides a detailed how-to if you are interested](https://github.com/FLARE-forecast/deployed-forecasts/blob/master/README.md)
 
