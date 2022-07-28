@@ -24,13 +24,15 @@ To help ensure a smooth tutorial, please go over these steps before the workshop
 
 ## GitHub account
 
-If you don't already have one, please create a GitHub account, and come to the tutorial already signed in to GitHub.. 
+If you don't already have one, please create a GitHub account, and come to the tutorial already signed in to GitHub.
 
 ## Installing Rclone
 
 Rclone is a free S3 client that works with multiple cloud storage technologies - including MinIO, which we use in CIBR. It is supported for Windows, macOS, and Linux. You need to install this software in your computer, so you can browse CIBR S3 buckets.
 
-Please [follow the steps in this page to install and configure Rclone](Manage-Files-on-S3-Using-Rclone). Note: for this tutorial, you only need read-only access - so it is ok to leave the `access_key_id` and `secret_access_key` blank when configuring Rclone.
+Please [follow the steps in this page to install and configure Rclone](Manage-Files-on-S3-Using-Rclone).
+
+**Note:** For this tutorial, you only need read-only access - so it is ok to leave the `access_key_id` and `secret_access_key` blank when configuring Rclone.
 
 If you have any difficulties installing/configuring Rclone, please contact Vahid prior to the tutorial.
 
