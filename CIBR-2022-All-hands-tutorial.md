@@ -1,6 +1,6 @@
 # Introduction and overview of tutorial
 
-During the 2022 CIBR virtual all-hands meeting, participants will go over a tutorial on how to configure and request execution of a set of retroactive forecast runs using FLARE. This is a capability that can facilitate CIBR researchers to execute batches of retroactive forecast runs. For example, let's say a researcher comes up with a new enhancement to the GLM model or FLARE data assimilation and would like to compare how it fares against a current approach using FCR as a case study. They will be able to use what they learned in this tutorial to run retroactive forecasts for FCR using current and new approach, say, for the entirety of 2020.
+During the 2022 CIBR virtual all-hands meeting, participants will go over a tutorial on how to configure and request execution of a set of retroactive forecast runs using FLARE. This is a capability that can facilitate CIBR researchers to execute batches of retroactive forecast runs. For example, let's say a researcher comes up with a new enhancement to the GLM model or FLARE data assimilation and would like to compare how it fares against a current approach using FCRE as a case study. They will be able to use what they learned in this tutorial to run retroactive forecasts for FCR using current and new approach, say, for the entirety of 2020.
 
 In this tutorial, you will learn:
 
