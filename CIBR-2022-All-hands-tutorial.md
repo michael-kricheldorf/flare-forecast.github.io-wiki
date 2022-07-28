@@ -217,4 +217,15 @@ While in this tutorial we've gone through setting up a batch of retroactive fore
 
 # Activity 5: checking your outputs
 
+Use the Rclone commands from activity 2 to inspect outputs in the S3 bucket. Your forecast/analysis outputs will have tutorial_<yourname> 
+
+Note that it's likely your retroactive jobs are still running while you do this, and you may only see outputs for a few days in the meantime.
+
 # Discussion: improvements, next steps
+
+Some ideas/questions for discussion:
+
+* Will you have use for this system in your research?
+* What do you think could be improved in this process to fit your research workflow?
+* What were the parts of this process that were the least clear to you?
+* Do you think users outside the CIBR project would be able to use this?
