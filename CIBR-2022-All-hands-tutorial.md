@@ -199,11 +199,11 @@ With your code repository set up and YAML configuration file created as per acti
 * "forecast_code_repo" is the full URL link to your GitHub repository which you have created and configured earlier in activity 3.
 * "forecast_code_branch" is the variable which points to the branch of your GitHub repository (typically main, but you can configure a different branch if needed).
 * "configure_run" is the name of the YAML configuration file you edited in your GitHub repo in activity 4, i.e. where dates were defined.
-* "config_set", "function" specify the FLARE config_set and which FLARE function to run (we'll use 'default' and '0' for this tutorial)
-* "use_https", "aws_default_region", and "aws_s3_endpoint" specify S3-related configuration: whether to use https, which S3 region to use, and which S3 server to connect. For most (if not all) CIBR runs, these will all be "TRUE", "s3", and "flare-forecast.org", so you are unlikely to ever need to change these
+* "config_set", "function" specify the FLARE config_set and which FLARE function to run (we'll use 'default' and '0' for this tutorial).
+* "use_https", "aws_default_region", and "aws_s3_endpoint" specify S3-related configuration: whether to use https, which S3 region to use, and which S3 server to connect. For most (if not all) CIBR runs, these will all be "TRUE", "s3", and "flare-forecast.org", so you are unlikely to ever need to change these.
 * "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set to "35" and the "forecast_start_date" is "2022/06/26" (defined in the "configure_flare.yml" as per the previous activity), there were results in 35 days in the S3 buckets.
 
-After setting up these variables, the file needs to be save as ```tutorial_<yourname>.json```.
+After setting up these variables, the file needs to be save as `tutorial_<yourname>.json`.
 To start the retroactive run, send the json file to Yun-Jung (y.ku@ufl.edu). 
 She will dispatch the run of a batch of 30 days as configured, using code from your repo with variables that you set up.
 You will be able to check the results in the S3 bucket as the runs complete, as per activity 2. Files associated with you your runs will have tutorial_<yourname> in the name.
@@ -222,7 +222,7 @@ While in this tutorial we've gone through setting up a batch of retroactive fore
 
 # Activity 5: checking your outputs
 
-Use the Rclone commands from activity 2 to inspect outputs in the S3 bucket. Your forecast/analysis outputs will have tutorial_<yourname> 
+Use the Rclone commands from activity 2 to inspect outputs in the S3 bucket. Your forecast/analysis outputs will have tutorial_<yourname>.
 
 Note that it's likely your retroactive jobs are still running while you do this, and you may only see outputs for a few days in the meantime.
 
