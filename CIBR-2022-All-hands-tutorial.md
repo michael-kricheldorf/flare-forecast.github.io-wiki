@@ -171,7 +171,7 @@ use_s3: TRUE
 
 **use_s3:** identifies whether we want to use S3 storage to store forecast outputs or not. If set to `FALSE`, the outputs will store locally, otherwise, when set to `TRUE`, all the outputs will be transferred to the S3 storage.
 
-The above configuration is set for running the forecasts starting June 01, 2022.
+The above configuration is set for running the forecasts starting June 26, 2022.
 
 This is a configuration for "cold-starting", with no forecast history (`restart_file: .na`). So keep in mind that the forecast outputs and results for the first few days, let's say 5 days, are not accurate and should be ignored. When you configure your forecast retroactive runs, keep in mind to plan for this "ramp-up" period as you configure the yml file.
 
