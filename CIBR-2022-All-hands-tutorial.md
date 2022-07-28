@@ -192,7 +192,7 @@ With your code repository set up and YAML configuration file created as per acti
   "use_https": "TRUE",
   "aws_default_region": "s3",
   "aws_s3_endpoint": "flare-forecast.org",
-  "number_of_runs": 30
+  "number_of_runs": 35
 }
 ```
 ### Variables Explanation
@@ -201,7 +201,7 @@ With your code repository set up and YAML configuration file created as per acti
 * "configure_run" is the name of the YAML configuration file you edited in your GitHub repo in activity 4, i.e. where dates were defined.
 * "config_set", "function" specify the FLARE config_set and which FLARE function to run (we'll use 'default' and '0' for this tutorial)
 * "use_https", "aws_default_region", and "aws_s3_endpoint" specify S3-related configuration: whether to use https, which S3 region to use, and which S3 server to connect. For most (if not all) CIBR runs, these will all be "TRUE", "s3", and "flare-forecast.org", so you are unlikely to ever need to change these
-* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set as 30 and the start date is 2022/06/01 (defined in the configure_flare.yml as per the previous activity), there were results in 30 days in the S3 buckets.
+* "number_of_runs" is the variable which set the period of observed days. For example, if "number_of_runs" is set to "35" and the "forecast_start_date" is "2022/06/26" (defined in the "configure_flare.yml" as per the previous activity), there were results in 35 days in the S3 buckets.
 
 After setting up these variables, the file needs to be save as ```tutorial_<yourname>.json```.
 To start the retroactive run, send the json file to Yun-Jung (y.ku@ufl.edu). 
