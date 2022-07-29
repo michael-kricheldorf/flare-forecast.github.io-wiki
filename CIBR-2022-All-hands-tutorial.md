@@ -36,7 +36,7 @@ Rclone is a free S3 client that works with multiple cloud storage technologies -
 
 Please [follow the steps in this page to install and configure Rclone](Manage-Files-on-S3-Using-Rclone).
 
-**Note:** For this tutorial, you only need read-only access - so it is ok to leave the `access_key_id` and `secret_access_key` blank when configuring Rclone.
+**Note: For this tutorial, you only need read-only access - so please make sure leave the `access_key_id` and `secret_access_key` blank when configuring Rclone. As a best practice, you should be using Rclone to only browse/read files unless you have a strong reason otherwise. This is to avoid the possibility of unintentional data deletion/corruption.**
 
 If you have any difficulties installing/configuring Rclone, please contact Vahid prior to the tutorial.
 
