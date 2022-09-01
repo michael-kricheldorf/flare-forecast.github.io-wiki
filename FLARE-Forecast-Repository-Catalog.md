@@ -5,182 +5,298 @@
 
 ## Data Repositories
 
-### FLARE-forecast/FCRE-data  
-Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir, VA, USA  
+
+### FLARE-forecast/FCRE-data
+
+Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir, VA, USA
+
 
 #### Branches
-**bita-logs:** Gateway logs for Bita, currently located at FCR weir  
-**carina-logs:** Gateway logs for Carina, currently located at FCR metstation  
-**fcre-catwalk-data:** Sensor data and logs for FCR catwalk  
-**fcre-manual-data:** Manually downloaded data from FCR data loggers  
-**fcre-metstation-data:** Sensor data and logs for FCR metstation  
-**fcre-weir-data:** Sensor data and logs for FCR weir  
-**master:** FCR GitHub Workflows and gateways and branches status updates  
-**mia-logs:** Gateway logs for Mia, currently located at FCR catwalk  
-**wvwa-generate-graphs:** GitHub Actions for generating graphs for West Virginia Water Authority reservoirs, FCR, BVR, and CCR  
-**wvwa-graphs:** GitHub Action generated graphs for West Virginia Water Authority reservoirs, FCR, BVR, and CCR  
 
-### FLARE-forecast/BVRE-data  
-Sensor data, sensor logs, and gateway logs for Beaverdam Reservoir, VA, USA  
+**bita-logs:** Gateway logs for Bita, currently located at FCRE weir
+
+**carina-logs:** Gateway logs for Carina, currently located at FCRE metstation
+
+**fcre-catwalk-data:** Sensor data and maintenance log for FCRE catwalk
+
+**fcre-manual-data:** Intermediary data for running FLARE forecast for FCRE (Archived)
+
+**fcre-metstation-data:** Sensor data and maintenance log for FCRE metstation
+
+**fcre-weir-data:** Sensor data and maintenance log for FCRE weir
+
+**master:** FCRE GitHub Workflows and gateways and branches status updates
+
+**mia-logs:** Gateway logs for Mia, currently located at FCRE catwalk
+
+**wvwa-generate-graphs:** GitHub Actions for generating graphs for West Virginia Water Authority reservoirs, FCRE, BVRE, and CCRE which contains the R script to generate the graphs
+
+**wvwa-graphs:** GitHub Action generated graphs for West Virginia Water Authority reservoirs, FCRE, BVRE, and CCRE
+
+
+### FLARE-forecast/BVRE-data
+
+Sensor data, sensor logs, and gateway logs for Beaverdam Reservoir, VA, USA
+
 
 #### Branches
-**bjorn-logs:** Gateway logs for Bjorn, currently located at BVR platform  
-**bvre-manual-downloads:** Manually downloaded data from BVR data loggers  
-**bvre-platform-data:** Sensor data and logs for BVR platform  
-**master:** BVR GitHub Workflows and gateways and branches status updates  
 
-### FLARE-forecast/SUNP-data  
-Sensor data, sensor logs, and gateway logs for Lake Sunapee, NH, USA  
+**bjorn-logs:** Gateway logs for Bjorn, currently located at BVRE platform
+
+**bvre-platform-data:** Sensor data and maintenance log for BVRE platform
+
+**master:** BVRE GitHub Workflows and gateways and branches status updates
+
+
+### FLARE-forecast/SUNP-data
+
+Sensor data, sensor logs, and gateway logs for Lake Sunapee, NH, USA
+
 
 #### Branches
-**lspa-computer-logs:**  
-**master:** SUNP GitHub Workflows  
-**sunp-buoy-data:**  
-**sunp-generate-graphs:**  
-**sunp-graphs:**  
 
-### FLARE-forecast/CCRE-data  
-#### Branches
-**annie-logs:**  
-**ccre-dam-data:**  
-**main:**  
+**lspa-computer-logs:** Git logs for LSPA computer
 
-### FLARE-forecast/NEON-nonDP-data  
+**master:** Lake Sunapee GitHub workflows
+
+**sunp-buoy-data:** Sensor data for SUNP buoy
+
+**sunp-generate-graphs:** GitHub Actions for generating graphs for SUNP which contains the R script to generate the graphs
+
+**sunp-graphs:** GitHub Action generated graphs for SUNP
+
+
+### FLARE-forecast/CCRE-data
+
+Sensor data, sensor logs, and gateway logs for Carvins Cove Reservoir, VA, USA
+
+
 #### Branches
-**master:**  
+
+**annie-logs:** Gateway logs for Annie, currently located at CCRE dam
+
+**ccre-dam-data:** Sensor data and maintenance logs for CCRE dam
+
+**main:**
 
 
 ## Forecast Repositories
 
-### FLARE-forecast/FLAREv1  
-#### Branches
-**dev:**  
-**master:**  
 
-### FLARE-forecast/Rnoaa4cast  
-#### Branches
-**cleaning_up:**  
-**master:**  
+### FLARE-forecast/FLAREv1 (Archived)
 
-### FLARE-forecast/FLAREr  
-#### Branches
-**master:**  
-### FLARE-forecast/flare_lake_examples  
-#### Branches
-**glm:**  
-**master:**  
+Old Smart and Connected Communities FLARE (used in Thomas et al. 2020)
 
-### FLARE-forecast/CRAM-forecast  
-#### Branches
-**main:**  
-
-### FLARE-forecast/rNOMADS  
-#### Branches
-**main:**  
-
-### FLARE-forecast/FCR-GLM-forecast  
-#### Branches
-**main:**  
-
-### FLARE-forecast/BARC-forecast  
-#### Branches
-**master:**  
-
-### FLARE-forecast/SUGG-forecast  
-#### Branches
-**master:**  
-
-### FLARE-forecast/PRPO-forecast  
-#### Branches
-**master:**  
-
-### FLARE-forecast/LIRO-forecast  
-#### Branches
-**master:**  
-
-### FLARE-forecast/GLM3r  
-#### Branches
-**master:**  
-**v3.1.0a3-2:**  
-**v3.1.0a3:**  
-**v3.1.0:**  
-**v3.1.1:**  
-**v3.1.2_nogd:**  
-**v3.2:**  
-
-### FLARE-forecast/PRLA-forecast  
-#### Branches
-**master:**  
-
-### FLARE-forecast/SUNP-forecast-code  
-#### Branches
-**latest:**  
-**main:**  
-
-### FLARE-forecast/NEON-forecast-code  
-#### Branches
-**main:**  
-
-### FLARE-forecast/FCRE-forecast-code  
-#### Branches
-**latest:**  
-**main:**  
-
-### FLARE-forecast/BVRE-forecast-code  
-#### Branches
-**master:**  
-
-### FLARE-forecast/FEEA-forecast  
-#### Branches
-**main:**  
-
-### FLARE-forecast/LAKE-forecast-code  
-#### Branches
-**main:**  
-
-### FLARE-forecast/flaretools  
-#### Branches
-**master:**  
-
-### FLARE-forecast/FLARE-forecast-analysis  
-#### Branches
-**master:**  
-
-### FLARE-forecast/deployed-forecasts  
-#### Branches
-**master:**  
-
-### FLARE-forecast/FLARErLER  
-#### Branches
-**main:**  
-
-### FLARE-forecast/FCRE_LER-forecast-code  
-#### Branches
-**main:**  
-
-### FLARE-forecast/FCRE-dashboard  
-Code for shiny dashboard for Falling Creek Reservoir, VA, USA
 
 #### Branches
-**master:**  
+
+**dev:** Development branch
+
+**master:** Old Smart and Connected Communities FLARE (used in Thomas et al. 2020)
+
+
+### FLARE-forecast/Rnoaa4cast
+
+Rnoaa4cast R package for downloading and processing NOAA GEFS and CFS forecasts
+
+
+#### Branches
+
+**cleaning_up:**
+
+**master:** Rnoaa4cast R package for downloading and processing NOAA GEFS and CFS forecasts
+
+
+### FLARE-forecast/FLAREr
+
+FLAREr R package
+
+
+#### Branches
+
+**master:** FLAREr R package
+
+
+### FLARE-forecast/rNOMADS
+
+A fork of rNOMADS package tweaked for more robust NOAA forecast downloads
+
+
+#### Branches
+
+**main:** A fork of rNOMADS package tweaked for more robust NOAA forecast downloads
+
+
+### FLARE-forecast/GLM3r
+
+GLM3r R package used in FLARE
+
+
+#### Branches
+
+**master: latest GLM-AED binaries **
+
+**V3.1.0a3-2: old version**
+
+**v3.1.0a3:old version**
+
+**V3.1.0: old version**
+
+**V3.1.1: old version**
+
+**V3.1.2_nogd: old version**
+
+**V3.2: old version**
+
+**V.3.3: Current version (the binaries are all the same for linux/mac/windows)**
+
+
+### FLARE-forecast/SUNP-forecast-code
+
+Codebase for running FLARE forecast for Lake Sunapee, NH, USA
+
+
+#### Branches
+
+**latest:** The latest stable and fully tested version of the code for running in production
+
+**main:** The most recent version of the code
+
+
+### **FLARE-forecast/NEON-forecast-code**
+
+The code for Thomas et al 2022 NEON Lakes paper (the “official” version is in rqthomas organization)
+
+
+#### Branches
+
+**main: The code for Thomas et al 2022 NEON Lakes paper (the “official” version is in rqthomas organization)**
+
+
+### FLARE-forecast/FCRE-forecast-code
+
+Codebase for running FLARE forecast for Falling Creek Reservoir, VA, USA
+
+
+#### Branches
+
+**latest:** The latest stable and fully tested version of the code for running in production
+
+**main:** The most recent version of the code
+
+
+### FLARE-forecast/BVRE-forecast-code
+
+Codebase for running FLARE forecast for Beaverdam Reservoir, VA, USA
+
+
+#### Branches
+
+**master:** Codebase for running FLARE forecast for Beaverdam Reservoir, VA, USA
+
+
+### FLARE-forecast/LAKE-forecast-code
+
+The template codebase based on FCRE-forecast-code for running FLARE forecast
+
+
+#### Branches
+
+**main:** The template codebase based on FCRE-forecast-code for running FLARE forecast
+
+
+### FLARE-forecast/flaretools
+
+Merge into **miscellaneous**
+
+
+#### Branches
+
+**master:**
+
+
+### FLARE-forecast/deployed-forecasts
+
+User-customized JSON configuration files for automatic deployment of FLARE forecast on IBM Cloud Functions
+
+
+#### Branches
+
+**master:** User-customized JSON configuration files for automatic deployment of FLARE forecast on IBM Cloud Functions
+
+
+### FLARE-forecast/FLARErLER
+
+The R package that extends FLAREr to run LER
+
+
+#### Branches
+
+**main: The R package that extends FLAREr to run LER**
+
+
+### FLARE-forecast/FCRE_LER-forecast-code
+
+Codebase for running LER at FCRE
+
+
+#### Branches
+
+**main:** 
+
+
+### FLARE-forecast/FCRE-dashboard
+
+Codebase for shiny dashboard for Falling Creek Reservoir, VA, USA
+
+
+#### Branches
+
+**master:** Codebase for shiny dashboard for Falling Creek Reservoir, VA, USA
 
 
 ## Cyberinfrastructure Repositories
 
-### FLARE-forecast/FLARE-containers  
-#### Branches
-**master:**  
 
-### FLARE-forecast/CIBR  
-#### Branches
-**decision-trees:**  
-**main:**  
-**scripts:**  
+### FLARE-forecast/FLARE-containers
 
-### FLARE-forecast/flare-forecast.github.io  
-#### Branches
-**master:**  
+Codebase for various containers used in FLARE forecast
 
-### FLARE-forecast/miscellaneous  
+
 #### Branches
-**master:**  
+
+**master:** Codebase for various containers used in running FLARE forecast
+
+
+### FLARE-forecast/CIBR
+
+Miscellaneous content for CIBR project
+
+
+#### Branches
+
+**decision-trees:** Decision trees for sensor gateway troubleshooting
+
+**main:**
+
+**scripts:** Miscellaneous scripts for CIBR project
+
+
+### FLARE-forecast/flare-forecast.github.io
+
+Website and wiki for FLARE forecast
+
+
+#### Branches
+
+**master:** Jekyll website for FLARE forecast
+
+
+### FLARE-forecast/miscellaneous
+
+Miscellaneous content for FLARE forecast
+
+
+#### Branches
+
+**master:** Miscellaneous content for FLARE forecast
