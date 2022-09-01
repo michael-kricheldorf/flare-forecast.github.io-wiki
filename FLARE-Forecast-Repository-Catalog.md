@@ -242,7 +242,7 @@ Codebase for running LER at FCRE
 
 #### Branches
 
-**main:** 
+**main:** Codebase for running LER at FCRE
 
 
 ### FLARE-forecast/FCRE-dashboard
