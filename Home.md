@@ -40,6 +40,7 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
+| [FLARE Forecast Repository Catalog](FLARE-Forecast-Repository-Catalog) | FLARE |
 | [Container Development Workflow](Development-Workflow) | Containers |
 | [OpenWhisk FLARE integration](Openwhisk-FLARE-integration) | OpenWhisk+FLARE |
 | [OpenWhisk FLARE deployment on Jetstream2](FLARE-OpenWhisk-setup-on-Jetstream2) | OpenWhisk+FLARE |
