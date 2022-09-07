@@ -29,7 +29,7 @@ Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir, VA, USA
 
 **mia-logs:** Gateway logs for Mia, currently located at FCRE catwalk
 
-**wvwa-generate-graphs:** GitHub Actions for generating graphs for West Virginia Water Authority reservoirs, FCRE, BVRE, and CCRE which contains the R script to generate the graphs
+**wvwa-generate-graphs:** R script to generate the graphs with GitHub Actions for West Virginia Water Authority reservoirs, FCRE, BVRE, and CCRE
 
 **wvwa-graphs:** GitHub Action generated graphs for West Virginia Water Authority reservoirs, FCRE, BVRE, and CCRE
 
@@ -61,7 +61,7 @@ Sensor data, sensor logs, and gateway logs for Lake Sunapee, NH, USA
 
 **sunp-buoy-data:** Sensor data for SUNP buoy
 
-**sunp-generate-graphs:** GitHub Actions for generating graphs for SUNP which contains the R script to generate the graphs
+**sunp-generate-graphs:** R script to generate the graphs with GitHub Actions for SUNP
 
 **sunp-graphs:** GitHub Action generated graphs for SUNP
 
