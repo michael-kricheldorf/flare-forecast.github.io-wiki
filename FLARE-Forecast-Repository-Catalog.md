@@ -6,7 +6,7 @@
 ## Data Repositories
 
 
-### FLARE-forecast/FCRE-data
+### [FLARE-forecast/FCRE-data](https://github.com/FLARE-forecast/FCRE-data)
 
 Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir, VA, USA
 
@@ -34,7 +34,7 @@ Sensor data, sensor logs, and gateway logs for Falling Creek Reservoir, VA, USA
 **wvwa-graphs:** GitHub Action generated graphs for West Virginia Water Authority reservoirs, FCRE, BVRE, and CCRE
 
 
-### FLARE-forecast/BVRE-data
+### [FLARE-forecast/BVRE-data](https://github.com/FLARE-forecast/BVRE-data)
 
 Sensor data, sensor logs, and gateway logs for Beaverdam Reservoir, VA, USA
 
@@ -48,7 +48,7 @@ Sensor data, sensor logs, and gateway logs for Beaverdam Reservoir, VA, USA
 **master:** BVRE GitHub Workflows and gateways and branches status updates
 
 
-### FLARE-forecast/SUNP-data
+### [FLARE-forecast/SUNP-data](https://github.com/FLARE-forecast/SUNP-data)
 
 Sensor data, sensor logs, and gateway logs for Lake Sunapee, NH, USA
 
@@ -66,7 +66,7 @@ Sensor data, sensor logs, and gateway logs for Lake Sunapee, NH, USA
 **sunp-graphs:** GitHub Action generated graphs for SUNP
 
 
-### FLARE-forecast/CCRE-data
+### [FLARE-forecast/CCRE-data](https://github.com/FLARE-forecast/CCRE-data)
 
 Sensor data, sensor logs, and gateway logs for Carvins Cove Reservoir, VA, USA
 
@@ -83,7 +83,7 @@ Sensor data, sensor logs, and gateway logs for Carvins Cove Reservoir, VA, USA
 ## Forecast Repositories
 
 
-### FLARE-forecast/FLAREv1 (Archived)
+### [FLARE-forecast/FLAREv1](https://github.com/FLARE-forecast/FLAREv1) (Archived)
 
 Old Smart and Connected Communities FLARE (used in Thomas et al. 2020)
 
@@ -95,7 +95,7 @@ Old Smart and Connected Communities FLARE (used in Thomas et al. 2020)
 **master:** Old Smart and Connected Communities FLARE (used in Thomas et al. 2020)
 
 
-### FLARE-forecast/Rnoaa4cast
+### [FLARE-forecast/Rnoaa4cast](https://github.com/FLARE-forecast/Rnoaa4cast)
 
 Rnoaa4cast R package for downloading and processing NOAA GEFS and CFS forecasts
 
@@ -107,7 +107,7 @@ Rnoaa4cast R package for downloading and processing NOAA GEFS and CFS forecasts
 **master:** Rnoaa4cast R package for downloading and processing NOAA GEFS and CFS forecasts
 
 
-### FLARE-forecast/FLAREr
+### [FLARE-forecast/FLAREr](https://github.com/FLARE-forecast/FLAREr)
 
 FLAREr R package
 
@@ -117,7 +117,7 @@ FLAREr R package
 **master:** FLAREr R package
 
 
-### FLARE-forecast/rNOMADS
+### [FLARE-forecast/rNOMADS](https://github.com/FLARE-forecast/rNOMADS)
 
 A fork of rNOMADS package tweaked for more robust NOAA forecast downloads
 
@@ -127,7 +127,7 @@ A fork of rNOMADS package tweaked for more robust NOAA forecast downloads
 **main:** A fork of rNOMADS package tweaked for more robust NOAA forecast downloads
 
 
-### FLARE-forecast/GLM3r
+### [FLARE-forecast/GLM3r](https://github.com/FLARE-forecast/GLM3r)
 
 GLM3r R package used in FLARE
 
@@ -151,7 +151,7 @@ GLM3r R package used in FLARE
 **V.3.3: Current version (the binaries are all the same for linux/mac/windows)**
 
 
-### FLARE-forecast/SUNP-forecast-code
+### [FLARE-forecast/SUNP-forecast-code](https://github.com/FLARE-forecast/SUNP-forecast-code)
 
 Codebase for running FLARE forecast for Lake Sunapee, NH, USA
 
@@ -163,7 +163,7 @@ Codebase for running FLARE forecast for Lake Sunapee, NH, USA
 **main:** The most recent version of the code
 
 
-### **FLARE-forecast/NEON-forecast-code**
+### [FLARE-forecast/NEON-forecast-code](https://github.com/FLARE-forecast/NEON-forecast-code)
 
 The code for Thomas et al 2022 NEON Lakes paper (the “official” version is in rqthomas organization)
 
@@ -173,7 +173,7 @@ The code for Thomas et al 2022 NEON Lakes paper (the “official” version is i
 **main: The code for Thomas et al 2022 NEON Lakes paper (the “official” version is in rqthomas organization)**
 
 
-### FLARE-forecast/FCRE-forecast-code
+### [FLARE-forecast/FCRE-forecast-code](https://github.com/FLARE-forecast/FCRE-forecast-code)
 
 Codebase for running FLARE forecast for Falling Creek Reservoir, VA, USA
 
@@ -185,7 +185,7 @@ Codebase for running FLARE forecast for Falling Creek Reservoir, VA, USA
 **main:** The most recent version of the code
 
 
-### FLARE-forecast/BVRE-forecast-code
+### [FLARE-forecast/BVRE-forecast-code](https://github.com/FLARE-forecast/BVRE-forecast-code)
 
 Codebase for running FLARE forecast for Beaverdam Reservoir, VA, USA
 
@@ -195,7 +195,7 @@ Codebase for running FLARE forecast for Beaverdam Reservoir, VA, USA
 **master:** Codebase for running FLARE forecast for Beaverdam Reservoir, VA, USA
 
 
-### FLARE-forecast/LAKE-forecast-code
+### [FLARE-forecast/LAKE-forecast-code](https://github.com/FLARE-forecast/LAKE-forecast-code)
 
 The template codebase based on FCRE-forecast-code for running FLARE forecast
 
@@ -205,7 +205,7 @@ The template codebase based on FCRE-forecast-code for running FLARE forecast
 **main:** The template codebase based on FCRE-forecast-code for running FLARE forecast
 
 
-### FLARE-forecast/flaretools
+### [FLARE-forecast/flaretools](https://github.com/FLARE-forecast/flaretools)
 
 Merge into **miscellaneous**
 
@@ -215,7 +215,7 @@ Merge into **miscellaneous**
 **master:**
 
 
-### FLARE-forecast/deployed-forecasts
+### [FLARE-forecast/deployed-forecasts](https://github.com/FLARE-forecast/deployed-forecasts)
 
 User-customized JSON configuration files for automatic deployment of FLARE forecast on IBM Cloud Functions
 
@@ -225,7 +225,7 @@ User-customized JSON configuration files for automatic deployment of FLARE forec
 **master:** User-customized JSON configuration files for automatic deployment of FLARE forecast on IBM Cloud Functions
 
 
-### FLARE-forecast/FLARErLER
+### [FLARE-forecast/FLARErLER](https://github.com/FLARE-forecast/FLARErLER)
 
 The R package that extends FLAREr to run LER
 
@@ -235,7 +235,7 @@ The R package that extends FLAREr to run LER
 **main: The R package that extends FLAREr to run LER**
 
 
-### FLARE-forecast/FCRE_LER-forecast-code
+### [FLARE-forecast/FCRE_LER-forecast-code](https://github.com/FLARE-forecast/FCRE_LER-forecast-code)
 
 Codebase for running LER at FCRE
 
@@ -245,7 +245,7 @@ Codebase for running LER at FCRE
 **main:** Codebase for running LER at FCRE
 
 
-### FLARE-forecast/FCRE-dashboard
+### [FLARE-forecast/FCRE-dashboard](https://github.com/FLARE-forecast/FCRE-dashboard)
 
 Codebase for shiny dashboard for Falling Creek Reservoir, VA, USA
 
@@ -258,7 +258,7 @@ Codebase for shiny dashboard for Falling Creek Reservoir, VA, USA
 ## Cyberinfrastructure Repositories
 
 
-### FLARE-forecast/FLARE-containers
+### [FLARE-forecast/FLARE-containers](https://github.com/FLARE-forecast/FLARE-containers)
 
 Codebase for various containers used in FLARE forecast
 
@@ -268,7 +268,7 @@ Codebase for various containers used in FLARE forecast
 **master:** Codebase for various containers used in running FLARE forecast
 
 
-### FLARE-forecast/CIBR
+### [FLARE-forecast/CIBR](https://github.com/FLARE-forecast/CIBR)
 
 Miscellaneous content for CIBR project
 
@@ -282,7 +282,7 @@ Miscellaneous content for CIBR project
 **scripts:** Miscellaneous scripts for CIBR project
 
 
-### FLARE-forecast/flare-forecast.github.io
+### [FLARE-forecast/flare-forecast.github.io](https://github.com/FLARE-forecast/flare-forecast.github.io)
 
 Website and wiki for FLARE forecast
 
@@ -292,7 +292,7 @@ Website and wiki for FLARE forecast
 **master:** Jekyll website for FLARE forecast
 
 
-### FLARE-forecast/miscellaneous
+### [FLARE-forecast/miscellaneous](https://github.com/FLARE-forecast/miscellaneous)
 
 Miscellaneous content for FLARE forecast
 
