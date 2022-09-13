@@ -37,3 +37,11 @@ Manually run forecasts:
 **Reason:** GitHub Action has not been run in the expected time on GitHub, usually due to GitHub server problems.
 
 **Potential Solution/Workaround:** Re-ran the GitHub Action and watch for the error logs.
+
+## Healthchecks.io Monitors
+
+### All the monitors are down at the same time.
+
+**Reason:** Monitor scripts have not been successfully executed in the expected time on JS2, usually due to JS2 network problems.
+
+**Potential Solution/Workaround:** 
