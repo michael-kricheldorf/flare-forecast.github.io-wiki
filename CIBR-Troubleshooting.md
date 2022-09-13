@@ -10,7 +10,7 @@
 
 #### How to troubleshoot
 
-On JS2 VM
+**On JS2 VM:**
 
 Check availability of NOAA forecasts:
 
@@ -44,4 +44,10 @@ Manually run forecasts:
 
 **Reason:** Monitor scripts have not been successfully executed in the expected time on JS2, usually due to JS2 network problems.
 
-**Potential Solution/Workaround:** 
+**Potential Solution/Workaround:** Check network connection on JS2 and wait for it to get resolved.
+
+**On JS2 VM:**
+
+```bash
+ping hc-ping.com
+```
