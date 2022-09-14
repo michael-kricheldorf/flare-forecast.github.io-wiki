@@ -104,7 +104,24 @@ Manually run forecasts:
 ~/applications/forecast/forecast-sunp.sh
 ```
 
+
+Example - suppose last forecast was for 9/14 data and 9/15 and 9/16 missing data, then data is back on 9/17:
+
+```
+restart_file: fcre-2022-09-14-fcre_js2.nc  <- don't change
+start_datetime: 2022-09-14 00:00:00     <- change to 09-16
+end_datetime: .na
+forecast_start_datetime: 2022-09-15 00:00:00    <- change to 09-17
+forecast_horizon: 16.0
+sim_name: fcre_js2
+configure_flare: configure_flare.yml
+configure_obs: observation_processing.yml
+use_s3: yes
+```
+
 ### Sensor Check Graphs are not attached to FCRE or SUNP daily emails
+
+Expected: 7 attachment for FCRE, 4 for SUNP
 
 **Reason:** GitHub Action has not been run in the expected time on GitHub, usually due to GitHub server problems.
 
