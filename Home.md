@@ -59,3 +59,10 @@ Links to pages are organized by audience and topic of interest in the following 
 | [OpenWhisk Setup](OpenWhisk-setup) | OpenWhisk |
 | [OpenWhisk helpful resources](OpenWhisk---helpful-resources) | OpenWhisk |
 | [OpenWhisk Alarm](Install-alarm-package-in-Openwhisk) | OpenWhisk |
+
+### Github Actions
+
+| Title | Topic |
+|---|---|
+| [Gateway Guidelines for Field Crew](Gateway-Guidelines-for-Field-Crew) | Github Actions |
+| [Gateway Troubleshooting](Gateway-Troubleshooting) | Github Actions |
