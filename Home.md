@@ -64,5 +64,5 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
-|  | Github Actions |
+| [Github Action for sending email](Github-Action-for-sending-email) | Github Actions |
 |  | Github Actions |
