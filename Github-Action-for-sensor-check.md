@@ -77,7 +77,7 @@
           rclone copy ${{ github.workspace }}/CCRWaterQualityDataFigures_$(date '+%Y-%m-%d').pdf s3flare:wvwa-graphs/outputs/
 ```
 
-7. Send email if there is a failure happened. Sender's email credentials is saved inside secrets.
+7. Send email if there is a failure happened. Sender's email credentials are saved inside secrets.
 ```yaml
 - name: Send mail
         if: ${{ failure() }}
@@ -99,4 +99,4 @@
           from: FLARE
 
 ```
-> "to" variable is used to fill up with receipents' email address.
+> "to" variable is used to fill with receipents' email address.
