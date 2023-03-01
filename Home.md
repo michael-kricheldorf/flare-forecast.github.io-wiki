@@ -64,5 +64,5 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
-| [Github Action for sending email](Github Action for sending email) | Github Actions |
-| [Gateway Troubleshooting](Gateway-Troubleshooting) | Github Actions |
+|  | Github Actions |
+|  | Github Actions |
