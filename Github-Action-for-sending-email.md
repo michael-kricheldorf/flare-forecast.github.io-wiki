@@ -1,7 +1,3 @@
-
-Github Action for sending email
-===
-
 ## Secrets required for Github Action
 * Set GMAIL_USERNAME variable
 > This variable is Sender's email account
