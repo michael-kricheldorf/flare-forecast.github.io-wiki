@@ -15,7 +15,7 @@ Edit yaml file
 #### The yaml file is used to include files attached in the email
 ##### *Take config-fcre.yml as example*
 
-```yaml=2
+```yaml
 gmail:
   username:
   password:
@@ -24,7 +24,7 @@ gmail:
 > "username" and "password" variables will be added by secrets when executing Github action. "From" variable is used as sender's name.
 
 
-```yaml=6
+```yaml
 email:
   sender: SCC
   subject: Daily FCR Forecast and Graphs
@@ -35,7 +35,7 @@ email:
 > "Body" variable will be shown as the content inside the email.
 
 
-```yaml=10
+```yaml
 attachments_web:
     - prefix: https://github.com/FLARE-forecast/flare-dashboard/raw/main/docs/fcre_files/figure-html/bvre-ice-1.png
       infix:
@@ -44,7 +44,7 @@ attachments_web:
 > "attachments_web" variable is used to attach files from the web.
 > 'Prefix', 'infix', and 'suffix' can be blank.
 
-```yaml=56
+```yaml
 attachments_local:
     - prefix:
       infix:
@@ -53,7 +53,7 @@ attachments_local:
 > "attachments_local" variable is used to attach files from local directories inside the container.
 > 'Prefix', 'infix', and 'suffix' can be blank.
 
-```yaml=57
+```yaml
 recipients:
     - 
 ```
@@ -61,7 +61,7 @@ recipients:
 
 ### Steps in Github Actions
 1. Put gmail account name and password from secrets into yaml files
-```yaml=14
+```yaml
       - name: Update gmail_username
         uses: fjogeleit/yaml-update-action@main
         with:
@@ -80,7 +80,7 @@ recipients:
 
 ```
 2. Log into Dockerhub by using credentials set up in secrets
-```yaml=33
+```yaml
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
@@ -89,7 +89,7 @@ recipients:
 
 ```
 3. Run send-email container by using 'docker run'
-```yaml=39
+```yaml
       - name: Run send-email container
         run: |
           docker run --rm -v ${{ github.workspace }}:/root/flare/config --env CONFIG_FILE="/root/flare/config/config-fcre.yml" yjungku/send-email:dev
