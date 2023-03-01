@@ -64,5 +64,5 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
-| [Gateway Guidelines for Field Crew](Gateway-Guidelines-for-Field-Crew) | Github Actions |
+| [Github Action for sending email](Github Action for sending email) | Github Actions |
 | [Gateway Troubleshooting](Gateway-Troubleshooting) | Github Actions |
