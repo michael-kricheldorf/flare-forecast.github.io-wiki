@@ -35,3 +35,10 @@ Or you can explicitly use it:
 ```Dockerfile
 RUN R -e "devtools::install_github('FLARE-forecast/FLAREr', auth_token = $GITHUB_PAT)"
 ```
+
+**Note:** To check the GitHub rate limit, you can use:
+
+```
+install.packages('gh')
+gh::gh_rate_limit(.token = '$GITHUB_PAT')
+```
