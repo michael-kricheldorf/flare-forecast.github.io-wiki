@@ -282,6 +282,13 @@ Install Git:
 sudo apt install -y git
 ```
 
+Increase the HTTP buffer and timeout limits to 500 MB and 10 minutes respectively:
+
+```
+git config --global http.postBuffer 524288000
+git config --global http.timeout 600
+```
+
 Install Chromium depot_tools (It requires python 2.7 or 3.8 for python 3 support.):
 
 ```
