@@ -23,29 +23,34 @@ Links to pages are organized by audience and topic of interest in the following 
 | [CIBR Group Meetings](CIBR-Group-Meetings) | Meetings |
 | [CIBR Wiki Best Practices](CIBR-Wiki-Best-Practices) | Wiki |
 
-### FLARE - Containers
+### FLARE - Running in desktop containers
 
 | Title | Topic |
 |---|---|
-| [Debugging FLARE Containers](How-to-Debug-FLARE-Containers) | Containers |
-| [Building FLARE Containers](How-to-Build-FLARE-Containers) | Containers |
-| [Container Configuration](Configuration-File) | Containers |
 | [Running FLARE Containers](How-to-Run-FLARE-Containers) | Containers |
+| [Container Configuration](Configuration-File) | Containers |
+| [Debugging FLARE Containers](How-to-Debug-FLARE-Containers) | Containers |
 
-### FLARE - Github Actions
+### FLARE - Running in Github Actions
 
 | Title | Topic |
 |---|---|
 | [Github Action for sending email](Github-Action-for-sending-email) | Github Actions |
 | [Github Action for sensor check](Github-Action-for-sensor-check) | Github Actions |
 
-### FLARE - OpenWhisk
+### FLARE - Running in OpenWhisk
 
 | Title | Topic |
 |---|---|
 | [Deploying FLARE forecasts via JSON](https://github.com/FLARE-forecast/deployed-forecasts/blob/master/README.md) | OpenWhisk |
 
-### FLARE Documentation - Development and Management
+### FLARE System Management Documentation
+
+| Title | Topic |
+|---|---|
+| [EdgeVPN virtual addresses for gateway access](Gateway-Access) | EdgeVPN |
+
+### FLARE Developer Documentation
 
 | Title | Topic |
 |---|---|
@@ -53,12 +58,12 @@ Links to pages are organized by audience and topic of interest in the following 
 | [Role of Git in FLARE](Role-of-Git-in-FLARE) | Git |
 | [FLARE Forecast Repository Catalog](FLARE-Forecast-Repository-Catalog) | FLARE |
 | [Container Development Workflow](Development-Workflow) | Containers |
+| [Building FLARE Containers](How-to-Build-FLARE-Containers) | Containers |
 | [OpenWhisk FLARE integration](Openwhisk-FLARE-integration) | OpenWhisk+FLARE |
 | [OpenWhisk FLARE deployment on Jetstream2](FLARE-OpenWhisk-setup-on-Jetstream2) | OpenWhisk+FLARE |
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
-| [EdgeVPN virtual addresses for gateway access](Gateway-Access) | EdgeVPN |
 
-### Additional OpenWhisk documentation for developers
+### Additional OpenWhisk-specific documentation for developers
 
 | Title | Topic |
 |---|---|
