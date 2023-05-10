@@ -2,19 +2,16 @@ Welcome to the FLARE Wiki!
 
 Links to pages are organized by audience and topic of interest in the following tables:
 
-### FLARE Guide for Users and Technicians
+### FLARE S3 Data Access
 
 | Title | Topic |
 |---|---|
-| [Gateway Access](Gateway-Access) | Field Gateways |
-| [Gateway Guidelines for Field Crew](Gateway-Guidelines-for-Field-Crew) | Field Gateways |
-| [Gateway Troubleshooting](Gateway-Troubleshooting) | Field Gateways |
 | [Accessing FLARE S3 Storage from R](Accessing-FLARE-S3-Storage-from-R) | FLARE |
 | [Accessing FLARE S3 Storage with MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
 | [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
 | [Manage Files on S3 Using RClone](Manage-Files-on-S3-Using-RClone) | FLARE |
 
-### Collaboration
+### Collaboration Information
 
 | Title | Topic |
 |---|---|
@@ -44,10 +41,12 @@ Links to pages are organized by audience and topic of interest in the following 
 |---|---|
 | [Deploying FLARE forecasts via JSON](https://github.com/FLARE-forecast/deployed-forecasts/blob/master/README.md) | OpenWhisk |
 
-### FLARE System Management Documentation
+### FLARE System Management and Troubleshooting
 
 | Title | Topic |
 |---|---|
+| [Gateway Guidelines for Field Crew](Gateway-Guidelines-for-Field-Crew) | Field Gateways |
+| [Gateway Troubleshooting](Gateway-Troubleshooting) | Field Gateways |
 | [EdgeVPN virtual addresses for gateway access](Gateway-Access) | EdgeVPN |
 
 ### FLARE Developer Documentation
