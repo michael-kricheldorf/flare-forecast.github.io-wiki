@@ -45,7 +45,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | [OpenWhisk FLARE integration](Openwhisk-FLARE-integration) | OpenWhisk+FLARE |
 | [OpenWhisk FLARE deployment on Jetstream2](FLARE-OpenWhisk-setup-on-Jetstream2) | OpenWhisk+FLARE |
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
-| [EdgeVPN virtual addresses](CIBR2-Evio-network) | EdgeVPN |
+| [EdgeVPN virtual addresses for gateway access](Gateway-Access) | EdgeVPN |
 | [Accessing FLARE S3 Storage from R](Accessing-FLARE-S3-Storage-from-R) | FLARE |
 | [Accessing FLARE S3 Storage with MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
 | [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
