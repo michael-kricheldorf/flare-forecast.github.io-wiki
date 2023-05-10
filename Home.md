@@ -6,8 +6,9 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
-| [Gateway Guidelines for Field Crew](Gateway-Guidelines-for-Field-Crew) | Field gateways |
-| [Gateway Troubleshooting](Gateway-Troubleshooting) | Field gateways |
+| [Gateway Access](Gateway-Access) | Field Gateways |
+| [Gateway Guidelines for Field Crew](Gateway-Guidelines-for-Field-Crew) | Field Gateways |
+| [Gateway Troubleshooting](Gateway-Troubleshooting) | Field Gateways |
 | [Accessing FLARE S3 Storage from R](Accessing-FLARE-S3-Storage-from-R) | FLARE |
 | [Accessing FLARE S3 Storage with MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
 | [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
@@ -18,7 +19,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | Title | Topic |
 |---|---|
 | [CIBR Manuscript Authorship Guidelines](CIBR-Manuscript-Authorship-Guidelines) | Papers |
-| [CIBR Mailing List](https://groups.io/g/CIBR-FLARE) | Mailing list |
+| [CIBR Mailing List](https://groups.io/g/CIBR-FLARE) | Mailing List |
 | [CIBR Group Meetings](CIBR-Group-Meetings) | Meetings |
 | [CIBR Wiki Best Practices](CIBR-Wiki-Best-Practices) | Wiki |
 
