@@ -23,6 +23,9 @@ Links to pages are organized by audience and topic of interest in the following 
 | [CIBR Wiki Best Practices](CIBR-Wiki-Best-Practices) | Wiki |
 
 ### FLARE - Containers
+
+| Title | Topic |
+|---|---|
 | [Debugging FLARE Containers](How-to-Debug-FLARE-Containers) | Containers |
 | [Building FLARE Containers](How-to-Build-FLARE-Containers) | Containers |
 | [Container Configuration](Configuration-File) | Containers |
