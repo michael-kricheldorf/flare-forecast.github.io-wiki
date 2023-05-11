@@ -60,8 +60,102 @@ Boot Option #6 Network.
 
 ## Upgrade Ubuntu
 
+When asked for which services to restart, enter 11 for none of the above
+
 ```
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
 ```
+
+## Install Vim
+
+```
+sudo apt install -y vim
+```
+
+## Change Hostname
+
+Edit the hostname in the following files:
+
+```
+sudo vi /etc/hostname
+sudo vi /etc/hosts
+```
+
+Change the hostname without a reboot:
+
+```
+sudo hostname <new_hostname>
+```
+
+## Disable Auto Updates and Unattended Upgrades
+
+Edit the following file:
+
+```
+sudo vi /etc/apt/apt.conf.d/20auto-upgrades
+```
+
+The file should look like as follows:
+
+```
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Unattended-Upgrade "0";
+```
+
+## Recover from Kernel Panics and Lockups
+
+Create the following file:
+
+```
+sudo vi /etc/sysctl.d/panic.conf
+```
+
+Add the following lines to that:
+
+```
+# Reboot this many seconds after panic
+kernel.panic = 20
+
+# Panic if the kernel detects an I/O channel
+# check (IOCHK). 0=no | 1=yes
+kernel.panic_on_io_nmi = 1
+
+# Panic if a hung task was found. 0=no, 1=yes
+kernel.hung_task_panic = 1
+
+# Setup timeout for hung task,
+# in seconds (suggested 300)
+kernel.hung_task_timeout_secs = 300
+
+# Panic on out of memory.
+# 0=no | 1=usually | 2=always
+vm.panic_on_oom=2
+
+# Panic when the kernel detects an NMI
+# that usually indicates an uncorrectable
+# parity or ECC memory error. 0=no | 1=yes
+kernel.panic_on_unrecovered_nmi=1
+
+# Panic if the kernel detects a soft-lockup
+# error (1). Otherwise it lets the watchdog
+# process skip it's update (0)
+# kernel.softlockup_panic=0
+
+# Panic on oops too. Use with caution.
+# kernel.panic_on_oops=30
+```
+
+Load it:
+
+```
+sudo sysctl -p /etc/sysctl.d/panic.conf
+```
+
+[Source](https://www.supertechcrew.com/kernel-panics-and-lockups/)
+
+
+
+## todo - need to update timezone; wasn't asked for in install
+
