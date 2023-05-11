@@ -156,6 +156,47 @@ sudo sysctl -p /etc/sysctl.d/panic.conf
 [Source](https://www.supertechcrew.com/kernel-panics-and-lockups/)
 
 
+## FTP
+
+Install FTP Server:
+
+```
+sudo apt install -y vsftpd
+```
+
+Change the Configurations:
+
+```
+sudo vi /etc/vsftpd.conf
+```
+
+Uncomment the following line:
+```
+write_enable=YES
+```
+
+Restart `vsftpd`:
+
+```
+sudo systemctl restart vsftpd.service
+```
+
+## Create FTP user with Specific Directory Access
+
+**FTP User:** `ftpuser`  
+**Home Directory:** `/data/datalogger-data/`
+
+```
+sudo mkdir /data
+sudo chmod 755 /data/
+sudo mkdir -p /data/datalogger-data/
+
+chown -R ftpuser:ftpuser /data/datalogger-data/
+```
+
+[Source](https://linuxroutes.com/create-ftp-user-with-specific-directory-access/)
+
+
 
 ## todo - need to update timezone; wasn't asked for in install
 
