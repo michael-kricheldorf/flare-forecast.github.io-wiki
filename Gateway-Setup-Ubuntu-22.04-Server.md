@@ -39,16 +39,16 @@ Boot Option #6 Network.
 11- Use right arrow to select "Save & Exit".  
 12- You should see a GRUB window; use the down arrow to select "Try or Install Ubuntu Server".  
 13- After some initialization, the Ubuntu installation user interface will show up. If it prompts to update the installer, select the default (no). Select English, English (US) keyboard; Done.  
-14- Use the up arrows to select "Ubuntu Server (minimized)", Done. 
-15- The eno1 or enp1s0 Ethernet network interface should  be listed as an interface this server can use. Check that the information is corect. Click on Done.
-16- The next screen asks for a proxy address; skip that by pressing Done.
-17- Also press Done for mirror address.
-18- Leave "Use an entire disk" selected, and leave the local disk selected (unless it shows a device with name FLEXXON_M2 as the local disk - in which case use the up arrow to verify the list of disks and make sure there is a local disk matching the size of the SD card). Make sure you select the SD card as local disk - do not install on the FLEXXON_M2! Click Done.
+14- Use the up arrows to select "Ubuntu Server (minimized)", Done.  
+15- The eno1 or enp1s0 Ethernet network interface should  be listed as an interface this server can use. Check that the information is corect. Click on Done.  
+16- The next screen asks for a proxy address; skip that by pressing Done.  
+17- Also press Done for mirror address.  
+18- Leave "Use an entire disk" selected, and leave the local disk selected (unless it shows a device with name FLEXXON_M2 as the local disk - in which case use the up arrow to verify the list of disks and make sure there is a local disk matching the size of the SD card). Make sure you select the SD card as local disk - do not install on the FLEXXON_M2! Click Done.  
 20- Int he next screen you should see two devices: ubuntu-vg (new) and the FLEXXON_M2. Verify this is correct, click Done.  
-21- In the "Confirm destructive action", down arrow then Continue.
-21- Enter server name, user name and password; **Note** make sure you store username and password in a password manager in your computer, so you can retrieve it later.  Continue. 
-22- Click Continue to "skip for now" upgrade to Ubuntu Pro.
-23- Click on "Install OpenSSH Server", navigate down to Done.
+21- In the "Confirm destructive action", down arrow then Continue.  
+21- Enter server name, user name and password; **Note** make sure you store username and password in a password manager in your computer, so you can retrieve it later; Continue.  
+22- Click Continue to "skip for now" upgrade to Ubuntu Pro.  
+23- Click on "Install OpenSSH Server", navigate down to Done.  
 24- In "Featured Server Snaps", skip and navigate down to Done.  
 25- Now wait... After the installation is complete, power off the fitlet2.   
 26- Remove the USB drive, but keep the SD card in the fitlet2.  
