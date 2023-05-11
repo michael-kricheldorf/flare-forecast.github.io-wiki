@@ -43,10 +43,13 @@ Boot Option #6 Network.
 15- The eno1 or enp1s0 Ethernet network interface should  be listed as an interface this server can use. Check that the information is corect. Click on Done.
 16- The next screen asks for a proxy address; skip that by pressing Done.
 17- Also press Done for mirror address.
-18- Leave "Use an entire disk" selected, Continue.  
-19- Select the "MMC/SD card #1" device from drop-down list to install Ubuntu on the SD card.  
-20- Click "Install Now", then Continue.  
-21- Select timezone, user name and password, Continue. **Note** make sure you store username and password in a password manager in your computer, so you can retrieve it later.  
-22- After the installation is complete, power off the fitlet2.   
-23- Remove the USB drive, but keep the SD card in the fitlet2.  
-24- Power up the fitlet2 - it should now boot from the SD card.  
+18- Leave "Use an entire disk" selected, and leave the local disk selected (unless it shows a device with name FLEXXON_M2 as the local disk - in which case use the up arrow to verify the list of disks and make sure there is a local disk matching the size of the SD card). Make sure you select the SD card as local disk - do not install on the FLEXXON_M2! Click Done.
+20- Int he next screen you should see two devices: ubuntu-vg (new) and the FLEXXON_M2. Verify this is correct, click Done.  
+21- In the "Confirm destructive action", down arrow then Continue.
+21- Enter server name, user name and password; **Note** make sure you store username and password in a password manager in your computer, so you can retrieve it later.  Continue. 
+22- Click Continue to "skip for now" upgrade to Ubuntu Pro
+23- Click on "Install OpenSSH Server", navigate down to Done.
+24- In "Featured Server Snaps", skip and navigate down to Done.  
+25- Now wait... After the installation is complete, power off the fitlet2.   
+26- Remove the USB drive, but keep the SD card in the fitlet2.  
+27- Power up the fitlet2 - it should now boot from the SD card.  
