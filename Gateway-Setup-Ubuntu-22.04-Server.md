@@ -2,7 +2,7 @@
 
 ## Operating System
 
-Ubuntu Desktop 22.04 (64-bit)
+Ubuntu Server 22.04 (64-bit)
 
 ## Bios
 
