@@ -15,8 +15,8 @@ What you will need:
 1- A computer with the ISO image of Ubuntu 22.04 downloaded.  
 2- A USB drive with 4GB or more space to "burn" this ISO image from your computer. Note: this device will be erased and overwritten with the ISO image.   
 3- Software in your computer to "burn" the ISO image to the USB disk; this depends on your O/S. [Here's one example of using dd with MacOS](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).  
-4- A blank micro-SD card with 64GB or more space.
-5- An Ethernet cable connectes to the Internet  
+4- A blank micro-SD card with 64GB or more space.  
+5- An Ethernet cable that provides a connection to the Internet  
 
 Detailed steps:  
 
