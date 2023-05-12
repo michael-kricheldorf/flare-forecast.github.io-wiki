@@ -282,10 +282,20 @@ sudo apt install python3-pip
 pip3 install rns
 ```
 
-With your LoRa rnode device connected, you can check its configuration:
+Pip installs packages in /home/ubuntu/.local/lib/python3.10/site-packages by default, but we need to run rnodeconf as root. This is one solution to this issue (copying to the root account's site-packeges), but there may be cleaner approaches:
 
 ```
-rnodeconf /dev/ttyUSB0 -i
+sudo mkdir -p /root/.local/lib/python3.10/site-packages
+cd /home/ubuntu/.local/lib/python3.10/site-packages
+sudo cp -r * /root/.local/lib/python3.10/site-packages
+sudo chown -R ubuntu.ubuntu /root/.local/lib/python3.10/site-packages
+```
+
+With your LoRa rnode device connected to a USB port in the gateway, you can check its configuration:
+
+```
+cd /home/ubuntu/.local/bin
+sudo ./rnodeconf /dev/ttyUSB0 -i
 ```
 [Source](https://github.com/markqvist/rnodeconfigutil)
 
