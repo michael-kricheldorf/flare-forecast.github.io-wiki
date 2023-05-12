@@ -236,6 +236,30 @@ sudo ntpdate -buv ntp.ubuntu.com
 sudo timedatectl set-timezone EST
 ```
 
+## Configure Ethernet interface for field maintenance
+
+This example assumes we're configuring the Ethernet port that is right next to the power supply cable on the fitlet (with name eno1) and we'll give it private address 172.16.100.1/24. To connect your laptop to it via Ethernet, manually configure your laptop's Ethernet interface with address 172.16.100.2/24 (i.e. subnet mask 255.255.255.0)
+
+```
+sudo vi /etc/netplan/99_config.yaml
+# copy this into the configuration file; if you use an interface other than eno1, set its name instead
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+   eno1:
+      addresses:
+        - 172.16.100.1/24
+      routes:
+        - to: default
+          via: 172.16.100.1
+      nameservers:
+          addresses: [8.8.8.8]
+# save the file then
+sudo netplan apply
+# check the interface is up
+ip a
+```
 
 ## todo
 
