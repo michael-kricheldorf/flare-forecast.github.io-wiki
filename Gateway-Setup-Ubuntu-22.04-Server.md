@@ -71,10 +71,11 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-## Install Vim
+## Install Vim and ping
 
 ```
 sudo apt install -y vim
+sudo apt install -y iputils-ping
 ```
 
 ## Change Hostname
@@ -275,7 +276,7 @@ ip a
 Build and install the tncattach software that allows using LoRa as an Ethernet NIC:
 
 ```
-sudo apt install build-essential
+sudo apt install -y build-essential
 git clone https://github.com/markqvist/tncattach.git
 cd tncattach
 make
@@ -287,7 +288,7 @@ sudo make install
 Install the rnodeconf software that allows configuring the rnode LoRa adapter:
 
 ```
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 pip3 install rns
 ```
 
