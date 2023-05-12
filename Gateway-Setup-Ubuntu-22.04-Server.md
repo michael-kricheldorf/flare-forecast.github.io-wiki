@@ -261,6 +261,36 @@ sudo netplan apply
 ip a
 ```
 
+## Optional - install LoRa Rnode software
+
+Build and install the tncattach software that allows using LoRa as an Ethernet NIC:
+
+```
+sudo apt install build-essential
+git clone https://github.com/markqvist/tncattach.git
+cd tncattach
+make
+sudo make install
+```
+
+[Source](https://github.com/markqvist/tncattach)
+
+Install the rnodeconf software that allows configuring the rnode LoRa adapter:
+
+```
+sudo apt install python3-pip
+pip3 install rns
+```
+
+With your LoRa rnode device connected, you can check its configuration:
+
+```
+rnodeconf /dev/ttyUSB0 -i
+```
+[Source](https://github.com/markqvist/rnodeconfigutil)
+
+
+
 ## todo
 
 * new instructions for ssh keys
