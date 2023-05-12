@@ -208,6 +208,38 @@ sudo chown -R ftpuser:ftpuser /data/datalogger-data/
 [Source](https://linuxroutes.com/create-ftp-user-with-specific-directory-access/)
 
 
+## Git
 
-## todo - need to update timezone; wasn't asked for in install
+Install Git:
+
+```
+sudo apt install -y git
+```
+
+Increase the HTTP buffer and timeout limits to 500 MB and 10 minutes respectively:
+
+```
+git config --global http.postBuffer 524288000
+git config --global http.timeout 600
+```
+
+## Update the Time
+
+```
+sudo apt install -y ntpdate
+sudo ntpdate -buv ntp.ubuntu.com
+```
+
+## Change Timezone to EST
+
+```
+sudo timedatectl set-timezone EST
+```
+
+
+## todo
+
+* new instructions for ssh keys
+* rest of instructions from 18.04
+
 
