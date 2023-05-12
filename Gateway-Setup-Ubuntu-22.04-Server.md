@@ -240,6 +240,6 @@ sudo timedatectl set-timezone EST
 ## todo
 
 * new instructions for ssh keys
-* rest of instructions from 18.04
+* rest of instructions from 18.04 as needed
 
 
