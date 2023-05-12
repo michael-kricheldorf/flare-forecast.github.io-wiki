@@ -181,17 +181,28 @@ Restart `vsftpd`:
 sudo systemctl restart vsftpd.service
 ```
 
+## Prepare mount point
+
+Check which disk is the SDD using sudo fdisk -l. For example, /dev/sda1. Create /data and mount it.
+
+```
+sudo mkdir /data
+sudo vi /etc/fstab
+#add an entry:
+/dev/sda1 /data ext4 defaults 0 0
+sudo mount /data
+```
+
 ## Create FTP user with Specific Directory Access
 
 **FTP User:** `ftpuser`  
 **Home Directory:** `/data/datalogger-data/`
 
 ```
-sudo mkdir /data
 sudo chmod 755 /data/
 sudo mkdir -p /data/datalogger-data/
-
-chown -R ftpuser:ftpuser /data/datalogger-data/
+sudo adduser --home /data/datalogger-data ftpuser
+sudo chown -R ftpuser:ftpuser /data/datalogger-data/
 ```
 
 [Source](https://linuxroutes.com/create-ftp-user-with-specific-directory-access/)
