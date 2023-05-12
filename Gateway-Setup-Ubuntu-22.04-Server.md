@@ -308,11 +308,23 @@ sudo ./rnodeconf /dev/ttyUSB0 -i
 ```
 [Source](https://github.com/markqvist/rnodeconfigutil)
 
+## Optional - set up LoRa interface with IP address
+
+In the example below, the LoRa IP address is set up to 10.99.0.1/24 - adjust accordingly
+The second line sets up tc to throttle the link
+
+```
+sudo tncattach /dev/ttyUSB0 115200 -d -e -n -m 400 -i 10.99.0.2/24
+sudo tc qdisc add dev tnc0 root tbf rate 20kbit burst 32kbit latency 400ms
+```
 
 
 ## todo
 
 * new instructions for ssh keys
+* evio instructions
+* add LoRa to crontab
 * rest of instructions from 18.04 as needed
+
 
 
