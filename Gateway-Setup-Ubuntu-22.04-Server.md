@@ -189,6 +189,12 @@ sudo systemctl restart vsftpd.service
 Check which disk is the SDD using sudo fdisk -l. For example, /dev/sda1. Create /data and mount it.
 
 ```
+#if you need to partition the disk
+sudo fdisk /dev/sda
+# enter n to create a new
+# accept defaults
+# enter w to write
+sudo mkfs.ext4 /dev/sda1
 sudo mkdir /data
 sudo vi /etc/fstab
 #add an entry:
