@@ -312,12 +312,31 @@ sudo ./rnodeconf /dev/ttyUSB0 -i
 
 ## Optional - set up LoRa interface with IP address
 
-In the example below, the LoRa IP address is set up to 10.99.0.1/24 - adjust accordingly
+In the example below, the LoRa IP address is set up to 10.99.0.2/24 - adjust accordingly
 The second line sets up tc to throttle the link
 
 ```
-sudo tncattach /dev/ttyUSB0 115200 -d -e -n -m 400 -i 10.99.0.2/24
-sudo tc qdisc add dev tnc0 root tbf rate 20kbit burst 32kbit latency 400ms
+sudo bash
+cd /usr/local/bin
+vi restart_lora.sh
+```
+
+Add this to the restart_lora.sh script:
+
+```
+#!/bin/sh
+
+/usr/bin/killall tncattach
+/usr/local/sbin/tncattach /dev/ttyUSB0 115200 -d -e -n -m 400 -i $1
+/usr/sbin/tc qdisc add dev tnc0 root tbf rate 20kbit burst 32kbit latency 400ms
+```
+
+Then:
+
+
+```
+chmod 755 restart_lora.sh
+./restart_lora.sh 10.99.0.2/24
 ```
 
 
