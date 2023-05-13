@@ -1,5 +1,5 @@
 Gateway | Location | Evio IP | Nebula IP | eno1 IP |
-|---|---|---|---|
+|---|---|---|---|---|
 JS-front | Jetstream 2 | 10.10.100.1 | --- | --- |
 Carina | FCRE Metstation | 10.10.100.2 | 10.10.200.2 | --- |
 Mia | FCRE Catwalk | 10.10.100.3 | 10.10.200.3 | --- |
