@@ -273,6 +273,36 @@ sudo netplan apply
 ip a
 ```
 
+## Install nebula
+
+```
+sudo mkdir /etc/nebula
+cd /etc/nebula
+# copy the executables: nebula and run_nebula.sh
+# copy the appropriate host's configuration, CA and host certificate, and host key: config.yaml, host.key, host.crt, ca.crt
+# add this to the crontab to start on boot:
+sudo crontab -e
+@reboot /etc/nebula/nebula -config /etc/nebula/config.yaml
+```
+
+## Install Docker and EdgeVPN
+
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+# Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+sudo groupadd -f docker
+sudo usermod -a -G docker $USER
+```
+
+[Source](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
+
+
 ## Optional - install LoRa Rnode software
 
 Build and install the tncattach software that allows using LoRa as an Ethernet NIC:
