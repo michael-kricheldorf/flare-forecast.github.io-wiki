@@ -287,6 +287,8 @@ sudo crontab -e
 
 ## Install Docker and EdgeVPN
 
+First install the latest Docker:
+
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -301,6 +303,8 @@ sudo usermod -a -G docker $USER
 ```
 
 [Source](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
+
+The install EdgeVPN - you'll need a proper config.json file for your node. This configures docker to always restart the container, so there's no need for a crontab entry:
 
 ```
 cd
