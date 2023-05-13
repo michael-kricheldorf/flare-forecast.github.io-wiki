@@ -302,6 +302,18 @@ sudo usermod -a -G docker $USER
 
 [Source](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
 
+```
+cd
+mkdir .evio
+cd .evio
+# copy the node's config.json here
+echo openvswitch | sudo tee -a /etc/modules > /dev/null
+sudo modprobe openvswitch
+docker run -d -v /home/$USER/.evio/config.json:/etc/opt/evio/config.json -v /var/log/evio/:/var/log/evio/ --restart always --privileged --name evio-node --network host edgevpnio/evio-node:latest
+```
+
+[Source](https://edgevpn.io/trial/)
+
 
 ## Optional - install LoRa Rnode software
 
