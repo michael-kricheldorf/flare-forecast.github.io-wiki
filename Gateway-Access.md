@@ -1,4 +1,4 @@
-Gateway | Location | Evio IP | Nebula IP | eno1 IP |
+Gateway | Location | Evio IP (CIBR6) | Nebula IP | eno1 IP (field ssh) |
 |---|---|---|---|---|
 JS-front | Jetstream 2 | 10.10.100.1 | --- | --- |
 Carina | FCRE Metstation | 10.10.100.2 | 10.10.200.2 | --- |
