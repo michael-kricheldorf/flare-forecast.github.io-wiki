@@ -71,11 +71,12 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-## Install Vim and ping
+## Install Vim, ping, killall
 
 ```
 sudo apt install -y vim
 sudo apt install -y iputils-ping
+sudo apt install -y psmisc
 ```
 
 ## Change Hostname
