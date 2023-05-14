@@ -71,13 +71,14 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-## Install Vim, ping, killall, cron
+## Install Vim, ping, killall, cron, tcpdump
 
 ```
 sudo apt install -y vim
 sudo apt install -y iputils-ping
 sudo apt install -y psmisc
 sudo apt install -y cron
+sudo apt install -y tcpdump
 ```
 
 ## Change Hostname
