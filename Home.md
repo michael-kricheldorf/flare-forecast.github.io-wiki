@@ -6,6 +6,7 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
+| [FLARE S3 Storage Quick Start](FLARE-S3-quick-start) | FLARE |
 | [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
 | [Accessing S3 method 1 - from R code](Accessing-FLARE-S3-Storage-from-R) | FLARE |
 | [Accessing S3 method 2 - using MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
