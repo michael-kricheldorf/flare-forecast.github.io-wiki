@@ -1,1 +1,0 @@
-# CIBR Code of Conduct
