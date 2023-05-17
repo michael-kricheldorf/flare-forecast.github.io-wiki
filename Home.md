@@ -10,9 +10,9 @@ Information for FLARE users on how to access data stored in S3 cloud storage:
 |---|---|
 | [FLARE S3 Storage Quick Start](FLARE-S3-quick-start) | FLARE |
 | [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
-| [Accessing S3 method 1 - from R code](Accessing-FLARE-S3-Storage-from-R) | FLARE |
-| [Accessing S3 method 2 - using MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
-| [Accessing S3 method 3 - using Rclone client](Manage-Files-on-S3-Using-RClone) | FLARE |
+| [Accessing S3 data in FLARE, from R code](Accessing-FLARE-S3-Storage-from-R) | FLARE |
+| [Accessing S3 data from desktop, method 1 - Rclone](Manage-Files-on-S3-Using-RClone) | FLARE |
+| [Accessing S3 data from desktop, method 2 - MinIO](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
 
 ### FLARE Collaboration Information
 
