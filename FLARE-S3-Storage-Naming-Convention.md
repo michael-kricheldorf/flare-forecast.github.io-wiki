@@ -1,4 +1,6 @@
-# This document describes the file naming convention of NOAAGEFS forecasts that are available on the FLARE-CIBR s3 bucket
+# FLARE S3 storage naming
+
+This document describes the file naming convention of NOAAGEFS forecasts that are available on the FLARE S3 bucket in the project's S3 serer, s3.flare-forecast.org
 
 ## The files are organized using a prefix and a file name, where the prefix follows the structure:
 
