@@ -8,7 +8,7 @@ S3 is a standard protocol used to store and retrieve data from a cloud storage p
 
 ## What is an S3 bucket?
 
-S3 bucket is the terminology used for a placeholder for all data stored in an S3 account. Think of a bucket as equivalent to a folder in your computer, where you can store many/large files (which in S3 terminology are called "objects"). An S3 bucket is referred to by the bucket's name, e.g. drivers, noaa
+S3 bucket is the terminology used for a placeholder for all data stored in an S3 account. Think of a bucket as equivalent to a folder in your computer, where you can store many/large files (which in S3 terminology are called "objects"). An S3 bucket is referred to by the bucket's name, e.g. forecasts, drivers
 
 ## What is an S3 server?
 
@@ -16,9 +16,7 @@ An S3 server is the server on the Internet that holds the storage for all the ob
 
 ## S3 in FLARE
 
-Why do we use S3?
-
-How do we use S3?
+S3 storage is a key part of the FLARE workflow - it is used to store data persistently for access both by FLARE users (using desktop S3 clients such as Rclone and MinIO client) as well as by the FLARE daily forecasts (using the R package aws.s3). The S3 cloud storage allows access from anywhere - user clients or cloud computing workflows. It supports both anonymous, public read-only access to data, as well as authenticated access for read/write. All FLARE users have read-only access to data automatically - if you need authenticated read/write access, please contact the project PIs.
 
 ## How to use S3 in FLARE?
 
