@@ -6,10 +6,10 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
-| [Accessing FLARE S3 Storage from R](Accessing-FLARE-S3-Storage-from-R) | FLARE |
-| [Accessing FLARE S3 Storage with MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
 | [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention) | FLARE |
-| [Manage Files on S3 Using RClone](Manage-Files-on-S3-Using-RClone) | FLARE |
+| [Accessing S3 method 1 - from R code](Accessing-FLARE-S3-Storage-from-R) | FLARE |
+| [Accessing S3 method 2 - using MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
+| [Accessing S3 method 3 - using Rclone client](Manage-Files-on-S3-Using-RClone) | FLARE |
 
 ### Collaboration Information
 
