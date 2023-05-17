@@ -12,15 +12,15 @@ Links to pages are organized by audience and topic of interest in the following 
 | [Accessing S3 method 2 - using MinIO Client](Accessing-FLARE-S3-Storage-with-MinIO-Client) | FLARE |
 | [Accessing S3 method 3 - using Rclone client](Manage-Files-on-S3-Using-RClone) | FLARE |
 
-### Collaboration Information
+### FLARE Collaboration Information
 
 | Title | Topic |
 |---|---|
-| [CIBR Manuscript Authorship Guidelines](CIBR-Manuscript-Authorship-Guidelines) | Collaboration |
-| [CIBR Code of Conduct](CIBR-code-conduct) | Collaboration |
-| [CIBR Mailing List](https://groups.io/g/CIBR-FLARE) | Collaboration |
-| [CIBR Group Meetings](CIBR-Group-Meetings) | Collaboration |
-| [CIBR Wiki Best Practices](CIBR-Wiki-Best-Practices) | Collaboration |
+| [Manuscript Authorship Guidelines](CIBR-Manuscript-Authorship-Guidelines) | Collaboration |
+| [Code of Conduct](CIBR-code-conduct) | Collaboration |
+| [Mailing List](https://groups.io/g/CIBR-FLARE) | Collaboration |
+| [Project Group Meetings](CIBR-Group-Meetings) | Collaboration |
+| [Wiki Best Practices](CIBR-Wiki-Best-Practices) | Collaboration |
 
 ### FLARE - Running in desktop containers
 
