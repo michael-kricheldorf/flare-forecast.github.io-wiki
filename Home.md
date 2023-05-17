@@ -16,9 +16,10 @@ Links to pages are organized by audience and topic of interest in the following 
 
 | Title | Topic |
 |---|---|
-| [CIBR Manuscript Authorship Guidelines](CIBR-Manuscript-Authorship-Guidelines) | Papers |
-| [CIBR Mailing List](https://groups.io/g/CIBR-FLARE) | Mailing List |
-| [CIBR Group Meetings](CIBR-Group-Meetings) | Meetings |
+| [CIBR Manuscript Authorship Guidelines](CIBR-Manuscript-Authorship-Guidelines) | Collaboration |
+| [CIBR Code of Conduct](CIBR-code-conduct) | Collaboration |
+| [CIBR Mailing List](https://groups.io/g/CIBR-FLARE) | Collaboration |
+| [CIBR Group Meetings](CIBR-Group-Meetings) | Collaboration |
 | [CIBR Wiki Best Practices](CIBR-Wiki-Best-Practices) | Wiki |
 
 ### FLARE - Running in desktop containers
