@@ -20,10 +20,14 @@ S3 storage is a key part of the FLARE workflow - it is used to store data persis
 
 ## How to use S3 in FLARE?
 
-Naming convention
+First off, it's important to understand the naming conventions for how files are organized in buckets in the FLARE S3 server. [FLARE S3 Storage Naming Convention](FLARE-S3-Storage-Naming-Convention)
 
-Access from R
+As a user, there are two different ways you can browse data in the S3 buckets. For read-only access, you don't need credentials. For writable access, you need an S3 access key. The two clients you can use are [Rclone](Manage-Files-on-S3-Using-RClone) and 
+[MinIO](Accessing-FLARE-S3-Storage-with-MinIO-Client); they have similar capabilities, see which one you are more comfortable installing and using.
 
-Access from dekstops
+As a developer, you can access S3 data [from R code](Accessing-FLARE-S3-Storage-from-R)
+
+
+
 
 
