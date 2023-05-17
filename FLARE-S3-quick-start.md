@@ -8,12 +8,11 @@ S3 is a standard protocol used to store and retrieve data from a cloud storage p
 
 ## What is an S3 bucket?
 
-S3 bucket is the terminology used for a placeholder for all data stored in an S3 account. Think of a bucket as equivalent to a folder in your computer, where you can store many/large files (which in S3 terminology are called "objects"). An S3 bucket is referred to by the bucket's name, e.g. MyBucket
+S3 bucket is the terminology used for a placeholder for all data stored in an S3 account. Think of a bucket as equivalent to a folder in your computer, where you can store many/large files (which in S3 terminology are called "objects"). An S3 bucket is referred to by the bucket's name, e.g. drivers, noaa
 
 ## What is an S3 server?
 
-An S3 server is the server on the Internet that holds the storage for all the objects in an S3 bucket. An S3 server is referred to by an URL, e.g. mys3server.mydomain.org
-
+An S3 server is the server on the Internet that holds the storage for all the objects in an S3 bucket. An S3 server is referred to by an URL, e.g. s3.flare-forecast.org
 
 ## S3 in FLARE
 
