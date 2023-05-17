@@ -4,6 +4,8 @@ Links to pages are organized by audience and topic of interest in the following 
 
 ### FLARE S3 Data Access
 
+Information for FLARE users on how to access data stored in S3 cloud storage:
+
 | Title | Topic |
 |---|---|
 | [FLARE S3 Storage Quick Start](FLARE-S3-quick-start) | FLARE |
@@ -14,6 +16,8 @@ Links to pages are organized by audience and topic of interest in the following 
 
 ### FLARE Collaboration Information
 
+Information for collaborative work among FLARE team members:
+
 | Title | Topic |
 |---|---|
 | [Manuscript Authorship Guidelines](CIBR-Manuscript-Authorship-Guidelines) | Collaboration |
@@ -22,7 +26,11 @@ Links to pages are organized by audience and topic of interest in the following 
 | [Project Group Meetings](CIBR-Group-Meetings) | Collaboration |
 | [Wiki Best Practices](CIBR-Wiki-Best-Practices) | Collaboration |
 
-### FLARE - Running in desktop containers
+### Running FLARE
+
+Information for Running FLARE in different computing environments:
+
+#### Running FLARE in desktop containers
 
 | Title | Topic |
 |---|---|
@@ -30,7 +38,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | [Container Configuration](Configuration-File) | Containers |
 | [Debugging FLARE Containers](How-to-Debug-FLARE-Containers) | Containers |
 
-### FLARE - Running in Github Actions
+#### Running FLARE in Github Actions
 
 | Title | Topic |
 |---|---|
@@ -38,13 +46,15 @@ Links to pages are organized by audience and topic of interest in the following 
 | [Github Action for sending email](Github-Action-for-sending-email) | Github Actions |
 | [Github Action for sensor check](Github-Action-for-sensor-check) | Github Actions |
 
-### FLARE - Running in OpenWhisk
+#### Running FLARE in OpenWhisk
 
 | Title | Topic |
 |---|---|
 | [Deploying FLARE forecasts via JSON](https://github.com/FLARE-forecast/deployed-forecasts/blob/master/README.md) | OpenWhisk |
 
-### FLARE System Management and Troubleshooting
+### FLARE System Management, Troubleshooting, and Development
+
+Information for FLARE staff and developers:
 
 | Title | Topic |
 |---|---|
@@ -52,7 +62,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | [Gateway Troubleshooting](Gateway-Troubleshooting) | Field Gateways |
 | [EdgeVPN virtual addresses for gateway access](Gateway-Access) | EdgeVPN |
 
-### FLARE Developer Documentation
+#### FLARE Developer Documentation
 
 | Title | Topic |
 |---|---|
@@ -65,7 +75,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | [OpenWhisk FLARE deployment on Jetstream2](FLARE-OpenWhisk-setup-on-Jetstream2) | OpenWhisk+FLARE |
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
 
-### Additional OpenWhisk-specific documentation for developers
+#### Additional OpenWhisk-specific documentation for FLARE developers
 
 | Title | Topic |
 |---|---|
