@@ -21,7 +21,7 @@ Information for collaborative work among FLARE team members:
 | Title | Topic |
 |---|---|
 | [Manuscript Authorship Guidelines](CIBR-Manuscript-Authorship-Guidelines) | Collaboration |
-| [Code of Conduct](CIBR-code-conduct) | Collaboration |
+| [Code of Conduct](FLARE-code-of-conduct) | Collaboration |
 | [Mailing List](https://groups.io/g/CIBR-FLARE) | Collaboration |
 | [Project Group Meetings](CIBR-Group-Meetings) | Collaboration |
 | [Wiki Best Practices](CIBR-Wiki-Best-Practices) | Collaboration |
