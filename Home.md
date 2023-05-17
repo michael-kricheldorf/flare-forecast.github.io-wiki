@@ -20,7 +20,7 @@ Links to pages are organized by audience and topic of interest in the following 
 | [CIBR Code of Conduct](CIBR-code-conduct) | Collaboration |
 | [CIBR Mailing List](https://groups.io/g/CIBR-FLARE) | Collaboration |
 | [CIBR Group Meetings](CIBR-Group-Meetings) | Collaboration |
-| [CIBR Wiki Best Practices](CIBR-Wiki-Best-Practices) | Wiki |
+| [CIBR Wiki Best Practices](CIBR-Wiki-Best-Practices) | Collaboration |
 
 ### FLARE - Running in desktop containers
 
