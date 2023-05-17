@@ -30,14 +30,6 @@ Information for collaborative work among FLARE team members:
 
 Information for Running FLARE in different computing environments:
 
-#### Running FLARE in desktop containers
-
-| Title | Topic |
-|---|---|
-| [Running FLARE Containers](How-to-Run-FLARE-Containers) | Containers |
-| [Container Configuration](Configuration-File) | Containers |
-| [Debugging FLARE Containers](How-to-Debug-FLARE-Containers) | Containers |
-
 #### Running FLARE in Github Actions
 
 | Title | Topic |
@@ -51,6 +43,14 @@ Information for Running FLARE in different computing environments:
 | Title | Topic |
 |---|---|
 | [Deploying FLARE forecasts via JSON](https://github.com/FLARE-forecast/deployed-forecasts/blob/master/README.md) | OpenWhisk |
+
+#### Running FLARE in desktop containers
+
+| Title | Topic |
+|---|---|
+| [Running FLARE Containers](How-to-Run-FLARE-Containers) | Containers |
+| [Container Configuration](Configuration-File) | Containers |
+| [Debugging FLARE Containers](How-to-Debug-FLARE-Containers) | Containers |
 
 ### FLARE System Management, Troubleshooting, and Development
 
