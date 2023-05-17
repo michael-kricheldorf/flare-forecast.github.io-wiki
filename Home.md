@@ -35,8 +35,6 @@ Information for Running FLARE in different computing environments:
 | Title | Topic |
 |---|---|
 | [Running FLARE as a GitHub action](Github-Action-for-FLARE-run) | Github Actions |
-| [Github Action for sending email](Github-Action-for-sending-email) | Github Actions |
-| [Github Action for sensor check](Github-Action-for-sensor-check) | Github Actions |
 
 #### Running FLARE in OpenWhisk
 
@@ -74,6 +72,9 @@ Information for FLARE staff and developers:
 | [OpenWhisk FLARE integration](Openwhisk-FLARE-integration) | OpenWhisk+FLARE |
 | [OpenWhisk FLARE deployment on Jetstream2](FLARE-OpenWhisk-setup-on-Jetstream2) | OpenWhisk+FLARE |
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
+| [Github Action for sending email](Github-Action-for-sending-email) | Github Actions |
+| [Github Action for sensor check](Github-Action-for-sensor-check) | Github Actions |
+
 
 #### Additional OpenWhisk-specific documentation for FLARE developers
 
