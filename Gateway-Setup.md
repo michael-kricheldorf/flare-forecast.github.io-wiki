@@ -4,37 +4,30 @@ The gateway hardware is the [Fitlet2](https://fit-iot.com/web/products/fitlet2/)
 ### Carina:
 **SN:** 1180222-01905  
 **PN:** FITLET2-CJ3455-D2-M32S-FPCI-WI8260-J0-HTI-TE  
-**TeamViewer ID:**  
 
 ### Mia
 **SN:** 1180423-00507  
 **PN:** FITLET2-CJ3455-D2-M32S-FPCI-WI8260-J0-HTI-TE  
-**TeamViewer ID:**  
 
 ### Zoe
 **SN:** 1180712-04018  
 **PN:** FITLET2-CJ3455-D4-M64S-FPCI-WI8260-J0-HTI-TI  
-**TeamViewer ID:** 331 560 795  
 
 ### Diana
 **SN:** 1190117-11930  
 **PN:** FITLET2-CJ3455-D4-M64S-FPCI-WI8260-J0-HTI-TI  
-**TeamViewer ID:**  
 
 ### Bita
 **SN:** 1190124-02963  
 **PN:** FITLET2-CJ3455-D4-M64S-FPCI-WI8260-J0-HTI-TI  
-**TeamViewer ID:** 357 419 025  
 
 ### Bjorn
 **SN:** 1200227-00314  
 **PN:** FITLET2-CJ3455-D4-M64S-FPCI-WI8260-J0-HTI-TE  
-**TeamViewer ID:** 346 008 060 - 444 689 395  
 
 ### Annie 
 **SN:** 1200227-00315  
 **PN:** FITLET2-CJ3455-D4-M64S-FPCI-WI8260-J0-HTI-TE  
-**TeamViewer ID:** 838 197 449  
 
 ## Hardware Specifications
 
@@ -289,41 +282,6 @@ git config --global http.postBuffer 524288000
 git config --global http.timeout 600
 ```
 
-Install Chromium depot_tools (It requires python 2.7 or 3.8 for python 3 support.):
-
-```
-mkdir -p ~/applications
-cd ~/applications
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-cd depot_tools
-git checkout chrome/3987
-```
-
-Install Python2 (For some reason, depot_tools doesn't work properly with Python3.):
-
-```
-sudo apt install -y python-minimal
-```
-
-add the following lines to `~/.bashrc`:
-
-```
-vi ~/.bashrc
-```
-```
-# enable dept_tools
-export PATH=~/applications/depot_tools:$PATH
-
-# make depot_tools work with python2
-export GCLIENT_PY3=0
-```
-
-Enable the changes to `~/.bashrc` without reboot:
-
-```
-source ~/.bashrc
-```
-
 ## Monitor Network Traffic
 
 Install vnStat:
@@ -367,11 +325,11 @@ sudo timedatectl set-timezone EST
 
 ## Partition the Hard Drive
 
-Follow the isntructions:
+Follow the instructions:
 
 [Source](https://help.ubuntu.com/community/InstallingANewHardDrive)
 
-Add label to the data partition:
+Add a label to the data partition:
 
 ```
 sudo e2label /dev/sda1 data
@@ -417,11 +375,6 @@ sudo chown -R $USER:$USER /data
 
 [Source](https://linuxhint.com/setup_static_ip_address_ubuntu/)
 
-## S-nail Mail Service
-
-```
-sudo apt install -y s-nail
-```
 
 ## Controlling Front LEDs
 
@@ -495,7 +448,6 @@ To apply changes to the read-only filesystem:
 ```
 sudo overlayroot-chroot
 ```
-
 
 ## Set up Watchdog
 
