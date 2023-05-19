@@ -416,11 +416,11 @@ chmod 755 restart_lora.sh
 ./restart_lora.sh 10.99.0.2/24
 ```
 
-Add to the crontab entries for restarting at reboot and at 8pm every day:
+Add to the crontab entries for restarting at reboot and hourly:
 
 ```
 @reboot /usr/local/bin/restart_lora.sh 10.99.0.2/24
-0 8 * * * /usr/local/bin/restart_lora.sh 10.99.0.2/24
+@hourly /usr/local/bin/restart_lora.sh 10.99.0.2/24
 ```
 
 ## todo
