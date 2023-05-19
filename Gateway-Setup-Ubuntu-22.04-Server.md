@@ -1,4 +1,6 @@
-# Software
+# Software for edge gateways
+
+We're storing scripts/configuration for edge gateways in the [miscellaneous](https://github.com/FLARE-forecast/miscellaneous) repo
 
 ## Operating System
 
