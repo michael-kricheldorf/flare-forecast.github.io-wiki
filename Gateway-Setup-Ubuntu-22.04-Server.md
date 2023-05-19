@@ -80,11 +80,7 @@ sudo apt autoremove -y
 ## Install Vim, ping, killall, cron, tcpdump
 
 ```
-sudo apt install -y vim
-sudo apt install -y iputils-ping
-sudo apt install -y psmisc
-sudo apt install -y cron
-sudo apt install -y tcpdump
+sudo apt install -y vim iputils-ping psmisc cron tcpdump
 ```
 
 ## Change Hostname
@@ -261,7 +257,11 @@ This example assumes we're configuring the Ethernet port that is right next to t
 
 ```
 sudo vi /etc/netplan/99_config.yaml
-# copy this into the configuration file; if you use an interface other than eno1, set its name instead
+```
+
+Copy this into the configuration file; if you use an interface other than eno1, set its name instead
+
+```
 network:
   version: 2
   renderer: networkd
@@ -274,36 +274,38 @@ network:
           via: 172.16.100.1
       nameservers:
           addresses: [8.8.8.8]
-# save the file then
+```
+
+Save the file, then run netplan apply and check that the interface is up:
+
+```
 sudo netplan apply
-# check the interface is up
 ip a
 ```
 
 ## Install nebula
 
+First clone the miscellaneous repo and download the nebula binary, then install executables in their right places:
+
 ```
+cd
+git clone https://github.com/FLARE-forecast/miscellaneous
+cd miscellaneous/nebula
+wget https://github.com/slackhq/nebula/releases/download/v1.7.1/nebula-linux-amd64.tar.gz
+tar -xzvf nebula-linux-amd64.tar.gz
+chmod 755 nebula restart_nebula.sh
 sudo mkdir /etc/nebula
+sudo cp nebula /etc/nebula
+sudo cp ca.crt /etc/nebula
+sudo cp config.yaml /etc/nebula
+sudo cp restart_nebula.sh /usr/local/bin
+```
+
+You need to obtain the appropriate host.key and host.crt from the password safe for this Nebula IP address. Copy and paste the host.key and host.crt from the password safe /etc/nebula/host.key and /etc/nebula/host.crt then:
+
+```
 cd /etc/nebula
-# copy the executables: 
-# - nebula and run_nebula.sh go in /etc/nebula
-# copy the appropriate host's configuration, CA and host certificate, and host key to /etc/nebula: config.yaml, host.key, host.crt, ca.crt
-```
-
-Create restart script for nebula:
-
-```
-cd /usr/local/bin
-vi restart_nebula.sh
-chmod 755 restart_nebula.sh
-```
-
-restart_nebula.sh:
-```
-#!/bin/sh
-
-/usr/bin/killall nebula
-nohup /etc/nebula/nebula -config /etc/nebula/config.yaml > /var/log/nebula.log &
+sudo chmod 600 ca.crt host.key host.crt
 ```
 
 Add crontab entry to start on boot and 8pm every day:
@@ -334,7 +336,9 @@ sudo usermod -a -G docker $USER
 
 [Source](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
 
-The install EdgeVPN - you'll need a proper config.json file for your node. This configures docker to always restart the container, so there's no need for a crontab entry:
+The install EdgeVPN - you'll need a proper config.json file for your node that you can also obtain from the password safe storing secrets. 
+
+This configures docker to always restart the container, so there's no need for a crontab entry:
 
 ```
 cd
