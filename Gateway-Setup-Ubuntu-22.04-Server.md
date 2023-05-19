@@ -1,6 +1,10 @@
 # Software for edge gateways
 
+**Notes:**
+
 We're storing scripts/configuration for edge gateways in the [miscellaneous](https://github.com/FLARE-forecast/miscellaneous) repo
+
+We're storing an encrypted [pwsafe](https://pwsafe.org/)-compatible file with various keys/configuration files in a private [Google drive folder](https://drive.google.com/drive/folders/1sSO4UIZR0fnqKW-99Tr79nsCv9WY4aa6)
 
 ## Operating System
 
