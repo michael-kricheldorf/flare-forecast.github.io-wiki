@@ -279,11 +279,34 @@ ip a
 ```
 sudo mkdir /etc/nebula
 cd /etc/nebula
-# copy the executables: nebula and run_nebula.sh
-# copy the appropriate host's configuration, CA and host certificate, and host key: config.yaml, host.key, host.crt, ca.crt
+# copy the executables: 
+# - nebula and run_nebula.sh go in /etc/nebula
+# copy the appropriate host's configuration, CA and host certificate, and host key to /etc/nebula: config.yaml, host.key, host.crt, ca.crt
+```
+
+Create restart script for nebula:
+
+```
+cd /usr/local/bin
+vi restart_nebula.sh
+chmod 755 restart_nebula.sh
+```
+
+restart_nebula.sh:
+```
+#!/bin/sh
+
+/usr/bin/killall nebula
+nohup /etc/nebula/nebula -config /etc/nebula/config.yaml > /var/log/nebula.log &
+```
+
+Add crontab entry to start on boot and 8pm every day:
+
+```
 # add this to the crontab to start on boot:
 sudo crontab -e
-@reboot /etc/nebula/nebula -config /etc/nebula/config.yaml
+@reboot /usr/local/bin/restart_nebula.sh
+0 8 * * * /usr/local/bin/restart_nebula.sh
 ```
 
 ## Install Docker and EdgeVPN
@@ -356,6 +379,12 @@ With your LoRa rnode device connected to a USB port in the gateway, you can chec
 cd /home/ubuntu/.local/bin
 sudo ./rnodeconf /dev/ttyUSB0 -i
 ```
+
+If this works, configure the rnode device with LoRa parameters we currently use in the project:
+```
+sudo /home/ubuntu/.local/bin/rnodeconf /dev/ttyUSB0 -T --freq 903000000 --bw 62500 --txp 17 --sf 7 --cr 5
+```
+
 [Source](https://github.com/markqvist/rnodeconfigutil)
 
 ## Optional - set up LoRa interface with IP address
@@ -387,18 +416,18 @@ chmod 755 restart_lora.sh
 ./restart_lora.sh 10.99.0.2/24
 ```
 
-Add to the crontab entries for restarting at reboot and every hour:
+Add to the crontab entries for restarting at reboot and at 8pm every day:
 
 ```
 @reboot /usr/local/bin/restart_lora.sh 10.99.0.2/24
-@hourly /usr/local/bin/restart_lora.sh 10.99.0.2/24
+0 8 * * * /usr/local/bin/restart_lora.sh 10.99.0.2/24
 ```
 
 ## todo
 
 * new instructions for ssh keys
-* evio instructions
-* add LoRa to crontab
+* evio instructions to gateway for lora
+* create repo for scripts: run_nebula.sh, restart_nebula.sh, etc
 * rest of instructions from 18.04 as needed
 
 
