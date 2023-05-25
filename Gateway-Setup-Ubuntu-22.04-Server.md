@@ -350,6 +350,7 @@ cd .evio
 # copy the node's config.json here
 echo openvswitch | sudo tee -a /etc/modules > /dev/null
 sudo modprobe openvswitch
+docker pull edgevpnio/evio-node:latest
 docker run -d -v /home/$USER/.evio/config.json:/etc/opt/evio/config.json -v /var/log/evio/:/var/log/evio/ --restart always --privileged --name evio-node --network host edgevpnio/evio-node:latest
 ```
 
