@@ -278,6 +278,14 @@ sudo netplan apply
 ip a
 ```
 
+## Install SSH key
+
+Add this public key to ~/.ssh/authorized_keys:
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0F2x12xyL357P/JiTZzlsa6Kfe4PL07VyW/xf7iocG/1YoZd3QOIpFJ1x4YIMA0YU2VoSi9tecE2mzbudcIm06VbpeXc59fMp5UH0KY8DpSzpk58eLvB78UOsMQ99swiTqYexUHqEfPaEmJfgkwkPvgzuKIcmJkRZuRGb7LurfxTXv5kGSJTJmdhWwSfdAgCJhTzzvGBYFzoC2SkvCsc8O6EGXKRdnoReJ0kSTI8bv2n7cAkMW5LQZPCxEAPsHb2fEbeU3kXqYJV025rWb1Xllp2fyIfy9dzUJP9IOAwdMDFBB+on2HF629DHD879MbkOWmC2/N2tcJ38SRQc8TPNKuiRrfsiuFjNvkghrhSsDYsYLWkP3gpDJkCMjos3To+hamKml3RnfGayPECUSM551kE3ClXwYqUuq9iiaJaMI3UAzKqVRYcO0V4/S20H8hq9vWJjWqw8vJzqzMETrf412a/izvI31LMFNnBa+Il5Z7bxLDsmnMQxsihwuk7i19M= renato@Renatos-MacBook-Pro-2.local
+```
+
 ## Install nebula
 
 First clone the miscellaneous repo and download the nebula binary, then install executables in their right places:
