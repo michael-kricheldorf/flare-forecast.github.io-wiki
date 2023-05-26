@@ -299,12 +299,11 @@ tar -xzvf nebula-linux-amd64.tar.gz
 chmod 755 nebula restart_nebula.sh
 sudo mkdir /etc/nebula
 sudo cp nebula /etc/nebula
-sudo cp ca.crt /etc/nebula
 sudo cp config.yaml /etc/nebula
 sudo cp restart_nebula.sh /usr/local/bin
 ```
 
-You need to obtain the appropriate host.key and host.crt from the password safe for this Nebula IP address. Copy and paste the host.key and host.crt from the password safe /etc/nebula/host.key and /etc/nebula/host.crt then:
+You need to obtain the appropriate ca.crt, host.key and host.crt from the password safe for this Nebula IP address. Copy and paste the ca.crt, host.key and host.crt from the password safe to /etc/nebula then:
 
 ```
 cd /etc/nebula
