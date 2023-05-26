@@ -28,3 +28,5 @@ _Note:_ For workflow trigger on push on a specific branch, the workflow file sho
 **QAQC Data** (e.g. [fcre-waterquality-L1.csv](https://github.com/FLARE-forecast/FCRE-data/blob/fcre-catwalk-data-qaqc/fcre-waterquality_L1.csv))
 
 **Legacy Sensor Data Files**
+
+_Note:_ Legacy sensor data files are manually split from the original sensor data files (usually once a year) to avoid exceeding the 100 MB GitHub file size limit.
