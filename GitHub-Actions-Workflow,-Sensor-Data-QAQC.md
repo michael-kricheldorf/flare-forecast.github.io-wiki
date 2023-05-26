@@ -26,3 +26,5 @@ _Note:_ For workflow trigger on push on a specific branch, the workflow file sho
 **Maintenance Logs** (e.g. [CAT_MaintenanceLog.txt](https://github.com/FLARE-forecast/FCRE-data/blob/fcre-catwalk-data-qaqc/CAT_MaintenanceLog.txt))
 
 **QAQC Data** (e.g. [fcre-waterquality-L1.csv](https://github.com/FLARE-forecast/FCRE-data/blob/fcre-catwalk-data-qaqc/fcre-waterquality_L1.csv))
+
+**Legacy Sensor Data Files**
