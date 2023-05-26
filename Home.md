@@ -74,6 +74,7 @@ Information for FLARE staff and developers:
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
 | [Github Action for sending email](Github-Action-for-sending-email) | Github Actions |
 | [Github Action for sensor check](Github-Action-for-sensor-check) | Github Actions |
+| [GitHub Actions for sensor data QAQC](GitHub-Actions-Workflow:-Sensor-Data-QAQC) | Github Actions |
 
 
 #### Additional OpenWhisk-specific documentation for FLARE developers
