@@ -1,4 +1,4 @@
-# GitHub Structure
+# Branching Structure
 
 ## Raw Data Branch
 
