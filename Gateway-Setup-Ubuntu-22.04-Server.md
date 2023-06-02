@@ -410,7 +410,7 @@ In the example below, the LoRa IP address for the "pendant" node (LoRa only) is 
 
 ```
 cd
-cd miscellanous/lora
+cd miscellaneous/lora
 chmod 755 restart_lora_at_pendant.sh
 sudo cp restart_lora_at_pendant.sh /usr/local/bin
 ```
@@ -426,7 +426,7 @@ Add to the crontab entries for restarting at reboot and hourly:
 
 ```
 cd
-cd miscellanous/lora
+cd miscellaneous/lora
 chmod 755 restart_lora_at_noevio_gateway.sh
 sudo cp restart_lora_at_noevio_gateway.sh /usr/local/bin
 ```
