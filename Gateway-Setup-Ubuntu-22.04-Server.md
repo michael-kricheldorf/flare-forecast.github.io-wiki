@@ -269,6 +269,9 @@ network:
    eno1:
       addresses:
         - 172.16.100.1/24
+      nameservers:
+        addresses:
+          - 8.8.8.8
 ```
 
 Save the file, then run netplan apply and check that the interface is up:
