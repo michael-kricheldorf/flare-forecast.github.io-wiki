@@ -1,5 +1,4 @@
 Gateway | Location | Evio IP | Nebula IP | eno1 IP | Laptop IP | tnc0 IP | 
-Gateway | Location | (CIBR6) | Nebula IP | (field ssh) | (field ssh) |(LoRa) |
 |---|---|---|---|---|---|---|
 JS-front | Jetstream 2 | 10.10.100.1 | --- | --- | --- | --- |
 Carina | FCRE Metstation | 10.10.100.2 | 10.10.200.2 | --- | --- | --- |
@@ -11,3 +10,8 @@ Norvel | FCRE Metstation new | 10.10.100.7 | 10.10.200.7 | 172.16.100.1 | 172.16
 Henrietta | FCRE Catwalk new | 10.10.100.8 | 10.10.200.8 | 172.16.100.1 | 172.16.100.2 | 10.10.101.3 |
 VD mgmt | Vahid's laptop | 10.10.100.9 | 10.10.200.9 | --- | --- | --- |
 RF mgmt | Renato's laptop | 10.10.100.10 | 10.10.200.10 | --- | --- | --- |
+
+Notes:
+* Evio overlay name is CIBR6
+* eno1 is the interface closest the power supply in the fitlet, and for field management via ssh from a laptop
+* tnc0 is the interface used for LoRa radio
