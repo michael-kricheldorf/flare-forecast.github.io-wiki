@@ -10,6 +10,7 @@ Norvel | FCRE Metstation new | 10.10.100.7 | 10.10.200.7 | 172.16.100.1 | 10.10.
 Henrietta | FCRE Catwalk new | 10.10.100.8 | 10.10.200.8 | 172.16.100.1 | 10.10.1.2 | 172.16.100.2 | 10.10.101.3 |
 VD mgmt | Vahid's laptop | 10.10.100.9 | 10.10.200.9 | --- | --- | --- | --- |
 RF mgmt | Renato's laptop | 10.10.100.10 | 10.10.200.10 | --- | --- | --- | --- |
+Dianna | Vahid's Fitlet | 10.10.100.11 | 10.10.200.11 | --- | --- | --- | --- |
 
 Notes:
 * The subnet mask for all the IP addresses is `255.255.255.0`.
