@@ -83,6 +83,38 @@ sudo apt autoremove -y
 sudo apt install -y vim iputils-ping psmisc cron tcpdump
 ```
 
+## Configure sudo to run without a password prompt
+
+1- Run the following command to edit the sudoers file using the visudo command, which provides syntax checking and prevents you from saving invalid changes:
+
+```
+sudo visudo
+```
+
+2- This will open the sudoers file in the default text editor. Look for the line that contains the following:
+
+```
+%sudo   ALL=(ALL:ALL) ALL
+```
+
+3- Below that line, add the following:
+
+```
+ubuntu   ALL=(ALL) NOPASSWD:ALL
+```
+
+This line allows the `ubuntu` user to run any command with sudo without entering a password.
+
+4- Save the changes and exit the text editor.
+
+5- Verify that the sudo configuration is correct by running a command with sudo:
+
+```
+sudo ls
+```
+
+It should execute the command without asking for a password.
+
 ## Change Hostname
 
 Edit the hostname in the following files:
@@ -236,13 +268,6 @@ Increase the HTTP buffer and timeout limits to 500 MB and 10 minutes respectivel
 ```
 git config --global http.postBuffer 524288000
 git config --global http.timeout 600
-```
-
-## Update the Time
-
-```
-sudo apt install -y ntpdate
-sudo ntpdate -buv ntp.ubuntu.com
 ```
 
 ## Change Timezone to EST
