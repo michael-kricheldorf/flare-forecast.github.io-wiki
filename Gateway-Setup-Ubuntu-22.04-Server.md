@@ -240,6 +240,12 @@ sudo vi /etc/fstab
 sudo mount /data
 ```
 
+Then change the ownership of the directory to `ubuntu` so that it is accessible by this non-root user.
+
+```
+sudo chown -R ubuntu:ubuntu /data
+```
+
 ## Create FTP user with Specific Directory Access
 
 **FTP User:** `ftpuser`  
@@ -269,6 +275,16 @@ Increase the HTTP buffer and timeout limits to 500 MB and 10 minutes respectivel
 git config --global http.postBuffer 524288000
 git config --global http.timeout 600
 ```
+
+Set your Git account's default identity:
+
+```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
+
+Also, [add your SSH public key to your GitHub account](https://github.com/settings/keys)
+
 
 ## Change Timezone to EST
 
