@@ -291,6 +291,15 @@ Also, [add your SSH public key to your GitHub account](https://github.com/settin
 ```
 sudo timedatectl set-timezone EST
 ```
+## `dmesg` without root
+
+To access system logs via `dmesg` without need to run the commands with root access:
+
+```
+echo "kernel.dmesg_restrict = 0" | sudo tee -a /etc/sysctl.conf > /dev/null
+sudo sysctl -p
+```
+
 
 ## Configure Ethernet interface for field maintenance
 
