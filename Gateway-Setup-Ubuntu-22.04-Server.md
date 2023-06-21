@@ -304,6 +304,34 @@ echo "kernel.dmesg_restrict = 0" | sudo tee -a /etc/sysctl.conf > /dev/null
 sudo sysctl -p
 ```
 
+## Skip network interface waiting for configuration at startup
+
+1- Edit the network configuration file:
+
+```
+sudo vi /etc/netplan/00-installer-config.yaml
+```
+
+2- Add `optional: true` to interfaces. The output should be similar to the following:
+
+```
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    eno1:
+      dhcp4: true
+      optional: true
+    enp2s0:
+      dhcp4: true
+      optional: true
+  version: 2
+```
+
+3- Apply the changes.
+
+```
+sudo netplan apply
+```
 
 ## Configure Ethernet interface for field maintenance
 
@@ -379,7 +407,7 @@ sudo crontab -e
 
 ## Install Docker and EdgeVPN
 
-First install the latest Docker:
+First, install the latest Docker:
 
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
