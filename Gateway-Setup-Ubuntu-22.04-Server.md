@@ -77,11 +77,15 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-## Install Vim, ping, killall, cron, tcpdump
+## Install required tools and packages
 
 ```
-sudo apt install -y vim iputils-ping psmisc cron tcpdump
+sudo apt install -y vim iputils-ping psmisc cron tcpdump autossh
+wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
+    chmod +x /usr/bin/yq
 ```
+
+**Note:** [yq snap notes when running with sudo](https://github.com/mikefarah/yq#snap-notes)
 
 ## Configure sudo to run without a password prompt
 
@@ -333,15 +337,16 @@ ip a
 
 ## Install SSH key
 
-Add this public key to ~/.ssh/authorized_keys:
+Add these public key to ~/.ssh/authorized_keys:
 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0F2x12xyL357P/JiTZzlsa6Kfe4PL07VyW/xf7iocG/1YoZd3QOIpFJ1x4YIMA0YU2VoSi9tecE2mzbudcIm06VbpeXc59fMp5UH0KY8DpSzpk58eLvB78UOsMQ99swiTqYexUHqEfPaEmJfgkwkPvgzuKIcmJkRZuRGb7LurfxTXv5kGSJTJmdhWwSfdAgCJhTzzvGBYFzoC2SkvCsc8O6EGXKRdnoReJ0kSTI8bv2n7cAkMW5LQZPCxEAPsHb2fEbeU3kXqYJV025rWb1Xllp2fyIfy9dzUJP9IOAwdMDFBB+on2HF629DHD879MbkOWmC2/N2tcJ38SRQc8TPNKuiRrfsiuFjNvkghrhSsDYsYLWkP3gpDJkCMjos3To+hamKml3RnfGayPECUSM551kE3ClXwYqUuq9iiaJaMI3UAzKqVRYcO0V4/S20H8hq9vWJjWqw8vJzqzMETrf412a/izvI31LMFNnBa+Il5Z7bxLDsmnMQxsihwuk7i19M= renato@Renatos-MacBook-Pro-2.local
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTf1GNFsGaG5iW2JycihXPL+aqVe3HkxUWlnWiQVtXBR7dijTQbDhx0B7D/QreVK57LEyKJsxP3UQhbS+fIwjS2FNV+rXCRpA6SSm7B9O0x+18chEpJx5G9vGHZOP5W+6HAU2jxpSpfPu3V9tdAfc1wkyZZSUs0t6vnD+BLOPxp6xGz+4FbuV0zB6OQvxk+PusPYwkeWxBQko/uDOg5peLPOmwRGNzGCfJ7Bdxgo9gAeUsUzXh1ntKisI6PcHepgZ5Hg7PQS1FA8IYcyTQbvB5say5mgooyFjCXFtzj6WfFDsonhfG2XZFdVv2JY98241jHdC7CmaHOlI6C07yNBxj ubuntu@rightly-merry-cougar
 ```
 
 ## Install nebula
 
-First clone the miscellaneous repo and download the nebula binary, then install executables in their right places:
+First, clone the miscellaneous repo and download the nebula binary, then install executables in their right places:
 
 ```
 cd
