@@ -74,6 +74,7 @@ When asked for which services to restart, enter 11 for none of the above
 ```
 sudo apt update -y
 sudo apt upgrade -y
+sudo apt dist-upgrade -y
 sudo apt autoremove -y
 ```
 
