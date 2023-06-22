@@ -280,12 +280,14 @@ git config --global http.postBuffer 524288000
 git config --global http.timeout 600
 ```
 
-Set your Git account's default identity:
+Set your Git account's default identity for both `ubuntu` user with and without `sudo`:
 
 ```
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-```
+git config --global user.email "v.daneshmand@gmail.com"
+git config --global user.name "vahid-dan"
+sudo git config --global user.email "v.daneshmand@gmail.com"
+sudo git config --global user.name "vahid-dan"
+``` 
 
 Also, [add your SSH public key to your GitHub account](https://github.com/settings/keys)
 
