@@ -81,8 +81,8 @@ sudo apt autoremove -y
 
 ```
 sudo apt install -y vim iputils-ping psmisc cron tcpdump autossh
-wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
-    chmod +x /usr/bin/yq
+sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
+    sudo chmod +x /usr/bin/yq
 ```
 
 **Note:** [yq snap notes when running with sudo](https://github.com/mikefarah/yq#snap-notes)
@@ -350,7 +350,7 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-   eno1:
+    eno1:
       addresses:
         - 172.16.100.1/24
       nameservers:
