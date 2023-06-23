@@ -351,11 +351,10 @@ network:
   renderer: networkd
   ethernets:
     eno1:
-      addresses:
-        - 10.10.1.2/24
+      dhcp4: no
+      addresses: [10.10.1.2/24]
       nameservers:
-        addresses:
-          - 8.8.8.8
+        addresses: [8.8.8.8, 8.8.4.4]
 ```
 
 Save the file, then run netplan apply and check that the interface is up:
