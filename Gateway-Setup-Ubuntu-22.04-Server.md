@@ -335,9 +335,9 @@ network:
 sudo netplan apply
 ```
 
-## Configure Ethernet interface for field maintenance
+## Configure Ethernet interface for data logger connection and field maintenance
 
-This example assumes we're configuring the Ethernet port that is right next to the power supply cable on the fitlet (with name eno1) and we'll give it private address 172.16.100.1/24. To connect your laptop to it via Ethernet, manually configure your laptop's Ethernet interface with address 172.16.100.2/24 (i.e. subnet mask 255.255.255.0)
+This example assumes we're configuring the Ethernet port that is right next to the power supply cable on the fitlet (with name eno1) and we'll give it private address 10.10.1.2/24. To connect your laptop to it via Ethernet, manually configure your laptop's Ethernet interface with address 10.10.1.3/24 (i.e. subnet mask 255.255.255.0). The data logger IP address is 10.10.1.1/24.
 
 ```
 sudo vi /etc/netplan/99_config.yaml
@@ -352,7 +352,7 @@ network:
   ethernets:
     eno1:
       addresses:
-        - 172.16.100.1/24
+        - 10.10.1.2/24
       nameservers:
         addresses:
           - 8.8.8.8
