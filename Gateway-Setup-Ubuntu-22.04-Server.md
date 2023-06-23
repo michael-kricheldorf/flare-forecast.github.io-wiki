@@ -210,15 +210,26 @@ Install FTP Server:
 sudo apt install -y vsftpd
 ```
 
+Configure `ftpuser`:
+
+```
+sudo adduser ftpuser
+sudo usermod -d /data/datalogger-data ftpuser
+sudo chown ftpuser:ftpuser /data/datalogger-data
+sudo usermod -a -G ftpuser ubuntu
+sudo chmod 775 /data/datalogger-data
+```
+
 Change the Configurations:
 
 ```
 sudo vi /etc/vsftpd.conf
 ```
 
-Uncomment the following line:
+Uncomment the following lines:
 ```
 write_enable=YES
+chroot_local_user=YES
 ```
 
 Restart `vsftpd`:
