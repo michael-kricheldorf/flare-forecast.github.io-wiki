@@ -214,10 +214,14 @@ Configure `ftpuser`:
 
 ```
 sudo adduser ftpuser
-sudo usermod -d /data/datalogger-data ftpuser
-sudo chown ftpuser:ftpuser /data/datalogger-data
+mkdir /data/datalogger-data
+mkdir /data/datalogger-raw-data
+sudo chown -R ftpuser:ftpuser /data/datalogger-data
+sudo chown -R ftpuser:ftpuser /data/datalogger-raw-data
+sudo adduser --home /data/datalogger-data ftpuser
 sudo usermod -a -G ftpuser ubuntu
 sudo chmod 775 /data/datalogger-data
+sudo chmod 775 /data/datalogger-raw-data
 ```
 
 Change the Configurations:
@@ -226,10 +230,9 @@ Change the Configurations:
 sudo vi /etc/vsftpd.conf
 ```
 
-Uncomment the following lines:
+Uncomment the following line:
 ```
 write_enable=YES
-chroot_local_user=YES
 ```
 
 Restart `vsftpd`:
@@ -261,21 +264,6 @@ Then change the ownership of the directory to `ubuntu` so that it is accessible 
 ```
 sudo chown -R ubuntu:ubuntu /data
 ```
-
-## Create FTP user with Specific Directory Access
-
-**FTP User:** `ftpuser`  
-**Home Directory:** `/data/datalogger-data/`
-
-```
-sudo chmod 755 /data/
-sudo mkdir -p /data/datalogger-data/
-sudo adduser --home /data/datalogger-data ftpuser
-sudo chown -R ftpuser:ftpuser /data/datalogger-data/
-```
-
-[Source](https://linuxroutes.com/create-ftp-user-with-specific-directory-access/)
-
 
 ## Git
 
