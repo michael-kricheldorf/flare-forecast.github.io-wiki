@@ -81,9 +81,16 @@ sudo apt autoremove -y
 ## Install required tools and packages
 
 ```
-sudo apt install -y vim iputils-ping psmisc cron tcpdump autossh
+sudo apt install -y vim iputils-ping psmisc cron tcpdump autossh bash-completion
+source /etc/bash_completion
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     sudo chmod +x /usr/bin/yq
+```
+
+Add to .bashrc:
+```
+# enable bash completion
+echo 'if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi' >>~/.bashrc
 ```
 
 **Note:** [yq snap notes when running with sudo](https://github.com/mikefarah/yq#snap-notes)
