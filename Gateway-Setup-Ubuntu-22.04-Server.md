@@ -241,7 +241,7 @@ Add the following lines:
 ```
 # Adjust transferred file permission
 chmod_enable=YES
-local_umask=022
+local_umask=002
 ```
 
 Restart `vsftpd`:
