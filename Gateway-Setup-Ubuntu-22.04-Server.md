@@ -231,8 +231,17 @@ sudo vi /etc/vsftpd.conf
 ```
 
 Uncomment the following line:
+
 ```
 write_enable=YES
+```
+
+Add the following lines:
+
+```
+# Adjust transferred file permission
+chmod_enable=YES
+local_umask=022
 ```
 
 Restart `vsftpd`:
