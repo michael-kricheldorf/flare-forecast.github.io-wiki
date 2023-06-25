@@ -81,19 +81,31 @@ sudo apt autoremove -y
 ## Install required tools and packages
 
 ```
-sudo apt install -y vim iputils-ping psmisc cron tcpdump autossh bash-completion
-source /etc/bash_completion
+sudo apt install -y vim iputils-ping psmisc cron tcpdump curl autossh bash-completion
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     sudo chmod +x /usr/bin/yq
 ```
 
-Add to .bashrc:
+**Note:** [yq snap notes when running with sudo](https://github.com/mikefarah/yq#snap-notes)
+
+## Enable bash-completion
+
+1- Edit the following file:
+
 ```
-# enable bash completion
+sudo vi ~/.bashrc
+```
+
+Add the following lines:
+```
+# enable bash-completion
 echo 'if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi' >>~/.bashrc
 ```
 
-**Note:** [yq snap notes when running with sudo](https://github.com/mikefarah/yq#snap-notes)
+2- Run the following command:
+```
+source /etc/bash_completion
+```
 
 ## Configure sudo to run without a password prompt
 
