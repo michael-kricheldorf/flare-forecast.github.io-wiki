@@ -334,7 +334,7 @@ echo "kernel.dmesg_restrict = 0" | sudo tee -a /etc/sysctl.conf > /dev/null
 sudo sysctl -p
 ```
 
-## Skip network interface waiting for configuration at startup
+## Skip network interface waiting for configuration at startup + Add USB modem network interface configuration
 
 1- Edit the network configuration file:
 
@@ -342,7 +342,7 @@ sudo sysctl -p
 sudo vi /etc/netplan/00-installer-config.yaml
 ```
 
-2- Add `optional: true` to interfaces. The output should be similar to the following:
+2- Add `optional: true` to interfaces. Also add the USB modem network interface configuration. The output should be similar to the following:
 
 ```
 # This is the network config written by 'subiquity'
@@ -351,11 +351,16 @@ network:
     eno1:
       dhcp4: true
       optional: true
-    enp2s0:
+    enp1s0:
+      dhcp4: true
+      optional: true
+    enx0015ff025968:
       dhcp4: true
       optional: true
   version: 2
 ```
+
+**Note: **The exact USB modem network name may be different. It should start with `enx`. Run `ip a` to find it from the list of interfaces.
 
 3- Apply the changes.
 
