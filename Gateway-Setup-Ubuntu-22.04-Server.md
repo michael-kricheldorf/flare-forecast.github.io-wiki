@@ -81,7 +81,7 @@ sudo apt autoremove -y
 ## Install required tools and packages
 
 ```
-sudo apt install -y vim iputils-ping psmisc cron tcpdump curl autossh bash-completion
+sudo apt install -y vim iputils-ping psmisc cron tcpdump curl vsftpd autossh bash-completion
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     sudo chmod +x /usr/bin/yq
 ```
@@ -162,7 +162,7 @@ Edit the following file:
 sudo vi /etc/apt/apt.conf.d/20auto-upgrades
 ```
 
-The file should look like as follows:
+The file should look as follows:
 
 ```
 APT::Periodic::Update-Package-Lists "0";
@@ -222,12 +222,6 @@ sudo sysctl -p /etc/sysctl.d/panic.conf
 
 
 ## FTP
-
-Install FTP Server:
-
-```
-sudo apt install -y vsftpd
-```
 
 Configure `ftpuser`:
 
