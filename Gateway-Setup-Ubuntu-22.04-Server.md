@@ -239,8 +239,8 @@ sudo chown -R ftpuser:ftpuser /data/datalogger-data
 sudo chown -R ftpuser:ftpuser /data/datalogger-raw-data
 sudo adduser --home /data/datalogger-data ftpuser
 sudo usermod -a -G ftpuser ubuntu
-sudo chmod 775 /data/datalogger-data
-sudo chmod 775 /data/datalogger-raw-data
+sudo chmod -R 775 /data/datalogger-data
+sudo chmod -R 775 /data/datalogger-raw-data
 ```
 
 Change the Configurations:
