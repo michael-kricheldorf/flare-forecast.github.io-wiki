@@ -362,6 +362,9 @@ network:
     enp1s0:
       dhcp4: true
       optional: true
+    enp2s0:
+      dhcp4: true
+      optional: true
     enx0015ff025968:
       dhcp4: true
       optional: true
