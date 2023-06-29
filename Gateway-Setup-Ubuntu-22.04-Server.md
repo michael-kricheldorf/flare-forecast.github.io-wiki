@@ -12,7 +12,6 @@ Ubuntu Server 22.04 (64-bit)
 
 ## Bios
 
-
 ### Initial setup: BIOS and Ubuntu Installation on SD Card
 
 What you will need:  
@@ -162,6 +161,9 @@ Change the hostname without a reboot:
 sudo hostname <new_hostname>
 ```
 
+**Note: **Without updating `/etc/hostname` and `/etc/hosts`, this change is not permanent and will be undone after reboot.
+
+
 ## Disable Auto Updates and Unattended Upgrades
 
 Edit the following file:
@@ -176,6 +178,7 @@ The file should look as follows:
 APT::Periodic::Update-Package-Lists "0";
 APT::Periodic::Unattended-Upgrade "0";
 ```
+
 
 ## Recover from Kernel Panics and Lockups
 
@@ -234,9 +237,11 @@ sudo sysctl -p /etc/sysctl.d/panic.conf
 Check which disk is the SDD using `sudo fdisk -l`. For example, `/dev/sda1`. Create `/data` and mount it.
 
 If you need to partition the disk:
+
 ```
 sudo fdisk /dev/sda
 ```
+
 Enter n to create a new
 Accept defaults
 Enter w to write
@@ -247,7 +252,7 @@ sudo mkdir /data
 sudo vi /etc/fstab
 ```
 
-Add an entry:
+Add an entry to `/etc/fstab`:
 
 ```
 /dev/sda1 /data ext4 defaults 0 0
@@ -266,7 +271,7 @@ sudo chown -R ubuntu:ubuntu /data
 
 ## FTP
 
-Configure `ftpuser`:
+Add and configure `ftpuser`:
 
 ```
 sudo adduser ftpuser
@@ -281,7 +286,7 @@ sudo chown -R ftpuser:ftpuser /data/datalogger-raw-data
 
 ```
 
-Change the Configurations:
+Change the configurations:
 
 ```
 sudo vi /etc/vsftpd.conf
@@ -370,8 +375,9 @@ network:
       optional: true
   version: 2
 ```
+**Note 1: **The name of one of the network interfaces may be either `enp1s0` or `enp2s0` of Fitlet2 devices.
 
-**Note: **The exact USB modem network name may be different. It should start with `enx`. Run `ip a` to find it from the list of interfaces.
+**Note 2: **The exact USB modem network interface name may be different. It should start with `enx`. Run `ip a` to find it from the list of interfaces.
 
 3- Apply the changes.
 
@@ -381,7 +387,7 @@ sudo netplan apply
 
 ## Configure Ethernet interface for data logger connection and field maintenance
 
-This example assumes we're configuring the Ethernet port that is right next to the power supply cable on the fitlet (with name eno1) and we'll give it private address 10.10.1.2/24. To connect your laptop to it via Ethernet, manually configure your laptop's Ethernet interface with address 10.10.1.3/24 (i.e. subnet mask 255.255.255.0). The data logger IP address is 10.10.1.1/24.
+This example assumes we're configuring the Ethernet port that is right next to the power supply cable on the Fitlet2 (with name eno1) and we'll give it private address 10.10.1.2/24. To connect your laptop to it via Ethernet, manually configure your laptop's Ethernet interface with address 10.10.1.3/24 (i.e. subnet mask 255.255.255.0). The data logger IP address is 10.10.1.1/24.
 
 ```
 sudo vi /etc/netplan/99_config.yaml
