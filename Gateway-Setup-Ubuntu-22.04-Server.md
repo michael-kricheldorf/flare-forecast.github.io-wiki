@@ -12,9 +12,8 @@ Ubuntu Server 22.04 (64-bit)
 
 ## Bios
 
-  
 
-## Initial setup: BIOS and Ubuntu Installation on SD Card
+### Initial setup: BIOS and Ubuntu Installation on SD Card
 
 What you will need:  
 
@@ -81,7 +80,7 @@ sudo apt autoremove -y
 ## Install required tools and packages
 
 ```
-sudo apt install -y vim iputils-ping psmisc cron tcpdump curl vsftpd autossh bash-completion
+sudo apt install -y vim iputils-ping psmisc cron tcpdump curl vsftpd git autossh bash-completion
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     sudo chmod +x /usr/bin/yq
 ```
@@ -138,6 +137,15 @@ sudo ls
 ```
 
 It should execute the command without asking for a password.
+
+
+## Set password for `root` user
+
+```
+sudo -i
+passwd
+```
+
 
 ## Change Hostname
 
@@ -221,20 +229,56 @@ sudo sysctl -p /etc/sysctl.d/panic.conf
 [Source](https://www.supertechcrew.com/kernel-panics-and-lockups/)
 
 
+## Prepare mount point
+
+Check which disk is the SDD using `sudo fdisk -l`. For example, `/dev/sda1`. Create `/data` and mount it.
+
+If you need to partition the disk:
+```
+sudo fdisk /dev/sda
+```
+Enter n to create a new
+Accept defaults
+Enter w to write
+
+```
+sudo mkfs.ext4 /dev/sda1
+sudo mkdir /data
+sudo vi /etc/fstab
+```
+
+Add an entry:
+
+```
+/dev/sda1 /data ext4 defaults 0 0
+```
+
+```
+sudo mount /data
+```
+
+Then change the ownership of the directory to `ubuntu` so that it is accessible by this non-root user.
+
+```
+sudo chown -R ubuntu:ubuntu /data
+```
+
+
 ## FTP
 
 Configure `ftpuser`:
 
 ```
 sudo adduser ftpuser
-mkdir /data/datalogger-data
-mkdir /data/datalogger-raw-data
-sudo chown -R ftpuser:ftpuser /data/datalogger-data
-sudo chown -R ftpuser:ftpuser /data/datalogger-raw-data
 sudo adduser --home /data/datalogger-data ftpuser
 sudo usermod -a -G ftpuser ubuntu
+mkdir /data/datalogger-data
+mkdir /data/datalogger-raw-data
 sudo chmod -R 775 /data/datalogger-data
 sudo chmod -R 775 /data/datalogger-raw-data
+sudo chown -R ftpuser:ftpuser /data/datalogger-data
+sudo chown -R ftpuser:ftpuser /data/datalogger-raw-data
+
 ```
 
 Change the Configurations:
@@ -263,37 +307,7 @@ Restart `vsftpd`:
 sudo systemctl restart vsftpd.service
 ```
 
-## Prepare mount point
-
-Check which disk is the SDD using sudo fdisk -l. For example, /dev/sda1. Create /data and mount it.
-
-```
-#if you need to partition the disk
-sudo fdisk /dev/sda
-# enter n to create a new
-# accept defaults
-# enter w to write
-sudo mkfs.ext4 /dev/sda1
-sudo mkdir /data
-sudo vi /etc/fstab
-#add an entry:
-/dev/sda1 /data ext4 defaults 0 0
-sudo mount /data
-```
-
-Then change the ownership of the directory to `ubuntu` so that it is accessible by this non-root user.
-
-```
-sudo chown -R ubuntu:ubuntu /data
-```
-
 ## Git
-
-Install Git:
-
-```
-sudo apt install -y git
-```
 
 Increase the HTTP buffer and timeout limits to 500 MB and 10 minutes respectively:
 
@@ -430,7 +444,7 @@ Add crontab entry to start on boot and 8pm every day:
 # add this to the crontab to start on boot:
 sudo crontab -e
 @reboot /usr/local/bin/restart_nebula.sh
-0 8 * * * /usr/local/bin/restart_nebula.sh
+00 * * * * /usr/local/bin/restart_nebula.sh
 ```
 
 ## Install Docker and EdgeVPN
