@@ -1,8 +1,8 @@
 Gateway   | Location            | Evio IP      | Nebula IP    | eno1 IP (static) | enp1s0 (edge of device) | tnc0 IP     | Reverse SSH Port 
 ---       | ---                 | ---          | ---          | ---              | ---                     | ---         | ---
 JS-front  | Jetstream 2         | 10.10.100.1  | ---          | ---              | ---                     | ---         | ---
-Bita      | FCRE Weir           | ---          | ---          | 10.10.1.2        | dhcp                    | 10.10.101.2 | ---
-Carina    | Vahid's Fitlet      | 10.10.100.2 (TODO)  | 10.10.200.2  | 10.10.1.2        | dhcp                    | ---         | ---
+Diana     | FCRE Weir           | ---          | ---          | 10.10.1.2        | dhcp                    | 10.10.101.2 | ---
+Carina    | Vahid's Fitlet      | ---          | 10.10.200.2  | 10.10.1.2        | dhcp                    | ---         | ---
 Bjorn     | BVRE Platform       | 10.10.100.5  | 10.10.200.5  | 10.10.1.2        | dhcp                    | ---         | 60005
 Annie     | CCRE Dam            | 10.10.100.6  | 10.10.200.6  | 10.10.1.2        | dhcp                    | ---         | 60006
 Norvel    | FCRE Metstation     | 10.10.100.7  | 10.10.200.7  | 10.10.1.2        | dhcp                    | 10.10.101.1 | 60007
