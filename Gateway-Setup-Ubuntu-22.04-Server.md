@@ -79,7 +79,7 @@ sudo apt autoremove -y
 ## Install required tools and packages
 
 ```
-sudo apt install -y vim iputils-ping psmisc cron tcpdump curl vsftpd git autossh bash-completion
+sudo apt install -y vim iputils-ping psmisc cron tcpdump curl vsftpd git autossh bash-completion apparmor-utils
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     sudo chmod +x /usr/bin/yq
 ```
@@ -455,6 +455,23 @@ sudo crontab -e
 @reboot /usr/local/bin/restart_nebula.sh
 00 * * * * /usr/local/bin/restart_nebula.sh
 ```
+
+# Remove tcpdump from 
+
+Having `tcpdum` in AppArmor profiles prevents you from using `tcpdump -w` to write the output file in `/data`.
+
+First, check if `tcpdump` is in AppArmor profiles:
+
+```
+sudo aa-status
+```
+
+If so, you may want to remove it:
+
+```
+sudo aa-disable /usr/bin/tcpdump
+```
+
 
 ## Install Docker and EdgeVPN
 
