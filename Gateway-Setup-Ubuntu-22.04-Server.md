@@ -456,20 +456,20 @@ sudo crontab -e
 00 * * * * /usr/local/bin/restart_nebula.sh
 ```
 
-# Remove tcpdump from 
+# Remove tcpdump from AppArmor Profiles
 
 Having `tcpdum` in AppArmor profiles prevents you from using `tcpdump -w` to write the output file in `/data`.
 
 First, check if `tcpdump` is in AppArmor profiles:
 
 ```
-sudo aa-status
+sudo aa-status | grep tcpdump
 ```
 
 If so, you may want to remove it:
 
 ```
-sudo aa-disable /usr/bin/tcpdump
+sudo aa-disable tcpdump
 ```
 
 
