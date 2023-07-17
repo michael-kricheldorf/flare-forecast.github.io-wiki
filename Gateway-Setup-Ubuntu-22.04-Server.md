@@ -370,6 +370,12 @@ network:
     enp2s0:
       dhcp4: true
       optional: true
+    enx0015ff030033:
+      dhcp4: true
+      optional: true
+    enx0015ff080733:
+      dhcp4: true
+      optional: true
     enx0015ff025968:
       dhcp4: true
       optional: true
