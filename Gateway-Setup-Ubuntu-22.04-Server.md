@@ -379,6 +379,9 @@ network:
     enx0015ff025968:
       dhcp4: true
       optional: true
+    enx0015ff357651:
+      dhcp4: true
+      optional: true
   version: 2
 ```
 **Note 1: **The name of one of the network interfaces may be either `enp1s0` or `enp2s0` of Fitlet2 devices.
