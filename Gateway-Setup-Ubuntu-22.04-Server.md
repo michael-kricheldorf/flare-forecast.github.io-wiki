@@ -88,16 +88,10 @@ sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd6
 
 ## Enable bash-completion
 
-1- Edit the following file:
+1- Edit `~/.bashrc`:
 
 ```
-sudo vi ~/.bashrc
-```
-
-Add the following lines:
-```
-# enable bash-completion
-echo 'if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi' >>~/.bashrc
+echo 'if [ -f /etc/bash_completion ]; then . /etc/bash_completion; fi' >> ~/.bashrc
 ```
 
 2- Run the following command:
