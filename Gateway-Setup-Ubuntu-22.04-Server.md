@@ -79,7 +79,7 @@ sudo apt autoremove -y
 ## Install required tools and packages
 
 ```
-sudo apt install -y vim iputils-ping psmisc cron tcpdump curl vsftpd git autossh bash-completion apparmor-utils
+sudo apt install -y vim iputils-ping psmisc cron tcpdump curl vsftpd ftp git autossh bash-completion apparmor-utils
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     sudo chmod +x /usr/bin/yq
 ```
@@ -304,6 +304,18 @@ Restart `vsftpd`:
 
 ```
 sudo systemctl restart vsftpd.service
+```
+
+Test FTP service:
+
+```
+FTP localhost
+```
+
+Check FTP logs:
+
+```
+tail /var/log/vsftpd.log
 ```
 
 ## Git
