@@ -2,11 +2,11 @@ Gateway   | Location            | Evio IP      | Nebula IP    | eno1 IP (static)
 ---       | ---                 | ---          | ---          | ---              | ---                     | ---         | ---
 JS-front  | Jetstream 2         | 10.10.100.1  | ---          | ---              | ---                     | ---         | ---
 Diana     | FCRE Weir           | ---          | ---          | 10.10.1.2        | dhcp                    | 10.10.101.2 | ---
-Carina    | Vahid's Fitlet      | ---          | 10.10.200.2  | 10.10.1.2        | dhcp                    | ---         | ---
+Carina    | Vahid's Fitlet      | ---          | 10.10.200.2  | 10.10.1.2        | dhcp                    | ---         | 60002
 Bjorn     | BVRE Platform       | 10.10.100.5  | 10.10.200.5  | 10.10.1.2        | dhcp                    | ---         | 60005
 Annie     | CCRE Dam            | 10.10.100.6  | 10.10.200.6  | 10.10.1.2        | dhcp                    | ---         | 60006
 Norvel    | FCRE Metstation     | 10.10.100.7  | 10.10.200.7  | 10.10.1.2        | dhcp                    | 10.10.101.1 | 60007
-Henrietta | FCRE Catwalk        | 10.10.100.11 | 10.10.200.11 | 10.10.1.2        | dhcp                    | 10.10.101.3 | 60008
+Henrietta | FCRE Catwalk        | 10.10.100.11 | 10.10.200.11 | 10.10.1.2        | dhcp                    | 10.10.101.3 | 60011
 VD mgmt   | Vahid's laptop      | 10.10.100.9  | 10.10.200.9  | ---              | ---                     | ---         | ---
 RF mgmt   | Renato's laptop     | 10.10.100.10 | 10.10.200.10 | ---              | ---                     | ---         | ---
 MK mgmt   | Michael's laptop    | ---          | 10.10.200.13 | ---              | ---                     | ---         | ---
