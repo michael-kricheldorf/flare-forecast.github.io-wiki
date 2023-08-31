@@ -72,10 +72,10 @@ Information for FLARE staff and developers:
 | [OpenWhisk FLARE integration](Openwhisk-FLARE-integration) | OpenWhisk+FLARE |
 | [OpenWhisk FLARE deployment on Jetstream2](FLARE-OpenWhisk-setup-on-Jetstream2) | OpenWhisk+FLARE |
 | [Gateway Hardware and Software Setup](Gateway-Setup) | Gateways |
+| [Working with Constrained Gateways](Working-with-Constrained-Gateways) | Gateways |
 | [Github Action for sending email](Github-Action-for-sending-email) | Github Actions |
 | [Github Action for sensor check](Github-Action-for-sensor-check) | Github Actions |
 | [GitHub Action for sensor data QAQC](GitHub-Actions-Workflow,-Sensor-Data-QAQC) | Github Actions |
-
 
 #### Additional OpenWhisk-specific documentation for FLARE developers
 
