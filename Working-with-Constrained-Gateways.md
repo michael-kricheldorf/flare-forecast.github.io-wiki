@@ -1,5 +1,7 @@
 Here are some tips for working with constrained gateways, such as gateways with unstable internet connections or internet connections over LoRa:
 
+* Heavy traffic on the LoRa interface can take the whole LoRa network down.
+
 * Disable all unnecessary network traffic on the constrained interfaces (i.e., USB modem and LoRa radio interfaces).
 
 * Turn off automatic (i.e., unattended) operating system updates.
