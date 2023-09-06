@@ -10,7 +10,7 @@ Henrietta | FCRE Catwalk        | 10.10.100.11 | 10.10.200.11 | 10.10.1.2       
 VD mgmt   | Vahid's laptop      | 10.10.100.9  | 10.10.200.9  | ---              | ---                     | ---         | ---
 RF mgmt   | Renato's laptop     | 10.10.100.10 | 10.10.200.10 | ---              | ---                     | ---         | ---
 MK mgmt   | Michael's laptop    | ---          | 10.10.200.13 | ---              | ---                     | ---         | ---
-
+Zoe (MK)  | Michael's test gw   | ---          | 10.10.200.14 | 10.10.1.2        | dhcp                    | ---         | ---
 
 Notes:
 * The subnet mask for all the IP addresses is `255.255.255.0`.
