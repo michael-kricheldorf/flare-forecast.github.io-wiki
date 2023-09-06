@@ -462,15 +462,6 @@ cd /etc/nebula
 sudo chmod 600 ca.crt host.key host.crt
 ```
 
-Add crontab entry to start on boot and 8pm every day:
-
-```
-# add this to the crontab to start on boot:
-sudo crontab -e
-@reboot /usr/local/bin/restart_nebula.sh
-00 * * * * /usr/local/bin/restart_nebula.sh
-```
-
 # Remove tcpdump from AppArmor Profiles
 
 Having `tcpdum` in AppArmor profiles prevents you from using `tcpdump -w` to write the output file in `/data`.
@@ -525,11 +516,9 @@ docker run -d -v /home/$USER/.evio/config.json:/etc/opt/evio/config.json -v /var
 [Source](https://edgevpn.io/trial/)
 
 
-# Optional - for nodes with LoRA radio only
-
 ## Install LoRa Rnode software
 
-Build and install the tncattach software that allows using LoRa as an Ethernet NIC:
+Build and install the tncattach software that allows the use of LoRa as an Ethernet NIC:
 
 ```
 sudo apt install -y build-essential
@@ -570,84 +559,3 @@ sudo /home/ubuntu/.local/bin/rnodeconf /dev/ttyUSB0 -T --freq 903000000 --bw 625
 ```
 
 [Source](https://github.com/markqvist/rnodeconfigutil)
-
-## Standalone LoRa link setup (if you don't use EdgeVPN for LoRa address)
-
-In the example below, the LoRa IP address for the "pendant" node (LoRa only) is set up to 10.10.101.2/24 and its NAT gateway (LoRa + cell) is 10.10.101.1 - adjust accordingly. The address only has scope for the LoRa link.
-
-### If this is a "Pendant" Gateway with LoRa only (no cell)
-
-```
-cd
-cd miscellaneous/lora
-chmod 755 restart_lora_at_pendant.sh
-sudo cp restart_lora_at_pendant.sh /usr/local/bin
-```
-
-Add to the crontab entries for restarting at reboot and hourly:
-
-```
-@reboot /usr/local/bin/restart_lora_at_pendant.sh 10.10.101.2/24 10.10.101.1
-@hourly /usr/local/bin/restart_lora_at_pendant.sh 10.10.101.2/24 10.10.101.1
-```
-
-### If this is a gateway with both LoRa and cell modems
-
-```
-cd
-cd miscellaneous/lora
-chmod 755 restart_lora_at_noevio_gateway.sh
-sudo cp restart_lora_at_noevio_gateway.sh /usr/local/bin
-```
-
-Add to the crontab entries for restarting at reboot and hourly:
-
-```
-@reboot /usr/local/bin/restart_lora_at_noevio_gateway.sh 10.10.101.1
-@hourly /usr/local/bin/restart_lora_at_noevio_gateway.sh 10.10.101.1
-```
-
-## LoRa link setup with EdgeVPN
-
-In the example below, we'll use "evio_switch" to refer to the node with a cell modem running evio (e.g. FCR metstation gateway), and "lora_pendant" as the node without cell modem (e.g. FCR weir gateway). 
-
-In the example below, evio_switch has address 10.10.100.7 and lora_pendant 10.10.100.4; replace as per your configuration
-
-### If this is a "Pendant" Gateway with LoRa only (no cell)
-
-```
-cd
-cd miscellanous/lora
-chmod 755 restart_lora_at_pendant.sh
-sudo cp restart_lora_at_pendant.sh /usr/local/bin
-```
-
-Add to the crontab entries for restarting at reboot and hourly:
-
-```
-@reboot /usr/local/bin/restart_lora_at_pendant.sh 10.10.100.4/24 10.10.100.7
-@hourly /usr/local/bin/restart_lora_at_pendant.sh 10.10.100.4/24 10.10.100.7
-```
-
-### If this is a gateway with both LoRa and cell modems (evio_switch)
-
-
-```
-cd
-cd miscellanous/lora
-chmod 755 restart_lora_at_evio_switch.sh 
-sudo cp restart_lora_at_evio_switch.sh /usr/local/bin
-```
-
-Add crontab entries:
-```
-@reboot /usr/local/bin/restart_lora_at_evio_switch.sh 10.10.100.4
-@hourly /usr/local/bin/restart_lora_at_evio_switch.sh 10.10.100.4
-```
-
-## todo
-
-* rest of instructions from 18.04 as needed
-
-
-
