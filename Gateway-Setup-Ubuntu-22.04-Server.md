@@ -268,7 +268,6 @@ sudo chown -R ubuntu:ubuntu /data
 Add and configure `ftpuser`:
 
 ```
-sudo adduser ftpuser
 sudo adduser --home /data/datalogger-data ftpuser
 sudo usermod -a -G ftpuser ubuntu
 mkdir /data/datalogger-data
@@ -316,6 +315,12 @@ Check FTP logs:
 
 ```
 tail /var/log/vsftpd.log
+```
+
+Check FTP service status:
+
+```
+systemctl status vsftpd.service
 ```
 
 ## Git
