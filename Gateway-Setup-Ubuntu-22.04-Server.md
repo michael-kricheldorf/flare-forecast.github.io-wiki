@@ -299,10 +299,16 @@ chmod_enable=YES
 local_umask=002
 ```
 
-Restart `vsftpd`:
+Restart `vsftpd` service:
 
 ```
 sudo systemctl restart vsftpd.service
+```
+
+Check `vsftpd` service:
+
+```
+systemctl status vsftpd.service
 ```
 
 Test FTP service:
@@ -315,12 +321,6 @@ Check FTP logs:
 
 ```
 tail /var/log/vsftpd.log
-```
-
-Check FTP service status:
-
-```
-systemctl status vsftpd.service
 ```
 
 ## Git
