@@ -366,7 +366,7 @@ sudo sysctl -p
 sudo vi /etc/netplan/00-installer-config.yaml
 ```
 
-2- Add `optional: true` to interfaces. Also add the USB modem network interface configuration. The output should be similar to the following:
+2- Add `optional: true` to interfaces. Also, add the USB modem network interface configuration. The output should be similar to the following:
 
 ```
 # This is the network config written by 'subiquity'
@@ -397,7 +397,7 @@ network:
 ```
 **Note 1: **The name of one of the network interfaces may be either `enp1s0` or `enp2s0` of Fitlet2 devices.
 
-**Note 2: **The exact USB modem network interface name may be different. It should start with `enx`. Run `ip a` to find it from the list of interfaces.
+**Note 2: **The exact USB modem network interface name may be different. It should start with `enx`. Run `ip a` to find it from the list of interfaces. Even if you don't have any USB modem connected to the gateway, you still should add the above interfaces to the config file in case you attach a USB modem in the future.
 
 3- Apply the changes.
 
