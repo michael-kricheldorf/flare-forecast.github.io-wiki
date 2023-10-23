@@ -59,11 +59,31 @@ Boot Option #6 Network.
 27- In "Featured Server Snaps", skip and navigate down to Done.  
 28- Now wait... After the installation is complete, power off the fitlet2.   
 29- Remove the USB drive, but keep the SD card in the fitlet2.  
-30- Power up the fitlet2 - it should now boot from the SD card.  
+30- Power up the fitlet2 - it should now boot from the SD card.
 
 ### Bios Update
 
 **Optional - when in doubt, do not try this!** if you need to update the BIOS, information is available [here](http://www.fit-pc.com/wiki/index.php?title=Fitlet2:_BIOS_Update).
+
+## Access via SSH
+
+Since Ubuntu Server doesn't have a graphical user interface, to make the rest of the process easier, instead of accessing the gateway directly and typing the rest of the commands in Terminal on the gateway, you should find out the IP address of the gateway and establish an SSH connection to that via another computer that has a graphical user interface. Then you can access the gateway through that machine and access this documentation via the web browser on the second machine and copy and paste the commands to the gateway.
+
+### Get IP Address
+
+Find the IP address of the gateway from the list of network interfaces:
+
+```
+ip a
+```
+
+### Access the Gateway via SSH
+
+Connect to the gateway via SSH from the terminal on the second machine:
+
+```
+ssh ubuntu@<gateway_ip_address>
+```
 
 ## Upgrade Ubuntu
 
