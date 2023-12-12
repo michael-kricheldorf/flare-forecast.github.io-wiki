@@ -592,3 +592,20 @@ sudo /home/ubuntu/.local/bin/rnodeconf /dev/ttyUSB0 -T --freq 903000000 --bw 625
 ```
 
 [Source](https://github.com/markqvist/rnodeconfigutil)
+
+## Skip DNS Lookup by DHCP
+
+For LoRa connections, it is essential to lower the internet connection load, e.g. DNS lookup by the DHCP.
+
+Edit the following file:
+
+```
+sudo vi /etc/hosts
+```
+
+Add the following lines:
+
+```
+140.82.114.3 github.com www.github.com
+178.63.26.145 hc-ping.com
+```
