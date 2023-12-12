@@ -380,6 +380,12 @@ sudo sysctl -p
 
 ## Skip network interface waiting for configuration at startup + Add USB modem network interface configuration
 
+0- Permissions for the network configuration files are too open by default. We should change them:
+
+```
+sudo chmod 600 /etc/netplan/*.yaml
+```
+
 1- Edit the network configuration file:
 
 ```
