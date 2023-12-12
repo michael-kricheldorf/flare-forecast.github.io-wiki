@@ -175,6 +175,8 @@ Change the hostname without a reboot:
 sudo hostname <new_hostname>
 ```
 
+We need to log out and then log back in to notice the new hostname.
+
 **Note: **Without updating `/etc/hostname` and `/etc/hosts`, this change is not permanent and will be undone after reboot.
 
 
