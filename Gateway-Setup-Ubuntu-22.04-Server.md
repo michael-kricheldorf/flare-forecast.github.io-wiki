@@ -593,6 +593,20 @@ sudo /home/ubuntu/.local/bin/rnodeconf /dev/ttyUSB0 -T --freq 903000000 --bw 625
 
 [Source](https://github.com/markqvist/rnodeconfigutil)
 
+### Check LoRa Radio USB Connection
+
+To verify if the LoRa radio is connected properly through a USB port, run the following command:
+
+```
+lsusb
+```
+
+In the outputs you should see a line similar to the following:
+
+```
+Bus 001 Device 004: ID 0403:6015 Future Technology Devices International, Ltd Bridge(I2C/SPI/UART/FIFO)
+```
+
 ## Skip DNS Lookup by DHCP
 
 For LoRa connections, it is essential to lower the internet connection load, e.g. DNS lookup by the DHCP.
