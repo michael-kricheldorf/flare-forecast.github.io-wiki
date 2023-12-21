@@ -71,7 +71,41 @@ kubectl describe nodes
 sudo snap install helm --classic
 helm repo add openwhisk https://openwhisk.apache.org/charts
 helm repo update
+```
+
+# Configure and deploy the OpenWhisk cluster
+
+First, cd into the kind directory and edit the mycluster.yaml file to override cluster defaults:
+
+```
 cd ~/openwhisk-deploy-kube/deploy/kind
+vi mycluster.yaml
+```
+
+The mycluster.yaml file comes with pre-set credentials that are insecure. *You must delete the default auth entries for whisk.system and guest, and add your own auth key! Replace xxxx...:zzz... with your own auth key*
+
+Here you can also change resource limits (e.g. max 2GB memory and 120-minute timeout in this case) 
+
+```
+  auth:
+    system: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:zzzz....zzzz"
+  limits:
+    actions:
+      time:
+        min: "100ms"
+        max: "120m"
+        std: "1m"
+      memory:
+        min: "128m"
+        max: "2048m"
+        std: "256m"
+  containerPool:
+    userMemory: "8192m"
+```
+
+Now deploy the cluster with helm:
+
+```
 helm install owdev openwhisk/openwhisk -n openwhisk --create-namespace -f mycluster.yaml
 helm status owdev -n openwhisk
 ```
@@ -139,10 +173,14 @@ wsk -i action create greeting greeting.js
 wsk -i action invoke /faasr/greeting --result
 ```
 
+# Terminating the cluster
+
+```
+helm uninstall owdev -n openwhisk
+```
+
 # Still TBD
 
-* Changing cluster resource limits
-* Restarting cluster
 * Adding X509 certificate to nginx
 * Installing alarm package
 
