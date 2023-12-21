@@ -82,7 +82,9 @@ cd ~/openwhisk-deploy-kube/deploy/kind
 vi mycluster.yaml
 ```
 
-The mycluster.yaml file comes with pre-set credentials that are insecure. *You must delete the default auth entries for whisk.system and guest, and add your own auth key! Replace xxxx...:zzz... with your own auth key*
+The mycluster.yaml file comes with pre-set credentials that are insecure. Because of that, *you must delete the default auth entries for whisk.system and guest, and add your own auth key!*
+
+This assumes that you can generate a key for your deployment and replace xxxx...:zzz... with your own auth key
 
 Here you can also change resource limits (e.g. max 2GB memory and 120-minute timeout in this case) 
 
