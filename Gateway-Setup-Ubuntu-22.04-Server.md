@@ -617,9 +617,12 @@ Edit the following file:
 sudo vi /etc/hosts
 ```
 
-Add the following lines:
+Add the following lines to skip DNS lookup for some domains:
 
 ```
 140.82.114.3 github.com www.github.com
 178.63.26.145 hc-ping.com
+185.125.190.56 ntp.ubuntu.com
 ```
+
+**Note:** The IP addresses may have been changed since the last update to this document. Make sure the IP addresses work. 
